@@ -1,0 +1,50 @@
+.inicio-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inicio-home__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4em 2em;
+}
+
+.inicio-home__conteudo_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    width: 30%;
+    gap: 2em;
+}
+
+.inicio-home__conteudo_container h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 46px;
+    font-weight: 700;
+    color: var(--cor-fonte-preta);
+    text-align: left;
+    width: 80%;
+}
+
+.inicio-home__conteudo_container__botao {
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.botao_veja_crescimento {
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    padding: 1em;
+    background: black;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--cor-fonte-branca);
+}

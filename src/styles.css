@@ -2,9 +2,15 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: var(--fonte-family);
 }
 
 :root {
     --fundo-preto: #000;
-
+    --fundo-branco: #fff;
+    
+    --fonte-family: 'Roboto', sans-serif;
+    --fonte-family-titulo: "Eczar", serif;
+    --cor-fonte-preta: #000;
+    --cor-fonte-branca: #fff;
 }
