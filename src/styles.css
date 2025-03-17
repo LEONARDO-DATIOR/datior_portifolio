@@ -8,9 +8,11 @@
 :root {
     --fundo-preto: #000;
     --fundo-branco: #fff;
+    --fundo-cinza: #1D1D1D;
     
     --fonte-family: 'Roboto', sans-serif;
     --fonte-family-titulo: "Eczar", serif;
     --cor-fonte-preta: #000;
     --cor-fonte-branca: #fff;
+    --cor-fonte-cinza: #594F43;
 }
