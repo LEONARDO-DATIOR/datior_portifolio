@@ -1,3 +1,8 @@
+.projeto-div__link {
+    text-decoration: none;
+    color: var(--cor-fonte-preta);
+}
+
 .projeto-div {
     display: flex;
     width: 600px;

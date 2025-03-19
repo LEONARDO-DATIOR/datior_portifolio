@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-projeto-div',
@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './projeto-div.component.css'
 })
 export class ProjetoDivComponent {
-
+  @Input() titulo_projeto: string = '';
+  @Input() descricao_projeto: string = '';
+  @Input() caminho_imagem: string = '';
+  @Input() link_projeto: string = '#';
 }
