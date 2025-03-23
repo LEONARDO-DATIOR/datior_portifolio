@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-botao-padrao',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './botao-padrao.component.css'
 })
 export class BotaoPadraoComponent {
-
+  @Input() texto_botao: string = ''; 
 }
