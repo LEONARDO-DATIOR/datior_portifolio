@@ -5,6 +5,10 @@
     font-family: var(--fonte-family);
 }
 
+p {
+    margin: 0 !important;
+}
+
 :root {
     --fundo-preto: #000;
     --fundo-branco: #fff;

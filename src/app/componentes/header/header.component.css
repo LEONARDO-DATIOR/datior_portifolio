@@ -2,42 +2,14 @@
     background: var(--fundo-preto);
 }
 
-.container_header {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 60px;
-}
-
-.logo_div {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    margin: 1em;
-}
-
 .logo_div img {
     width: 50px;
 }
 
-.menu_opcoes {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;    
-    width: 400px;
-}
-
 .menu_opcoes a {
-    color: white;
+    color: var(--cor-fonte-branca);
     text-decoration: none;
     font-size: 18px;
-}
-
-.botao_menu_tema {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2em;
 }
 
 .botao_menu {
