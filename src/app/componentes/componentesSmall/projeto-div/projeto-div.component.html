@@ -1,13 +1,12 @@
-
-<a href="{{link_projeto}}" class="projeto-div__link text-decoration-none" target="_blank">
-    <div class="projeto-div d-flex">
+<a href="{{link_projeto}}" class="projeto-div__link text-decoration-none" target="_blank" style="color: var(--cor-fonte-preta);">
+    <div class="projeto-div d-flex" style="display: flex; width: 600px; background: white; border-radius: 0 200px 200px 0;">
         <div class="projeto-div__texto d-flex flex-column justify-content-center gap-3 ps-4 ">
             <h3 class="fs-4">{{titulo_projeto}}</h3>
-            <p class="fs-6">{{descricao_projeto}}</p>
+            <p class="fs-6" style="color: var(--cor-fonte-cinza);">{{descricao_projeto}}</p>
             <strong class="fs-6">Visualizar</strong>
         </div>
-        <div class="projeto-div__imagem">
-            <img src={{caminho_imagem}} alt="Imagem do projeto" class="rounded-end-circle">
+        <div class="projeto-div__imagem" style="height: 300px;">
+            <img src={{caminho_imagem}} alt="Imagem do projeto" class="rounded-end-circle" style="height: 300px;">
         </div>
     </div>
 </a>
