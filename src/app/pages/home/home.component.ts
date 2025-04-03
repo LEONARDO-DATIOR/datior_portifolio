@@ -4,12 +4,12 @@ import { ProjetosHomeComponent } from '../../componentes/projetos-home/projetos-
 import { FrasesHomeComponent } from '../../componentes/frases-home/frases-home.component';
 import { SobreComponent } from "../sobre/sobre.component";
 import { SobreHomeComponent } from "../../componentes/sobre-home/sobre-home.component";
+import { ContatoHomeComponent } from "../../componentes/contato-home/contato-home.component";
 
 @Component({
   selector: 'app-home',
-  imports: [InicioHomeComponent, ProjetosHomeComponent, FrasesHomeComponent, SobreComponent, SobreHomeComponent],
+  imports: [InicioHomeComponent, ProjetosHomeComponent, FrasesHomeComponent, SobreHomeComponent, ContatoHomeComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
 })
 export class HomeComponent {
 

@@ -6,7 +6,6 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule], // Aqui está a correção
   templateUrl: './frases-carrosel.component.html',
-  styleUrls: ['./frases-carrosel.component.css']
 })
 
 export class FrasesCarroselComponent {

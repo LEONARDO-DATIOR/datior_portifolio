@@ -1,0 +1,35 @@
+<div class="container">
+    <h2>Fale Conosco</h2>
+  
+    <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()"> <!-- DEFINE É O FORMGROUP E QUE QUANDO O BOTÃO DE SUBMIT DESSE FORM FOR CLICADO VAI PARA FUNÇÃO ENVIAR FORMULÁRIO -->
+      
+      <div class="mb-3">
+        <label for="nome">Nome</label>
+        <input id="nome" type="text" class="form-control" formControlName="nome">
+        <small *ngIf="formulario.get('nome')?.invalid && formulario.get('nome')?.touched"> <!-- SÓ EXIBE O SMAL SE A VALIDÃO DO CAMPO 'NOME' DO FORMULÁRIO ESTIVER VALIDO E SE O USUÁRIO CLICOU E SAIU DO CAMPO-->
+          Nome é obrigatório e deve ter pelo menos 3 caracteres.
+        </small>
+      </div>
+  
+      <div class="mb-3">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" class="form-control" formControlName="email">
+        <small *ngIf="formulario.get('email')?.invalid && formulario.get('email')?.touched">
+          Insira um e-mail válido.
+        </small>
+      </div>
+  
+      <div class="mb-3">
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" class="form-control" rows="4" formControlName="mensagem"></textarea>
+        <small *ngIf="formulario.get('mensagem')?.invalid && formulario.get('mensagem')?.touched">
+          A mensagem deve ter pelo menos 10 caracteres.
+        </small>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid"> <!-- ENVIA O FORMULÁRIO (BOTÃO DE SUBMIT), DESABILITADO CASO O FORMULÁRIO NÃO ESTEJA VALIDO-->
+        Enviar
+      </button>
+  
+    </form>
+  </div>

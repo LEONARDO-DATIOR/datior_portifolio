@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-sobre',
   imports: [],
   templateUrl: './sobre.component.html',
-  styleUrl: './sobre.component.css'
 })
 export class SobreComponent {
 
