@@ -1,27 +1,30 @@
-<div class="container">
-    <h2>Fale Conosco</h2>
-  
+<section class="w-100 d-flex justify-content-center align-items-center flex-column position-relative" style="height: 100vh;">
+  <h2 class="fs-1 text-uppercase fw-bold position-absolute" style="top: 15%; color: var(--cor-fonte-preta);" >Fale comigo</h2>
+  <div class="container">
     <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()"> <!-- DEFINE É O FORMGROUP E QUE QUANDO O BOTÃO DE SUBMIT DESSE FORM FOR CLICADO VAI PARA FUNÇÃO ENVIAR FORMULÁRIO -->
       
-      <div class="mb-3">
-        <label for="nome">Nome</label>
-        <input id="nome" type="text" class="form-control" formControlName="nome">
-        <small *ngIf="formulario.get('nome')?.invalid && formulario.get('nome')?.touched"> <!-- SÓ EXIBE O SMAL SE A VALIDÃO DO CAMPO 'NOME' DO FORMULÁRIO ESTIVER VALIDO E SE O USUÁRIO CLICOU E SAIU DO CAMPO-->
-          Nome é obrigatório e deve ter pelo menos 3 caracteres.
-        </small>
+      <div class="d-flex justify-content-center align-items-center gap-4">
+        <div class="my-4 w-50 position-relative">
+          <input id="primeiroNomeCampo" type="text" class="form-control" formControlName="primeiroNome" placeholder="Primeiro Nome">
+          <small class="position-absolute" style="color: rgb(184, 0, 0);" *ngIf="formulario.get('primeiroNome')?.invalid && formulario.get('primeiroNome')?.touched"> <!-- SÓ EXIBE O SMAL SE A VALIDÃO DO CAMPO 'primeiroNome' DO FORMULÁRIO ESTIVER VALIDO E SE O USUÁRIO CLICOU E SAIU DO CAMPO-->
+            primeiro Nome é obrigatório e deve ter pelo menos 3 caracteres.
+          </small>
+        </div>
+  
+        <div class="my-4 w-50">
+          <input id="sobreNomeCampo" type="text" class="form-control" formControlName="sobreNome" placeholder="Sobrenome">
+        </div>
       </div>
   
       <div class="mb-3">
-        <label for="email">E-mail</label>
-        <input id="email" type="email" class="form-control" formControlName="email">
+        <input id="email" type="email" class="form-control" formControlName="email" placeholder="E-mail">
         <small *ngIf="formulario.get('email')?.invalid && formulario.get('email')?.touched">
           Insira um e-mail válido.
         </small>
       </div>
   
       <div class="mb-3">
-        <label for="mensagem">Mensagem</label>
-        <textarea id="mensagem" class="form-control" rows="4" formControlName="mensagem"></textarea>
+        <textarea id="mensagem" class="form-control" rows="4" formControlName="mensagem" placeholder="Mensagem"></textarea>
         <small *ngIf="formulario.get('mensagem')?.invalid && formulario.get('mensagem')?.touched">
           A mensagem deve ter pelo menos 10 caracteres.
         </small>
@@ -33,3 +36,5 @@
   
     </form>
   </div>
+
+</section>

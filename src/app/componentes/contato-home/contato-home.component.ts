@@ -16,19 +16,18 @@ export class ContatoHomeComponent {
 
   constructor(private VariavelFormBuilder: FormBuilder) {
     this.formulario = this.VariavelFormBuilder.group({
-      nome: ['', [Validators.required, Validators.minLength(3)]],  
+      primeiroNome: ['', [Validators.required, Validators.minLength(3)]],  
+      sobreNome: '',  
       email: ['', [Validators.required, Validators.email]],        
-      mensagem: ['', [Validators.required, Validators.minLength(10)]]
+      mensagem: ''
     });
   }
 
   enviarFormulario() {
     if (this.formulario.valid) {
       console.log("Dados enviados:", this.formulario.value);
-      alert('Formulário enviado com sucesso!');
+      alert('Olá ' + this.formulario.value.primeiroNome + ' Estou trabalhando no back-end ainda, mas obrigado pela tentativa!');
       this.formulario.reset();
-    } else {
-      alert('Preencha todos os campos corretamente!');
-    }
+    } 
   }
 }
