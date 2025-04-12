@@ -5,7 +5,6 @@ import { ProjetoDivComponent } from '../componentesSmall/projeto-div/projeto-div
   selector: 'app-projetos-home',
   imports: [ProjetoDivComponent],
   templateUrl: './projetos-home.component.html',
-  styleUrl: './projetos-home.component.css'
 })
 export class ProjetosHomeComponent {
 

@@ -10,6 +10,7 @@ import { ContatoHomeComponent } from "../../componentes/contato-home/contato-hom
   selector: 'app-home',
   imports: [InicioHomeComponent, ProjetosHomeComponent, FrasesHomeComponent, SobreHomeComponent, ContatoHomeComponent],
   templateUrl: './home.component.html',
+  styles: ['./home.component.css'],
 })
 export class HomeComponent {
 
