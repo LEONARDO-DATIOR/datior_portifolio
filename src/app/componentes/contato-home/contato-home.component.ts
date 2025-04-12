@@ -17,7 +17,7 @@ export class ContatoHomeComponent {
   constructor(private VariavelFormBuilder: FormBuilder) {
     this.formulario = this.VariavelFormBuilder.group({
       primeiroNome: ['', [Validators.required, Validators.minLength(3)]],  
-      sobreNome: '',  
+      numero: '',  
       email: ['', [Validators.required, Validators.email]],        
       mensagem: ''
     });

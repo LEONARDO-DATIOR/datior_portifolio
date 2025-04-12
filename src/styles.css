@@ -17,6 +17,8 @@ p {
     --fundo-preto: #000;
     --fundo-branco: #fff;
     --fundo-cinza: #1D1D1D;
+    --fundo-campo-form: #c4c4c438;
+    --fundo-campo-form-hover: #c4c4c427;
     
     --fonte-family: 'Roboto', sans-serif;
     --fonte-family-titulo: "Eczar", serif;

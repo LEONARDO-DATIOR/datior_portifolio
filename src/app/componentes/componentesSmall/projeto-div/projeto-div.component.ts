@@ -4,7 +4,6 @@ import { Component, Input } from '@angular/core';
   selector: 'app-projeto-div',
   imports: [],
   templateUrl: './projeto-div.component.html',
-  styleUrl: './projeto-div.component.css'
 })
 export class ProjetoDivComponent {
   @Input() titulo_projeto: string = '';
