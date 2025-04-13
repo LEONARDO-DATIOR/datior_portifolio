@@ -1,5 +1,12 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background: var(--fundo-preto) !important;" >
-  <div class="container-fluid">
+<style> 
+  a {
+    color: var(--cor-fonte-branca) !important;  
+    text-decoration: none;
+    font-size: 20px;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg shadow-sm" [class.some_conteudo]="isHidden" [class.aparece_conteudo]="!isHidden" style="background: var(--fundo-preto); position: fixed; top: 0; width: 100%; z-index: 1050;">  <div class="container-fluid">
     <a class="navbar-brand" style="color: var(--cor-fonte-branca);" href="#">Navbar</a>
     <button class="navbar-toggler"  style="background-color: var(--fundo-branco) !important;"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon" ></span>
@@ -7,21 +14,18 @@
       <div class="collapse navbar-collapse justify-content-center align-items-center"  id="navbarSupportedContent">
         <ul class="navbar-nav mb-2 mb-lg-0  gap-4 justify-content-center align-items-center">
           <li>
-            <a style="color: var(--cor-fonte-branca) !important;  text-decoration: none;" href="#">Home</a>
+            <a href="#">Home</a>
           </li>
           <li>
-            <a style="color: var(--cor-fonte-branca) !important; text-decoration: none;" href="/Sobre">Sobre</a>
+            <a  href="/Sobre">Sobre</a>
           </li>
           <li>
-            <a style="color: var(--cor-fonte-branca) !important; text-decoration: none;" href="#">Contatos</a>
+            <a  href="#">Contatos</a>
           </li>
           <li>
-            <a style="color: var(--cor-fonte-branca) !important; text-decoration: none;" href="#">Certificados</a>
+            <a  href="#">Certificados</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Action</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -30,7 +34,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            <!-- <a class="nav-link disabled" aria-disabled="true">Disabled</a> -->
           </li>
         </ul>
         <button class="btn btn-outline-success" style="position: absolute; right: 60px !important;" type="submit">Search</button>

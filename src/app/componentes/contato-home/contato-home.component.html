@@ -17,10 +17,10 @@
   }
 </style>
 
-<section class="w-100 d-flex justify-content-center align-items-center flex-column position-relative" style="height: 100vh;">
-  <h2 class="fs-1 text-uppercase fw-bold position-absolute" style="top: 15%; color: var(--cor-fonte-preta);" >Fale comigo</h2>
-  <div class="container ">
-    <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()"> <!-- DEFINE É O FORMGROUP E QUE QUANDO O BOTÃO DE SUBMIT DESSE FORM FOR CLICADO VAI PARA FUNÇÃO ENVIAR FORMULÁRIO -->
+<section class="w-100 d-flex justify-content-center align-items-center flex-column pt-5" style="height: 100vh;">
+  <div class="container position-relative w-50 justify-content-center align-items-center d-flex mt-5" style="height: 100%;">
+    <h2 class="fs-1 text-uppercase fw-bold position-absolute" style="top: 15%; left: 5%; color: var(--cor-fonte-preta);" >Fale comigo</h2>
+    <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()" class="w-100"> <!-- DEFINE É O FORMGROUP E QUE QUANDO O BOTÃO DE SUBMIT DESSE FORM FOR CLICADO VAI PARA FUNÇÃO ENVIAR FORMULÁRIO -->
       
       <div class="d-flex justify-content-center align-items-center gap-5 mb-3">
         <div class="my-4 w-50 position-relative">
@@ -49,9 +49,8 @@
         </small>
       </div>
       
-      <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid"> <!-- ENVIA O FORMULÁRIO (BOTÃO DE SUBMIT), DESABILITADO CASO O FORMULÁRIO NÃO ESTEJA VALIDO-->
-        Enviar
-      </button>
+      <app-botao-padrao texto_botao="Enviar" [submit_botao]=true [disabled_botao]="formulario.invalid"></app-botao-padrao>
+
   
     </form>
   </div>

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { BotaoPadraoComponent } from "../componentesSmall/botao-padrao/botao-padrao.component";
 
 @Component({
   selector: 'app-contato-home',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],  // Importando módulos necessários
+  imports: [CommonModule, ReactiveFormsModule, BotaoPadraoComponent],  // Importando módulos necessários
   templateUrl: './contato-home.component.html',
 })
 

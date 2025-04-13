@@ -12,9 +12,19 @@ p {
 /* a {
    color: red !important;
 } */
+.some_conteudo {
+    transition: transform 0.5s ease-in-out;
+    transform: translateY(-100%);
+  }
+
+.aparece_conteudo {
+    transition: transform 0.5s ease-in-out;
+    transform: 0;
+}
+  
 
 :root {
-    --fundo-preto: #000;
+    --fundo-preto: #111111;
     --fundo-branco: #fff;
     --fundo-cinza: #1D1D1D;
     --fundo-campo-form: #c4c4c438;
