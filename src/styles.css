@@ -34,5 +34,6 @@ p {
     --fonte-family-titulo: "Eczar", serif;
     --cor-fonte-preta: #000;
     --cor-fonte-branca: #fff;
+    --cor-fonte-branca-hover: #d8d8d8;
     --cor-fonte-cinza: #594F43;
 }

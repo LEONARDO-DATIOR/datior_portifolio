@@ -1,5 +1,46 @@
+<style>
+    @keyframes TransicaoDivDireita {
+        from {
+            transform: translateX(100%);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @KeyFrames TransicaoDivEsquerda {
+        from {
+            transform: translateX(-100%);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    
+    .inicio-home__texto_container {
+        animation-duration: 1.5s;
+        animation-name: TransicaoDivEsquerda;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+    }
+
+    .inicio-home__imagem_container {
+        animation-duration: 1.5s;
+        animation-name: TransicaoDivDireita;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+    }
+
+
+</style>
+
 <section class="d-flex justify-content-evenly position-relative " style="height: 100vh;">
-    <div class="d-flex flex-column justify-content-evenly align-items-center w-50 position-relative">
+    <div class="inicio-home__texto_container d-flex flex-column justify-content-evenly align-items-center w-50 position-relative">
         <h1 class="fw-bold align-items-center text-center w-100 position-absolute" style="top: 25%; font-size: 4em; font-family: var(--fonte-titulo); color: var(--cor-fonte-preta);">Leonardo Weder <br/> (DATIOR)</h1>
         <div class="d-flex flex-center align-items-center gap-4 position-absolute" style="top: 60%;">
             <button class="d-flex flex-center justify-content-center align-items-center bg-blac border-0 rounded fs-7 fw-semibold " style="width: 170px; height: 50px; background: var(--fundo-preto); color: var(--cor-fonte-branca);">
