@@ -5,10 +5,11 @@ import { FrasesHomeComponent } from '../../componentes/frases-home/frases-home.c
 import { SobreComponent } from "../sobre/sobre.component";
 import { SobreHomeComponent } from "../../componentes/sobre-home/sobre-home.component";
 import { ContatoHomeComponent } from "../../componentes/contato-home/contato-home.component";
+import { ApresentacaoComponent } from "../../componentes/apresentacao/apresentacao.component";
 
 @Component({
   selector: 'app-home',
-  imports: [InicioHomeComponent, ProjetosHomeComponent, FrasesHomeComponent, SobreHomeComponent, ContatoHomeComponent],
+  imports: [InicioHomeComponent, ProjetosHomeComponent, FrasesHomeComponent, SobreHomeComponent, ContatoHomeComponent, ApresentacaoComponent],
   templateUrl: './home.component.html',
   styles: ['./home.component.css'],
 })
