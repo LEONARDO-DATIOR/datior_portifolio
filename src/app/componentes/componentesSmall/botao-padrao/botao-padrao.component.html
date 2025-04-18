@@ -1,6 +1,25 @@
 
-<button *ngIf="submit_botao" type="submit" [disabled]="disabled_botao" class="border-black rounded" style="background: var(--fundo-branco); width: 220px; height: 50px;">
-    <p class="fs-5 fw-bold" style="font-family: var(--font-family); color: var(--cor-fonte-preta);">{{texto_botao}}</p>
+<style>
+    .botao_submit {
+        background: var(--fundo-branco);
+        width: 220px; 
+        height: 50px; 
+        border-radius: 8px;
+        border: 1px solid var(--cor-fonte-preta);
+        color: var(--cor-fonte-preta);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .botao_submit:hover {
+        background: var(--fundo-preto);
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        color: var(--cor-fonte-branca);
+        font-family: var(--font-family)
+    }
+</style>
+
+<button *ngIf="submit_botao" type="submit" [disabled]="disabled_botao" class="botao_submit">
+    <p class="fs-5 fw-bold">{{texto_botao}}</p>
 </button>
 
 

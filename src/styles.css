@@ -26,9 +26,10 @@ p {
 :root {
     --fundo-preto: #000;
     --fundo-branco: #fff;
+    --fundo-branco-hover: #f1f1f1;
     --fundo-cinza: #1D1D1D;
     --fundo-campo-form: #eeeeee;
-    --fundo-campo-form-hover: #ffffff;
+    --fundo-campo-form-hover: #cecece;
     
     --fonte-family: 'Roboto', sans-serif;
     --fonte-family-titulo: "Eczar", serif;
