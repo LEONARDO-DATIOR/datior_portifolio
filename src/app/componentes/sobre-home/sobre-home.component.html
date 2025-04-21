@@ -3,7 +3,6 @@
     overflow: hidden;
     white-space: nowrap;
     text-align: justify;
-    border-right: 2px solid #fff;
     font-family: monospace;
     width: 0;
     opacity: 0;
@@ -12,7 +11,7 @@
 /* Só anima quando a classe 'visivel' é aplicada */
 .texto_sobre_home.visivel {
     opacity: 1;
-    animation: escreve 4s steps(50, end) forwards, blink 0.7s step-end infinite;
+    animation: escreve 4s steps(50, end) forwards;
 }
 
 @keyframes escreve {
@@ -24,11 +23,6 @@
     }
 }
 
-@keyframes blink {
-    50% {
-        border-color: transparent;
-    }
-}
 
 </style>
 
