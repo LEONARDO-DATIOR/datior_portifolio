@@ -1,4 +1,15 @@
-<div id="carouselExample" class="carousel slide position-relative " >
+<style>
+  .frases_carrosel {
+    opacity: 0;
+    transition: opacity 1.6s ease-out, top 0.6s ease-out;
+  }
+
+  .frases_carrosel.visivel {
+    opacity: 1;
+  }
+</style>
+
+<div #frases_carrosel class="frases_carrosel carousel slide position-relative " [class.visivel]="visivel">
 
   <div class="carousel-inner justify-content-center align-items-center">
     <div *ngFor="let grupo of frasesGrupos; let i = index" class="carousel-item" [class.active]="i === 0"> 
@@ -14,11 +25,13 @@
   </div>
   
   <button class="carousel-control-prev position-absolute" style="top: 50%; transform: translateY(-50%); left: 10px; opacity: 1;" 
-    type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    
+  type="button" data-bs-target="#frases_carrosel" data-bs-slide="prev">
     <span class="carousel-control-prev-icon bg-black" aria-hidden="true"></span>
   </button>
   
-    <button class="carousel-control-next" style="opacity: 1;" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    
+  <button class="carousel-control-next" style="opacity: 1;" type="button" data-bs-target="#frases_carrosel" data-bs-slide="next">
       <span class="carousel-control-next-icon bg-black" aria-hidden="true"></span>
     </button>
 

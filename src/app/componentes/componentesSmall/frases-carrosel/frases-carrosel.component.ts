@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,6 +9,28 @@ import { CommonModule } from '@angular/common';
 })
 
 export class FrasesCarroselComponent {
+  // Variável para controlar a visibilidade do carrossel
+  @ViewChild('frases_carrosel', { static: false }) cardRef!: ElementRef;
+  visivel = false;
+  ngAfterViewInit() {
+    setTimeout(() => {
+      if (this.cardRef && typeof IntersectionObserver !== 'undefined') {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              this.visivel = true;
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.5 });
+
+        observer.observe(this.cardRef.nativeElement);
+      }
+    }, 0);
+  }
+
+
+  // Frases para o carrossel
   frases = [
     { titulo: "Título 1", frase: "O sucesso é a soma de pequenos esforços repetidos dia após dia, mesmo quando ninguém está olhando.", autor: "Robert Collier" },
     { titulo: "Título 2", frase: "A vida não é medida pelo número de vezes que respiramos, mas pelos momentos que nos tiram o fôlego.", autor: "Maya Angelou" },

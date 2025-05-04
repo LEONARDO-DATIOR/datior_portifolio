@@ -1,9 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { BotaoPadraoComponent } from "../componentesSmall/botao-padrao/botao-padrao.component";
 
 @Component({
   selector: 'app-sobre-home',
-  imports: [BotaoPadraoComponent],
+  imports: [],
   templateUrl: './sobre-home.component.html',
 })
 
