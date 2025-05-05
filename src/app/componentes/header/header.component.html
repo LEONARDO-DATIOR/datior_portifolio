@@ -16,6 +16,38 @@
     font-weight: 700;
     font-size: 25px;
   }
+
+  @media (max-width: 768px) {
+    nav {
+      width: 100vw!important;
+    }
+
+    .navbar-brand {
+      margin-left: 1.5em;
+    }
+
+    .navbar-toggler{
+      margin-right: 1.5em;
+    }
+
+    div {
+      padding: 0!important;
+      margin: 0!important;
+      width: 100vw!important;
+    }
+
+    ul {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding-bottom: 1em;
+    }
+
+    a {
+      font-size: 1.2em;
+    }
+
+  }
 </style>
 
 <nav class="navbar navbar-expand-lg shadow-sm" [class.some_conteudo]="isHidden" [class.aparece_conteudo]="!isHidden" style="background: var(--fundo-preto); position: fixed; top: 0; width: 100%; height: 7%; z-index: 1050;">  <div class="container-fluid">
@@ -24,7 +56,7 @@
       <span class="navbar-toggler-icon" ></span>
     </button>
       <div class="collapse navbar-collapse justify-content-center align-items-center"  id="navbarSupportedContent">
-        <ul class="navbar-nav mb-2 mb-lg-0  gap-4 justify-content-center align-items-center">
+        <ul class="navbar-nav mb-2 mb-lg-0  gap-4 justify-content-center align-items-center" style="background: var(--fundo-preto);">
           <li>
             <a href="#">Home</a>
           </li>
@@ -37,19 +69,8 @@
           <li>
             <a  href="#">Certificados</a>
           </li>
-          <li class="nav-item dropdown">
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <!-- <a class="nav-link disabled" aria-disabled="true">Disabled</a> -->
-          </li>
         </ul>
-        <button class="btn btn-outline-success" style="position: absolute; right: 60px !important;" type="submit">Search</button>
+        <button class="btn btn-outline-success" style="position: absolute; right: 60px !important; display: none;" type="submit">Search</button>
     </div>
     </div>
   </nav>
