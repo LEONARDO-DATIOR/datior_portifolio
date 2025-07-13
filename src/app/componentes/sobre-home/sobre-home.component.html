@@ -1,61 +1,73 @@
 <style>
-.texto_sobre_home {
-    overflow: hidden;
-    white-space: nowrap;
-    text-align: justify;
-    font-family: monospace;
-    width: 0;
-    opacity: 0;
-}
-
-/* Só anima quando a classe 'visivel' é aplicada */
-.texto_sobre_home.visivel {
-    opacity: 1;
-    animation: escreve 4s steps(50, end) forwards;
-}
-
-@keyframes escreve {
-    from {
-        width: 0;
+    .sobre-home {
+        height: 100vh;
+        background-color: #000;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
     }
-    to {
-        width: 100%;
+
+    .sobre-home__textos {
+        width: 60%;
+    }
+
+    .textos_sobre_home p {
+        font-family: monospace;
+        white-space: normal; /* <- Isso permite quebra automática de linha */
+        word-wrap: break-word;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        position: relative;
+        top: 4em;
+    }
+
+
+@media screen and (max-width: 768px) {
+    .sobre-home {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 !important;
+    }
+
+    .sobre-home__textos {
+        width: 100vw !important;
+        text-align: center;
+        align-items: center !important;
+    }
+    .sobre-home__textos h2 {
+        padding: 0 !important;
+    }
+
+    .textos_sobre_home {
+        display: flex;
+        flex-direction: column;
+        width: 90vw !important;
+        word-wrap: break-word;
+    }
+
+    .sobre-home__gif {
+        width: 100vw !important;
     }
 }
 
 
 </style>
 
-<section class="sobre-home w-100 d-flex align-items-center gap-5" style="height: 100vh; background: var(--fundo-preto); padding: 100px 0px 0 300px;">
+<section #sectionRef class="sobre-home w-100 d-flex align-items-center gap-5" style="height: 100vh; background: var(--fundo-preto); padding: 100px 0px 0 300px;">
     
-    <div class="d-flex flex-column gap-5 w-50">
-        <h2 class="fs-1 pb-5" style="color: var(--cor-fonte-branca)">
+    <div class="sobre-home__textos d-flex flex-column gap-5 w-50 h-100">
+        <h2 class="fs-1 pb-5" style="color: var(--cor-fonte-branca); position: relative; top: 3em;">
             Sim! esse texto foi feito por IA.
         </h2>
-        <div #textoSobreHome style="height: 60vh; width: 70vw;"  >
-            <p class="texto_sobre_home fs-6" [class.visivel]="visivel" style="color: var(--cor-fonte-branca)">
-                Jovem talento de 22 anos, formado em análise e desenvolvimento de sistemas, 
-            </p>
-            <p class="texto_sobre_home fs-6" [class.visivel]="visivel" style="color: var(--cor-fonte-branca); animation-delay: 4s;">
-                com mais de três anos de experiência profissional na área de tecnologia.    
-            </p>
-            <p class="texto_sobre_home fs-6" [class.visivel]="visivel" style="color: var(--cor-fonte-branca); animation-delay: 8s;">
-                Desenvolvedor de software com uma sólida base, atualmente ocupa o cargo de
-            </p>
-            <p class="texto_sobre_home fs-6" [class.visivel]="visivel" style="color: var(--cor-fonte-branca); animation-delay: 12s;">
-                analista de infraestrutura na Localiza, pela DXC. Um profissional dinâmico
-            </p>
-            <p class="texto_sobre_home fs-6" [class.visivel]="visivel" style="color: var(--cor-fonte-branca); animation-delay: 15s;">
-                Desenvolvedor de software com uma sólida base, atualmente ocupa o cargo de analista
-            </p>
+        <div #textoSobreHome class="textos_sobre_home" >
+            <p>{{ textoDigitado }}</p>
         </div>
-                <!--  de infraestrutura na Localiza, pela DXC.
-                Um profissional dinâmico e apaixonado, com comprovada capacidade de resolver problemas complexos e um forte desejo de aprender e crescer no mundo da tecnologia.
-                Sua experiência abrange desde o desenvolvimento de software até a gestão de infraestruturas, oferecendo uma perspectiva completa e versátil.
-                Com uma sólida base teórica e vasta experiência prática, é capaz de enfrentar desafios complexos e contribuir significativamente para o sucesso de qualquer projeto. -->
     </div>
 
-    <div class="w-50 h-100">
+    <div class="sobre-home__gif w-50 h-100">
         <img src="../../../assets/imagens/Leo_IA.gif" alt="Imagem IA" 
             class="w-100 h-100 object-fit-cover">
     </div>

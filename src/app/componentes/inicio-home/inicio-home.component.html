@@ -1,4 +1,8 @@
 <style>
+    .inicio-home {
+        height: 100vh;
+    }
+
     @keyframes TransicaoDivDireita {
         from {
             transform: translateX(100%);
@@ -57,12 +61,46 @@
         gap: 2em;
     }
 
+    @media screen and (max-width: 768px) {
+        .inicio-home {
+            flex-direction: column;
+            justify-content: center !important;
+            align-items: center;
+            margin-top: 5em ;
+        }
+
+        .inicio-home__imagem_container {
+            width: 100vw !important;
+            height: 51vh;
+
+        }
+
+        .inicio-home__texto_container {
+            width: 100vw !important;
+            height: 50vh;
+            justify-content: center !important;
+            
+        }
+
+        .inicio-home__texto_container h1 {
+            font-size: 3em !important;
+        }
+
+        .inicio-home__texto__titulo_icones {
+            gap: 0;
+        }
+
+        .lista_icons {
+            width: 30%;
+            padding: 2em 0 0;
+        }
+    }
 
 </style>
 
-<section class="d-flex justify-content-evenly position-relative " style="height: 100vh;">
+<section class="inicio-home d-flex justify-content-evenly position-relative " >
     <div class="inicio-home__texto_container d-flex flex-column justify-content-center gap-5 align-items-center w-50 position-relative">
-        <div class="d-flex justify-content-center align-items-center flex-column">
+        <div class="inicio-home__texto__titulo_icones d-flex justify-content-center align-items-center flex-column">
             <h1 class="fw-bold align-items-center text-center w-100 position-relative" style="top: 35%; font-size: 4em; font-family: var(--fonte-titulo); color: var(--cor-fonte-preta);">Leonardo Duca</h1>
             <ul class="lista_icons">
                 <li class="icons__lista">
