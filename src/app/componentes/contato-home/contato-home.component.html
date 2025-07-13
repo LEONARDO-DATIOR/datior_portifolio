@@ -15,14 +15,33 @@
     background: var(--fundo-campo-form-hover);
     box-shadow: -2px 4px 5px rgba(0, 0, 0, 0.1);
   }
+
+  @media screen and (max-width: 768px) {
+    .container__contato {
+      width: 75% !important;  
+    }
+    
+    .container__contato h2 {
+      font-size: 38px !important;
+    }
+
+    .nome-numero__container__formulario {
+      flex-direction: column;
+      gap: 0 !important;
+    }
+
+    .nome-numero__container__formulario div{
+      width: 100% !important;
+    }
+  }
 </style>
 
 <section class="w-100 d-flex justify-content-center align-items-center flex-column" style="height: 100vh; background: var(--fundo-brancong);">
-  <div class="container position-relative w-50 justify-content-evenly align-items-center d-flex flex-column " style="height: 100%;">
+  <div class="container__contato container position-relative w-50 justify-content-evenly align-items-center d-flex flex-column " style="height: 100%;">
     <h2 class="text-uppercase fw-bold position-relative" style="color: var(--cor-fonte-preta); font-size: 52px;" >Fale comigo</h2>
-    <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()" class="w-100 d-flex flex-column"> <!-- DEFINE É O FORMGROUP E QUE QUANDO O BOTÃO DE SUBMIT DESSE FORM FOR CLICADO VAI PARA FUNÇÃO ENVIAR FORMULÁRIO -->
+    <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()" class="formulario__contato w-100 d-flex flex-column"> <!-- DEFINE É O FORMGROUP E QUE QUANDO O BOTÃO DE SUBMIT DESSE FORM FOR CLICADO VAI PARA FUNÇÃO ENVIAR FORMULÁRIO -->
       
-      <div class="d-flex justify-content-center align-items-center gap-5 mb-3">
+      <div class="nome-numero__container__formulario d-flex justify-content-center align-items-center gap-5 mb-3">
         <div class="my-4 w-50 position-relative">
           <small class="position-absolute" style="color: rgb(184, 0, 0); top: -2em;" *ngIf="formulario.get('primeiroNome')?.invalid && formulario.get('primeiroNome')?.touched"> <!-- SÓ EXIBE O SMAL SE A VALIDÃO DO CAMPO 'primeiroNome' DO FORMULÁRIO ESTIVER VALIDO E SE O USUÁRIO CLICOU E SAIU DO CAMPO-->
             primeiro Nome é obrigatório e deve ter pelo menos 3 caracteres.
