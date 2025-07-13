@@ -1,5 +1,8 @@
 <style>
     .inicio-home {
+        display: flex;
+        justify-content: space-evenly;
+        position: relative;
         height: 100vh;
     }
 
@@ -25,22 +28,37 @@
         }
     }
 
-    
     .inicio-home__texto_container {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        position: relative;
         animation-duration: 1.5s;
         animation-name: TransicaoDivEsquerda;
         animation-timing-function: ease;
         animation-fill-mode: forwards;
     }
 
-    .inicio-home__imagem_container {
-        animation-duration: 1.5s;
-        animation-name: TransicaoDivDireita;
-        animation-timing-function: ease-out;
-        animation-fill-mode: forwards;
+    .inicio-home__titulo_icones {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 
-    .lista_icons {
+    .inicio-home__titulo_icones h1 {
+        font-weight: bold;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        position: relative;
+        top: 35%;
+        font-size: 4em;
+        font-family: var(--fonte-titulo);
+        color: var(--cor-fonte-preta);
+    }   
+
+    .lista_icones {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 40px;
@@ -50,8 +68,15 @@
         padding: 0;
     }
 
-    .icons_lista__imagem {
+    .icones_lista__imagem {
         width: 70%;
+    }
+
+    .inicio-home__imagem_container {
+        animation-duration: 1.5s;
+        animation-name: TransicaoDivDireita;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
     }
 
     .botoes__home {
@@ -86,33 +111,29 @@
             font-size: 3em !important;
         }
 
-        .inicio-home__texto__titulo_icones {
-            gap: 0;
-        }
-
-        .lista_icons {
+        .lista_icones {
             width: 30%;
         }
     }
 
 </style>
 
-<section class="inicio-home d-flex justify-content-evenly position-relative " >
-    <div class="inicio-home__texto_container d-flex flex-column justify-content-center gap-5 align-items-center w-50 position-relative">
-        <div class="inicio-home__texto__titulo_icones d-flex justify-content-center align-items-center flex-column">
-            <h1 class="fw-bold align-items-center text-center w-100 position-relative" style="top: 35%; font-size: 4em; font-family: var(--fonte-titulo); color: var(--cor-fonte-preta);">Leonardo Duca</h1>
-            <ul class="lista_icons">
+<section class="inicio-home" >
+    <div class="inicio-home__texto_container">
+        <div class="inicio-home__titulo_icones">
+            <h1>Leonardo Duca</h1>
+            <ul class="lista_icones">
                 <li class="icons__lista">
-                    <img src="../../../assets/imagens/icons/icon_python_black.png" class="icons_lista__imagem" alt="Icone Python">
+                    <img src="../../../assets/imagens/icons/icon_python_black.png" class="icones_lista__imagem" alt="Icone Python">
                 </li>
                 <li class="icons__lista">
-                    <img src="../../../assets/imagens/icons/icon_angular_black.png" class="icons_lista__imagem" alt="Icone Python">
+                    <img src="../../../assets/imagens/icons/icon_angular_black.png" class="icones_lista__imagem" alt="Icone Python">
                 </li>
                  <li class="icons__lista">
-                    <img src="../../../assets/imagens/icons/icon_python_black.png" class="icons_lista__imagem" alt="Icone Python">
+                    <img src="../../../assets/imagens/icons/icon_python_black.png" class="icones_lista__imagem" alt="Icone Python">
                 </li>
                 <li class="icons__lista">
-                    <img src="../../../assets/imagens/icons/icon_angular_black.png" class="icons_lista__imagem" alt="Icone Python">
+                    <img src="../../../assets/imagens/icons/icon_angular_black.png" class="icones_lista__imagem" alt="Icone Python">
                 </li>
             </ul>
         </div>

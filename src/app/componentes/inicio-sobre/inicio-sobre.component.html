@@ -24,7 +24,6 @@
         width: 100%;
         position: relative;
         gap: 3em;
-        margin-bottom: 2em;
     }
 
     .container__inicio-sobre p {
@@ -37,6 +36,15 @@
         width: 25%;
     }
 
+    @media screen and (max-width: 768px) {
+          .container__inicio-sobre p {
+            width: 75%;
+        }
+
+        .container__inicio-sobre img {
+            width: 35%;
+        }
+    }
 
 </style>
 
@@ -46,5 +54,7 @@
         <p>Um profissional dinâmico e apaixonado, com comprovada capacidade de resolver problemas complexos e um forte desejo de aprender e crescer no mundo da tecnologia. Sua experiência abrange desde o desenvolvimento de software até a gestão de infraestruturas, oferecendo uma perspectiva completa e versátil. Com uma sólida base teórica e vasta experiência prática, é capaz de enfrentar desafios complexos e contribuir significativamente para o sucesso de qualquer projeto.</p>
         <img src="../../../assets/imagens/foto_leo_sobre.png" alt="Foto do Leonardo Duca">
     </div>
-    <app-botao-padrao texto_botao="Contato" tipo_botao="botao_branco"></app-botao-padrao>
+    <a href="#">
+        <app-botao-padrao texto_botao="Contato" tipo_botao="botao_branco"></app-botao-padrao>
+    </a>
 </section>
