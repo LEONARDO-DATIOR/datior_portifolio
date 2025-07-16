@@ -1,22 +1,22 @@
 <style>
-    .section-certificados {
-        max-width: 75%;
+    .section-certificados-categoria {
+        max-width: 50%;
         height: 100vh;
         margin: 0 auto;
     }
 
-    .section-certificados h2 {
+    .section-certificados-categoria h2 {
         font-family: var(--fonte-titulo);
         position: relative;
         top: 20%;
         text-align: left;
-        margin: 0 0 1em 5em;
+        margin: 0 0 1em 1em;
     }
 
     .certificados_lista-categorias {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, max-content));
-        gap: 2em;
+        grid-template-columns: repeat(auto-fit, minmax(250px, max-content));
+        gap: 2em 4em;
         position: relative;
         top: 20%;
         justify-content: center;
@@ -25,8 +25,9 @@
     }
 
     .certificados_categorias {
-        border: 2px solid black;
-        aspect-ratio: 1 / 1; /* Sempre quadrado */
+        border: 1px solid var(--fundo-cinza);
+        aspect-ratio: 1 / 1; /* pega o tamanho da largura e replica para altura */
+        border-radius: 12px;
     
     }
     .certificados_categorias a {
@@ -37,26 +38,36 @@
             "img" 
             "texto";
         grid-template-columns: 100% 1fr;
-        grid-template-rows: 50% 1fr auto;
+        grid-template-rows: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+        padding: auto 0;
+        text-decoration: none;
     }
 
     .certificados_categorias a img {
         grid-area: img;
         display: flex;
         justify-self: center;
+        padding-top: 3em;
+        width: 40%;
     }
 
     .certificados_categorias a h3 {
         grid-area: texto;
         display: flex;
         justify-self: center;
-        align-items: center;
+        align-items: center;  
+        color: var(--cor-fonte-preta);
+        font-family: var(--fonte-family-titulo-cards);
+        font-weight: 100;
+        font-size: 1.7em;  
     }
 
 
 </style>
 
-<section class="section-certificados">
+<section class="section-certificados-categoria">
     <h2 >Conhecimento por categoria</h2>
     <ul class="certificados_lista-categorias">
         <li class="certificados_categorias">
@@ -83,6 +94,17 @@
                 <h3>Front-end</h3>
             </a>
         </li>
-
+        <li class="certificados_categorias">
+            <a href="">
+                <img src="../../../assets/imagens/icons/Icone_design.svg" alt="Icone design">
+                <h3>Front-end</h3>
+            </a>
+        </li>
+        <li class="certificados_categorias">
+            <a href="">
+                <img src="../../../assets/imagens/icons/Icone_design.svg" alt="Icone design">
+                <h3>Front-end</h3>
+            </a>
+        </li>
     </ul>
 </section>

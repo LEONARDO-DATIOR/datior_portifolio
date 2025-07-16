@@ -1,0 +1,62 @@
+<style>
+    .section-certificados-principais {
+        max-width: 50%;
+        height: 50vh;
+        margin: 0 auto;
+    }
+
+    .section-certificados-principais h2 {
+        font-family: var(--fonte-titulo);
+        position: relative;
+        text-align: left;
+    }
+
+    .certificados_lista-principais {
+        display: grid;
+        grid-template-columns: 250px 250px 250px;
+        gap: 4em;
+        padding: 2em 0 0 0;
+        list-style: none;
+    }
+
+    .certificados_principais {
+        background: var(--fundo-cinza);
+        aspect-ratio: 1 / 1;
+        border-radius: 12px;
+    }
+
+    .certificados_principais a {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-areas:
+            "img"
+            "texto";
+        grid-template-columns: 1fr;
+        grid-template-rows: 50% 1fr; 
+    }
+</style>
+
+<section class="section-certificados-principais">
+    <h2>Principais certificados</h2>
+    <ul class="certificados_lista-principais">
+        <li class="certificados_principais">
+            <a href="">
+                <img src="../../../assets/imagens/icons/Copyright.svg" alt="Icone principal certificado">
+                <p>Desenvolvimento WEB avançado</p>
+            </a>
+        </li>
+        <li class="certificados_principais">
+            <a href="">
+                <img src="../../../assets/imagens/icons/Copyright.svg" alt="Icone principal certificado">
+                <p>Desenvolvimento WEB avançado</p>
+            </a>
+        </li>
+        <li class="certificados_principais">
+            <a href="">
+                <img src="../../../assets/imagens/icons/Copyright.svg" alt="Icone principal certificado">
+                <p>Desenvolvimento WEB avançado</p>
+            </a>
+        </li>
+    </ul>
+</section>
