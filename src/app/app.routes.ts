@@ -8,9 +8,9 @@ import { CertificadosComponent } from './pages/certificados/certificados.compone
 export const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'home', component: HomeComponent},
-    {path: 'Sobre', component: SobreComponent},
-    {path: 'Contato', component: ContatoComponent},
-    {path: 'Certificados', component: CertificadosComponent}
+    {path: 'sobre', component: SobreComponent},
+    {path: 'contato', component: ContatoComponent},
+    {path: 'certificados', component: CertificadosComponent}
     // {path: 'Certificados',}
     // {path: 'Contato',}
 ];
