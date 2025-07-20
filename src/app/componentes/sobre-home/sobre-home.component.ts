@@ -1,8 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild, NgZone} from '@angular/core';
+import { BotaoPadraoComponent } from '../componentesSmall/botao-padrao/botao-padrao.component';
 
 @Component({
   selector: 'app-sobre-home',
-  imports: [],
+  imports: [BotaoPadraoComponent],
   templateUrl: './sobre-home.component.html',
 })
 
@@ -10,7 +11,10 @@ export class SobreHomeComponent  {
   textoDigitado = '';
   textoCompleto = `Jovem talento de 22 anos, formado em Análise e Desenvolvimento de Sistemas,
 com mais de três anos de experiência profissional na área de tecnologia.
-Atualmente ocupa o cargo de analista de infraestrutura na Localiza, pela DXC.`;
+Atualmente ocupa o cargo de analista de infraestrutura na Localiza, pela DXC. \n
+Esse é o meu texte de verdade, aqui foi escrito por mim e não por uma IA e você só consegue visualizar ele em uma tela de.
+Esse é o meu texte de verdade, aqui foi escrito por mim e não por uma IA e você só consegue visualizar ele em uma tela de.
+Esse é o meu texte de verdade, aqui foi escrito por mim e não por uma IA e você só consegue visualizar ele em uma tela de.`;
 
   @ViewChild('sectionRef', { static: true }) sectionRef!: ElementRef;
   jaDigitou = false;

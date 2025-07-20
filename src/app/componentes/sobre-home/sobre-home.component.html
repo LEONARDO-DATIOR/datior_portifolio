@@ -11,6 +11,7 @@
 
     .sobre-home__textos {
         width: 60%;
+        height: 100vh;
     }
 
     .textos_sobre_home p {
@@ -21,6 +22,17 @@
         line-height: 1.5;
         position: relative;
         top: 4em;
+        height: 45vh;
+    }
+
+    .botao_contato {
+        position: relative;
+        width: 100%;
+        text-align: center;
+    }
+
+    .botao_contato button {
+        width: 80% !important;
     }
 
 
@@ -65,8 +77,11 @@
         <div #textoSobreHome class="textos_sobre_home" >
             <p>{{ textoDigitado }}</p>
         </div>
+        <a class="botao_contato" href="#">
+            <app-botao-padrao texto_botao="Conhecimentos" tipo_botao="botao_branco"></app-botao-padrao>
+        </a>
     </div>
-
+    
     <div class="sobre-home__gif w-50 h-100">
         <img src="../../../assets/imagens/Leo_IA.gif" alt="Imagem IA" 
             class="w-100 h-100 object-fit-cover">

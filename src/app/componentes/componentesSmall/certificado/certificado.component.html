@@ -1,0 +1,42 @@
+<style>
+     .certificado {
+        background: var(--fundo-branco);
+        aspect-ratio: 1 / 1;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .certificado a {
+        display: grid;
+        height: 100%;    
+        width: 100%;
+        grid-template-areas: 
+            "img"
+            "nome";
+        overflow: hidden;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        text-decoration: none;
+    }
+
+    .certificado a img {
+        height: 102%;
+        width: 100%;
+    }
+
+    .certificado a p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--cor-fonte-preta);
+        font-weight: 600;
+        padding: 0 1.5em;
+        text-align: center;
+    }
+</style>
+
+<li class="certificado">
+    <a href="{{link}}">
+        <img src="{{caminho_imagem}}" alt="{{alt_imagem}}">
+        <p>{{titulo}}</p>
+    </a>
+</li>

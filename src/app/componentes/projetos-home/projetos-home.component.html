@@ -1,15 +1,26 @@
 <style>
-
-    .projetos-home__titulo {
-        opacity: 0.5;
-        position: absolute;
-        top: 0%;
-        transition: opacity 0.6s ease-out, top 0.6s ease-out;
+    .section_projetos-home {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background: var(--fundo-preto);
+        min-height: 100vh;
+        gap: 8em;
     }
 
-    .projetos-home__titulo.visivel {
-        top: 9%;
-        opacity: 1;
+    .projetos-home__titulo {
+        color: var(--cor-fonte-branca);
+        font-size: 56px;
+    }
+
+    .projetos-home__projetos {
+        display: flex;
+        justify-content: space-evenly;
+        align-self: center;
+        width: 100%;
+        background: var(--fundo-preto);
     }
 
     @media screen and (max-width: 768px) {
@@ -20,9 +31,9 @@
     }
 </style>
 
-<section class="projetos-home d-flex flex-column justify-content-center align-items-center w-100 position-relative" style="background: var(--fundo-preto); height: 110vh; gap: 4em;">
-    <h2 #projetos__titulo class="projetos-home__titulo" [class.visivel]="visivel" style="color: var(--cor-fonte-branca); font-size: 56px;">Projetos</h2>
-    <div class="projetos-home__projetos d-flex justify-content-evenly align-items-center w-100" style="background: var(--fundo-preto);">
+<section class="section_projetos-home">
+    <h2 #projetos__titulo class="projetos-home__titulo">Projetos</h2>
+    <div class="projetos-home__projetos">
         <app-projeto-div 
             titulo_projeto="DATIOR HOME" 
             descricao_projeto="Esse é o projeto atual em que, porém consegue acompanho seu desenvolvimento no youtube e no github" 

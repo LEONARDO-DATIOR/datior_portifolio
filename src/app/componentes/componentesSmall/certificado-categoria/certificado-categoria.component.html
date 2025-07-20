@@ -1,0 +1,96 @@
+<style>
+    .certificados_categorias {
+        border: 1px solid var(--fundo-cinza);
+        aspect-ratio: 1 / 1; /* pega o tamanho da largura e replica para altura */
+        border-radius: 12px;
+    
+    }
+    .certificados_categorias a {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-areas: 
+            "img" 
+            "texto";
+        grid-template-columns: 100% 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+        padding: auto 0;
+        text-decoration: none;
+    }
+
+    .certificados_categorias a img {
+        grid-area: img;
+        display: flex;
+        justify-self: center;
+        padding-top: 3em;
+        width: 40%;
+    }
+
+    .certificados_categorias a h3 {
+        grid-area: texto;
+        display: flex;
+        justify-self: center;
+        align-items: center;  
+        color: var(--cor-fonte-preta);
+        font-family: var(--fonte-family-titulo-cards);
+        font-weight: 100;
+        font-size: 1.7em;  
+        text-align: center;
+    }
+
+    /* PRINCIPAL */
+     .certificados_principais {
+        background: var(--fundo-cinza);
+        aspect-ratio: 1 / 1;
+        border-radius: 12px;
+    }
+
+    .certificados_principais a {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-areas:
+            "img"
+            "texto";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 30%; 
+        place-items: center;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+
+    }
+
+    .certificados_principais a img {
+        grid-area: img;
+        display: block;
+        justify-content: center;
+        width: 60%;
+    }
+
+    .certificados_principais a h3 {
+        grid-area: texto;
+        color: var(--cor-fonte-branca);
+        font-family: var(--fonte-family-titulo-cards);
+        font-weight: 100;
+        font-size: 1.4em;  
+        text-align: center;
+    }
+</style>
+
+<li *ngIf="tipo === 'categoria' " class="certificados_categorias">
+    <a href="{{link}}">
+        <img src="{{caminho_imagem}}" alt="{{alt_imagem}}">
+        <h3>{{titulo}}</h3>
+    </a>
+</li>
+
+<li *ngIf="tipo === 'principal' " class="certificados_principais">
+    <a href="{{link}}">
+        <img src="{{caminho_imagem}}" alt="{{alt_imagem}}">
+        <h3>{{titulo}}</h3>
+    </a>
+</li>
+

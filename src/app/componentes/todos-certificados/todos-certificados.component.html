@@ -12,79 +12,51 @@
         list-style: none;
     }
 
-    .certificado {
-        background: var(--fundo-branco);
-        aspect-ratio: 1 / 1;
-        border-radius: 0 0 20px 20px;
-    }
-
-    .certificado a {
-        display: grid;
-        height: 100%;    
-        width: 100%;
-        grid-template-areas: 
-            "img"
-            "nome";
-        overflow: hidden;
-        grid-template-columns: 100%;
-        grid-template-rows: 50% 50%;
-        text-decoration: none;
-    }
-
-    .certificado a img {
-        height: 102%;
-        width: 100%;
-    }
-
-    .certificado a p {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: var(--cor-fonte-preta);
-        font-weight: 600;
-        padding: 0 1.5em;
-        text-align: center;
-    }
-
 </style>
 
 <section class="section_certificados-todos">
     <ul class="certificados_lista-todos">
-        <li class="certificado">
-            <a href="#">
-                <img src="../../../assets/imagens/img_certificados/img_certificado.svg" alt="IMG certificado teste">
-                <p>TESTE CERTIFICADOS 2.0</p>
-            </a>
-        </li>
-        <li class="certificado">
-            <a href="#">
-                <img src="../../../assets/imagens/img_certificados/img_certificado.svg" alt="IMG certificado teste">
-                <p>TESTE CERTIFICADOS 2.0</p>
-            </a>
-        </li>
-        <li class="certificado">
-            <a href="#">
-                <img src="../../../assets/imagens/img_certificados/img_certificado.svg" alt="IMG certificado teste">
-                <p>TESTE CERTIFICADOS 2.0</p>
-            </a>
-        </li>       
-        <li class="certificado">
-            <a href="#">
-                <img src="../../../assets/imagens/img_certificados/img_certificado.svg" alt="IMG certificado teste">
-                <p>TESTE CERTIFICADOS 2.0</p>
-            </a>
-        </li>
-        <li class="certificado">
-            <a href="#">
-                <img src="../../../assets/imagens/img_certificados/img_certificado.svg" alt="IMG certificado teste">
-                <p>TESTE CERTIFICADOS 2.0</p>
-            </a>
-        </li>
-        <li class="certificado">
-            <a href="#">
-                <img src="../../../assets/imagens/img_certificados/img_certificado.svg" alt="IMG certificado teste">
-                <p>TESTE CERTIFICADOS 2.0</p>
-            </a>
-        </li>
+        <app-certificado
+            link="#"
+            caminho_imagem="../../../assets/imagens/img_certificados/img_certificado.svg"
+            alt_imagem="Imagem certificado"
+            titulo="TESTE DE CERTIFICADO"
+        ></app-certificado>
+        <app-certificado></app-certificado>
+        <app-certificado
+            link="#"
+            caminho_imagem="../../../assets/imagens/img_certificados/img_certificado.svg"
+            alt_imagem="Imagem certificado"
+            titulo="TESTE DE CERTIFICADO"
+        ></app-certificado>
+        <app-certificado></app-certificado>
+        <app-certificado
+            link="#"
+            caminho_imagem="../../../assets/imagens/img_certificados/img_certificado.svg"
+            alt_imagem="Imagem certificado"
+            titulo="TESTE DE CERTIFICADO"
+        ></app-certificado>
+        <app-certificado></app-certificado>
+        <app-certificado
+            link="#"
+            caminho_imagem="../../../assets/imagens/img_certificados/img_certificado.svg"
+            alt_imagem="Imagem certificado"
+            titulo="TESTE DE CERTIFICADO"
+        ></app-certificado>
+        <app-certificado></app-certificado>
+        <app-certificado
+            link="#"
+            caminho_imagem="../../../assets/imagens/img_certificados/img_certificado.svg"
+            alt_imagem="Imagem certificado"
+            titulo="TESTE DE CERTIFICADO"
+        ></app-certificado>
+        <app-certificado></app-certificado>
+        <app-certificado
+            link="#"
+            caminho_imagem="../../../assets/imagens/img_certificados/img_certificado.svg"
+            alt_imagem="Imagem certificado"
+            titulo="TESTE DE CERTIFICADO"
+        ></app-certificado>
+        <app-certificado></app-certificado>
     </ul>
 </section>
