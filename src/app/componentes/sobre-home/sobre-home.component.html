@@ -9,6 +9,13 @@
         padding: 40px;
     }
 
+    .temporario {
+        font-size: 4em;
+        color: red;
+        top: 100px;
+        position: absolute;
+    }
+
     .sobre-home__textos {
         width: 60%;
         height: 100vh;
@@ -34,15 +41,27 @@
     .botao_contato button {
         width: 80% !important;
     }
+@media screen and (max-width: 1400px) {
+    .sobre-home {
+        padding-left: 2% !important;
+    }
+}
 
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width:1030px) {
     .sobre-home {
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 0 !important;
     }
+
+    .botao_contato {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
 
     .sobre-home__textos {
         width: 100vw !important;
@@ -69,15 +88,15 @@
 </style>
 
 <section #sectionRef class="sobre-home w-100 d-flex align-items-center gap-5" style="height: 100vh; background: var(--fundo-preto); padding: 100px 0px 0 300px;">
-    
+    <h2 class="temporario">PÁGINA E SITE EM CONSTRUÇÃO</h2>
     <div class="sobre-home__textos d-flex flex-column gap-5 w-50 h-100">
         <h2 class="fs-1 pb-5" style="color: var(--cor-fonte-branca); position: relative; top: 3em;">
-            Sim! esse texto foi feito por IA.
+            LEONARDO DUCA
         </h2>
         <div #textoSobreHome class="textos_sobre_home" >
             <p>{{ textoDigitado }}</p>
         </div>
-        <a class="botao_contato" href="#">
+        <a class="botao_contato" href="\certificados">
             <app-botao-padrao texto_botao="Conhecimentos" tipo_botao="botao_branco"></app-botao-padrao>
         </a>
     </div>

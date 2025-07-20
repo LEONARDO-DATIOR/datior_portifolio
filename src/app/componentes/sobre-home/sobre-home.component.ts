@@ -9,12 +9,10 @@ import { BotaoPadraoComponent } from '../componentesSmall/botao-padrao/botao-pad
 
 export class SobreHomeComponent  {
   textoDigitado = '';
-  textoCompleto = `Jovem talento de 22 anos, formado em Análise e Desenvolvimento de Sistemas,
-com mais de três anos de experiência profissional na área de tecnologia.
-Atualmente ocupa o cargo de analista de infraestrutura na Localiza, pela DXC. \n
-Esse é o meu texte de verdade, aqui foi escrito por mim e não por uma IA e você só consegue visualizar ele em uma tela de.
-Esse é o meu texte de verdade, aqui foi escrito por mim e não por uma IA e você só consegue visualizar ele em uma tela de.
-Esse é o meu texte de verdade, aqui foi escrito por mim e não por uma IA e você só consegue visualizar ele em uma tela de.`;
+  textoCompleto = `Olá tudo bem? estou realizando esse site para poder compartilhar e demonstrar meu conhecimento em diversas áreas.
+  incluindo na de desenvolvimento ou na área de análise de dados, vou compartilhar a evolução da minha carreira e da minha educação.
+  todos certificados que eu conseguir vou colocar aqui, vou colocar também meus projetos e minha evolução na carreira. \n No botão aqui
+  em baixo você vai para a tela que consegue visualizar melhor as minhas conquistas`;
 
   @ViewChild('sectionRef', { static: true }) sectionRef!: ElementRef;
   jaDigitou = false;

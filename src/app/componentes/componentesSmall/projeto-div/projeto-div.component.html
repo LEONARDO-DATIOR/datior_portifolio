@@ -1,13 +1,61 @@
 <style>
-  p, h5 {
-    color: var(--cor-fonte-branca);
-  }
-
+  
   .projeto {
     transform: scale(0);
     opacity: 0;
     transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+    border-radius: 12px;
+    border: none;
+    background: var(--fundo-preto);
+    max-width: 300px;
+    height: 18em;
+    box-shadow: 0px 0px 100px rgba(255, 255, 255, 0.3);
   }
+
+  .projeto:hover {
+    height: 25em;
+  }
+
+  .projeto:hover .links-textos_projetos {
+    display: flex;
+  }
+
+  .img_projeto img {
+    width: 100%;
+    border-radius:  12px 12px 0 0;
+  }
+
+  .textos_projetos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 55%;
+    
+  }
+
+  .textos_projetos h4 {
+    color: var(--cor-fonte-branca);
+  }
+
+  .links-textos_projetos {
+    display: none;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 1em;
+  }
+
+  .links-textos_projetos a {
+    text-decoration: none;
+    color: var(--cor-fonte-preta);
+    background: var(--fundo-branco);
+    border-radius: 4px;
+    width: 35%;
+    text-align: center;
+    font-weight: bold;
+  }
+
 
   .projeto.visivel {
     transform: scale(1);
@@ -15,22 +63,16 @@
   }
 </style>
 
-<div #projeto class="projeto rounded border-none" [class.visivel]="visivel"
-     style="background: var(--fundo-preto); width: 20em; height: 25em; box-shadow: 0px 0px 100px rgba(255, 255, 255, 0.3);">
-  <div class="rounded-top">
-    <img [src]="caminho_imagem" class="card-img-top w-100 rounded" alt="Imagem do projeto">
+<div #projeto class="projeto" [class.visivel]="visivel">
+  <div class="img_projeto">
+    <img [src]="caminho_imagem"  alt="Imagem do projeto">
   </div>
-  <div class="d-flex flex-column justify-content-center align-items-center h-100">
-    <div class="card-body d-flex flex-column justify-content-center align-items-center position-relative">
-      <h5 class="card-title fs-3" style="font-weight: 700;">{{ titulo_projeto }}</h5>
-    </div>
-    <div class="d-flex gap-3 card-body gap-2 mb-5" style="height: 25%;">
-      <a [href]="link_projeto" class="card-link text-decoration-none">
-        <button class="px-2 rounded fw-bold fs-5" style="background: var(--fundo-branco);">GITHUB</button>
-      </a>
-      <a href="#" class="card-link text-decoration-none">
-        <button class="px-2 rounded fw-bold fs-5" style="background: var(--fundo-branco);">DESIGN</button>
-      </a>
+  <div class="textos_projetos">
+    <h4 class="card-title fs-3" style="font-weight: 700;">{{ titulo_projeto }}</h4>
+    <div class="links-textos_projetos">
+      <a href="#">GITHUB</a>    
+      <a href="#">TESTAR</a>    
+      <a href="#">DESIGN</a>    
     </div>
   </div>
 </div>

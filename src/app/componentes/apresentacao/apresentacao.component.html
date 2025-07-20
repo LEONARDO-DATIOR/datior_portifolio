@@ -15,6 +15,21 @@
         border-radius: 2em;
     }
 
+    .video.visivel {
+        animation-duration: 3s;
+        animation-name: videoAparecendo;
+        transform: scale(1);
+    }
+
+    @keyframes videoAparecendo {
+        from {
+            scale: 0;
+        }
+        to {
+            scale: 1;
+        }
+    }
+
     @media screen and (max-width: 768px) {
 
         .section_apresentacao-video iframe {
@@ -26,7 +41,10 @@
 
 
 <section class="section_apresentacao-video">
-    <iframe 
+    <iframe
+        #video
+        class="video" 
+        [class.visivel]="visivel"
         src="https://www.youtube.com/embed/WvUf8PfISxw?si=dywSUZ1cOnAvB-tL" 
         title="YouTube Duca video sobre" 
         frameborder="4" 
