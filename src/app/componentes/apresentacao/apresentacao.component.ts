@@ -7,7 +7,7 @@ import { Component, ElementRef, ViewChild, viewChild } from '@angular/core';
 })
 export class ApresentacaoComponent {
  
-  @ViewChild('video', { static: true }) cardRef!: ElementRef;
+  @ViewChild('video', { static: true }) videoRef!: ElementRef;
   visivel = false;
 
   ngAfterViewInit() {
@@ -21,7 +21,7 @@ export class ApresentacaoComponent {
         });
       }, { threshold: 0.5 });
 
-      observer.observe(this.cardRef.nativeElement);
+      observer.observe(this.videoRef.nativeElement);
     } else {
       console.warn("IntersectionObserver não suportado");
     }

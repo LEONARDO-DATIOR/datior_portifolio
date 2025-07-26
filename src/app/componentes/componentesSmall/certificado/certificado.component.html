@@ -32,6 +32,21 @@
         padding: 0 1.5em;
         text-align: center;
     }
+
+    .certificado:hover {
+        animation-name: balancar;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes balancar {
+        0% {
+           transform: scale(1);
+        }
+        100% {
+            transform: scale(1.15);
+        }
+    }
 </style>
 
 <li class="certificado">

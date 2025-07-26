@@ -1,10 +1,35 @@
 <style>
     .certificados_categorias {
-        border: 1px solid var(--fundo-cinza);
+        border: 1px solid var(--fundo-preto);
         aspect-ratio: 1 / 1; /* pega o tamanho da largura e replica para altura */
         border-radius: 12px;
-    
+        background: var(--fundo-branco);
     }
+
+    .certificados_categorias:hover {
+        animation-name: balancar;
+        animation-duration: 1s;
+        background: rgb(245, 245, 245);
+    }
+
+    @keyframes balancar {
+        0% {
+            rotate: (0);
+        } 
+        25% {
+           transform: rotate(3deg);
+        }
+        50% {
+           transform: rotate(-3deg);
+        }
+        75% {
+           transform: rotate(1deg);
+        }
+        100% {
+           transform: rotate(-1deg);
+        }
+    }
+    
     .certificados_categorias a {
         width: 100%;
         height: 100%;
@@ -42,7 +67,7 @@
 
     /* PRINCIPAL */
      .certificados_principais {
-        background: var(--fundo-cinza);
+        background: var(--fundo-preto);
         aspect-ratio: 1 / 1;
         border-radius: 12px;
     }

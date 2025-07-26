@@ -2,13 +2,18 @@
     .section-certificados-categoria {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        max-width: 50%;
+        align-items: center;
         max-height: 3500px;
         min-height: 100vh;
         margin: 0 auto;
         position: relative;
         padding: 8em 0 0 0;
+        background: var(--fundo-preto);
+    }
+
+    .section-certificados-categoria div {
+        width: 50%;
+        color: var(--cor-fonte-branca);
     }
 
     .section-certificados-categoria h2 {
@@ -29,44 +34,46 @@
 </style>
 
 <section class="section-certificados-categoria">
-    <h2 >Conhecimento por categoria</h2>
-    <ul class="certificados_lista-categorias">
-        <app-certificado-categoria 
-            link="#"
-            caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
-            alt_imagem="Icone Categoria Design"
-            titulo="Front-end"
-        ></app-certificado-categoria>
-        <app-certificado-categoria 
-            link="#"
-            caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
-            alt_imagem="Icone Categoria Design"
-            titulo="Front-end"
-        ></app-certificado-categoria>
-        <app-certificado-categoria 
-            link="#"
-            caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
-            alt_imagem="Icone Categoria Design"
-            titulo="Front-end"
-        ></app-certificado-categoria>
-        <app-certificado-categoria 
-            link="#"
-            caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
-            alt_imagem="Icone Categoria Design"
-            titulo="Front-end"
-        ></app-certificado-categoria>
-        <app-certificado-categoria 
-            link="#"
-            caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
-            alt_imagem="Icone Categoria Design"
-            titulo="Front-end"
-        ></app-certificado-categoria>
-        <app-certificado-categoria 
-            link="#"
-            caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
-            alt_imagem="Icone Categoria Design"
-            titulo="Front-end"
-        ></app-certificado-categoria>
-        
-    </ul>
+    <div>
+        <h2 >Conhecimento por categoria</h2>
+        <ul class="certificados_lista-categorias">
+            <app-certificado-categoria 
+                link="#"
+                caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
+                alt_imagem="Icone Categoria Design"
+                titulo="Front-end"
+            ></app-certificado-categoria>
+            <app-certificado-categoria 
+                link="#"
+                caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
+                alt_imagem="Icone Categoria Design"
+                titulo="Front-end"
+            ></app-certificado-categoria>
+            <app-certificado-categoria 
+                link="#"
+                caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
+                alt_imagem="Icone Categoria Design"
+                titulo="Front-end"
+            ></app-certificado-categoria>
+            <app-certificado-categoria 
+                link="#"
+                caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
+                alt_imagem="Icone Categoria Design"
+                titulo="Front-end"
+            ></app-certificado-categoria>
+            <app-certificado-categoria 
+                link="#"
+                caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
+                alt_imagem="Icone Categoria Design"
+                titulo="Front-end"
+            ></app-certificado-categoria>
+            <app-certificado-categoria 
+                link="#"
+                caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
+                alt_imagem="Icone Categoria Design"
+                titulo="Front-end"
+            ></app-certificado-categoria>
+            
+        </ul>
+    </div>
 </section>

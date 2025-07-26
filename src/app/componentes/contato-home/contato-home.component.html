@@ -1,7 +1,56 @@
 <style>
-  input, textarea, input:focus, textarea:focus{
+  .section-formulario_contato {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background: var(--fundo-preto);
+  }
+
+  .container__formulario_contato {
+    position: relative;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .formulario_contato {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .container__formulario_contato h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    color: var(--cor-fonte-branca);
+    font-size: 52px;
+  }
+
+  .nome-numero__formulario_contato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    height: 40px;
+  }
+
+  .nome-numero__formulario_contato div {
+    width: 100%;
+    position: relative;
+  }
+
+  .campos {
     background: var(--fundo-campo-form);
-    padding: 1em;
+    width: 100%;
+    padding: 0.4em;
     border: none;
     border-radius: 16px;
     border-style: none;
@@ -11,6 +60,11 @@
     color: var(--cor-fonte-preta);
   }
 
+  .botao {
+    text-align: center;
+  }
+
+  
   input:hover, textarea:hover { 
     background: var(--fundo-campo-form-hover);
     box-shadow: -2px 4px 5px rgba(0, 0, 0, 0.1);
@@ -36,39 +90,41 @@
   }
 </style>
 
-<section class="w-100 d-flex justify-content-center align-items-center flex-column" style="height: 100vh; background: var(--fundo-brancong);">
-  <div class="container__contato container position-relative w-50 justify-content-evenly align-items-center d-flex flex-column " style="height: 100%;">
-    <h2 class="text-uppercase fw-bold position-relative" style="color: var(--cor-fonte-preta); font-size: 52px;" >Fale comigo</h2>
-    <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()" class="formulario__contato w-100 d-flex flex-column"> <!-- DEFINE É O FORMGROUP E QUE QUANDO O BOTÃO DE SUBMIT DESSE FORM FOR CLICADO VAI PARA FUNÇÃO ENVIAR FORMULÁRIO -->
-      
-      <div class="nome-numero__container__formulario d-flex justify-content-center align-items-center gap-5 mb-3">
-        <div class="my-4 w-50 position-relative">
-          <small class="position-absolute" style="color: rgb(184, 0, 0); top: -2em;" *ngIf="formulario.get('primeiroNome')?.invalid && formulario.get('primeiroNome')?.touched"> <!-- SÓ EXIBE O SMAL SE A VALIDÃO DO CAMPO 'primeiroNome' DO FORMULÁRIO ESTIVER VALIDO E SE O USUÁRIO CLICOU E SAIU DO CAMPO-->
-            primeiro Nome é obrigatório e deve ter pelo menos 3 caracteres.
-          </small>
-          <input id="primeiroNomeCampo" type="text" class="form-control" formControlName="primeiroNome" placeholder="Primeiro Nome">
+<section class="section-formulario_contato">
+  <div class="container__formulario_contato">
+    <h2>Fale comigo</h2>
+    <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()" class="formulario_contato"> <!-- DEFINE É O FORMGROUP E QUE QUANDO O BOTÃO DE SUBMIT DESSE FORM FOR CLICADO VAI PARA FUNÇÃO ENVIAR FORMULÁRIO -->
+
+      <div class="nome-numero__formulario_contato">
+        <div>
+          <!-- <small style="color: rgb(184, 0, 0); top: -2em;" *ngIf="formulario.get('primeiroNome')?.invalid && formulario.get('primeiroNome')?.touched"> <!-- SÓ EXIBE O SMAL SE A VALIDÃO DO CAMPO 'primeiroNome' DO FORMULÁRIO ESTIVER VALIDO E SE O USUÁRIO CLICOU E SAIU DO CAMPO-->
+            <!-- primeiro Nome é obrigatório e deve ter pelo menos 3 caracteres. -->
+          <!-- </small> -->
+          <input id="primeiroNomeCampo" type="text" class="campos" formControlName="primeiroNome" placeholder="Primeiro Nome">
         </div>
   
-        <div class="my-4 w-50 ">
-          <input id="numero" type="string" class="form-control" formControlName="numero" placeholder="Número">
+        <div>
+          <input id="numero" type="string" class="campos" formControlName="numero" placeholder="Número">
         </div>
       </div>
   
-      <div class="mb-5">
-        <input id="email" type="email" class="form-control" formControlName="email" placeholder="E-mail">
+      <div>
+        <input id="email" type="email" class="campos" formControlName="email" placeholder="E-mail">
         <small *ngIf="formulario.get('email')?.invalid && formulario.get('email')?.touched">
           Insira um e-mail válido.
         </small>
       </div>
   
-      <div class="mb-3">
-        <textarea id="mensagem" class="form-control" rows="4" formControlName="mensagem" placeholder="Mensagem"></textarea>
-        <small *ngIf="formulario.get('mensagem')?.invalid && formulario.get('mensagem')?.touched">
-          A mensagem deve ter pelo menos 10 caracteres.
-        </small>
+      <div>
+        <textarea id="mensagem" class="campos" rows="4" formControlName="mensagem" placeholder="Mensagem"></textarea>
+        <!-- <small *ngIf="formulario.get('mensagem')?.invalid && formulario.get('mensagem')?.touched"> -->
+          <!-- A mensagem deve ter pelo menos 10 caracteres. -->
+        <!-- </small> -->
       </div>
       
-      <app-botao-padrao texto_botao="Enviar" class="mx-auto mt-5" [submit_botao]=true [disabled_botao]="formulario.invalid"></app-botao-padrao> 
+      <div class="botao">
+        <app-botao-padrao texto_botao="Enviar" [submit_botao]=true [disabled_botao]="formulario.invalid"></app-botao-padrao> 
+      </div>
     </form>
   </div>
 
