@@ -10,7 +10,6 @@
   }
 
   .container__formulario_contato {
-    position: relative;
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
@@ -71,21 +70,26 @@
   }
 
   @media screen and (max-width: 768px) {
-    .container__contato {
-      width: 75% !important;  
-    }
-    
-    .container__contato h2 {
+    .container__formulario_contato h2 {
       font-size: 38px !important;
     }
 
-    .nome-numero__container__formulario {
+    .formulario_contato {
+      width: 60% !important;  
+    }
+    
+
+    .nome-numero__formulario_contato {
       flex-direction: column;
       gap: 0 !important;
+      margin-bottom: 1em;
+
     }
 
-    .nome-numero__container__formulario div{
+    .nome-numero__formulario_contato > div{
       width: 100% !important;
+      height: 100%;
+      margin-bottom: 1.5em;
     }
   }
 </style>

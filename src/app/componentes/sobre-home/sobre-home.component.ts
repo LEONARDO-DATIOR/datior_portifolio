@@ -9,10 +9,10 @@ import { BotaoPadraoComponent } from '../componentesSmall/botao-padrao/botao-pad
 
 export class SobreHomeComponent  {
   textoDigitado = '';
-  textoCompleto = `Olá tudo bem? estou realizando esse site para poder compartilhar e demonstrar meu conhecimento em diversas áreas.
-  incluindo na de desenvolvimento ou na área de análise de dados, vou compartilhar a evolução da minha carreira e da minha educação.
-  todos certificados que eu conseguir vou colocar aqui, vou colocar também meus projetos e minha evolução na carreira. \n No botão aqui
-  em baixo você vai para a tela que consegue visualizar melhor as minhas conquistas`;
+  textoCompleto = `Olá! Seja bem-vindo ao meu portfólio.
+  Ele ainda está em construção, então é possível encontrar alguns ajustes pendentes ou conteúdos faltando — especialmente na parte de certificações e projetos.
+  Mesmo assim, você já pode explorar uma prévia do meu conhecimento em front-end.
+  A criação deste portfólio está documentada em vídeo, como parte da validação prática do meu aprendizado e desenvolvimento.`;
 
   @ViewChild('sectionRef', { static: true }) sectionRef!: ElementRef;
   jaDigitou = false;
