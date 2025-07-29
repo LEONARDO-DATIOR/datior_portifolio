@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild, NgZone} from '@angular/core';
-import { BotaoPadraoComponent } from '../componentesSmall/botao-padrao/botao-padrao.component';
+import { BotaoPadraoComponent } from '../../componentesSmall/botao-padrao/botao-padrao.component';
 
 @Component({
   selector: 'app-sobre-home',

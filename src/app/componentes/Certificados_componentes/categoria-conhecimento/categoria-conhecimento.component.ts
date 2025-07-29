@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CertificadoCategoriaComponent } from "../componentesSmall/certificado-categoria/certificado-categoria.component";
+import { CertificadoCategoriaComponent } from "../../componentesSmall/certificado-categoria/certificado-categoria.component";
 
 @Component({
   selector: 'app-categoria-conhecimento',

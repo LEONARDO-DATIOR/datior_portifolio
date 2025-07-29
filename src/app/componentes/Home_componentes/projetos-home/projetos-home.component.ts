@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { ProjetoDivComponent } from '../componentesSmall/projeto-div/projeto-div.component';
+import { ProjetoDivComponent } from '../../componentesSmall/projeto-div/projeto-div.component';
 
 @Component({
   selector: 'app-projetos-home',

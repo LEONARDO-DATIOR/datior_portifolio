@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { FrasesCarroselComponent } from '../componentesSmall/frases-carrosel/frases-carrosel.component';
+import { FrasesCarroselComponent } from '../../componentesSmall/frases-carrosel/frases-carrosel.component';
 
 @Component({
   selector: 'app-frases-home',
