@@ -2,28 +2,33 @@
     .sobre-home {
         display: flex;
         height: 100vh;
-        background-color: #000;
+        background-color: var(--fundo-preto);
         color: white;
         align-items: center;
         justify-content: center;
-        padding: 40px;
+        padding: 100px 0 0 300px;
         gap: 3em;
     }
 
-    .temporario {
-        font-size: 4em;
-        color: red;
-        top: 100px;
-        position: absolute;
-    }
-
     .sobre-home__textos {
-        width: 60%;
+        display: flex;
+        flex-direction: column;
+        gap: 4em;
+        width: 50%;
         height: 100vh;
     }
 
+    .sobre-home__textos h2 {
+        font-size: var(--fonte-titulo-componentes);
+        color: var(--cor-fonte-branca);
+        position: relative;
+        top: 3em;
+        font-size: 2.5em;
+        padding-bottom: 1em;
+    }
+
     .textos_sobre_home p {
-        font-family: monospace;
+        font-family: var(--fonte-comum);
         white-space: normal; /* <- Isso permite quebra automática de linha */
         word-wrap: break-word;
         font-size: 1.1rem;
@@ -42,6 +47,19 @@
     .botao_contato button {
         width: 80% !important;
     }
+
+    .sobre-home__gif {
+        width: 50%;
+        height: 100%;
+    }
+
+    .sobre-home__gif img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
 @media screen and (max-width: 1400px) {
     .sobre-home {
         padding-left: 2% !important;
@@ -88,10 +106,9 @@
 
 </style>
 
-<section #sectionRef class="sobre-home " style="height: 100vh; background: var(--fundo-preto); padding: 100px 0px 0 300px;">
-    <h2 class="temporario">PÁGINA E SITE EM CONSTRUÇÃO</h2>
-    <div class="sobre-home__textos d-flex flex-column gap-5 w-50 h-100">
-        <h2 class="fs-1 pb-5" style="color: var(--cor-fonte-branca); position: relative; top: 3em;">
+<section #sectionRef class="sobre-home ">
+    <div class="sobre-home__textos">
+        <h2>
             LEONARDO DUCA
         </h2>
         <div #textoSobreHome class="textos_sobre_home" >
@@ -103,8 +120,7 @@
     </div>
     
     <div class="sobre-home__gif w-50 h-100">
-        <img src="../../../assets/imagens/Leo_IA.gif" alt="Imagem IA" 
-            class="w-100 h-100 object-fit-cover">
+        <img src="../../../assets/imagens/Leo_IA.gif" alt="Imagem IA" >
     </div>
 
 </section>

@@ -9,6 +9,14 @@
     background: var(--fundo-preto);
   }
 
+  .section-formulario_contato  small {
+    font-family: var(--fonte-comum);
+    position: absolute;
+    color: red;
+    text-wrap: nowrap;
+    width: 100px;
+  }
+
   .container__formulario_contato {
     width: 100%;
     justify-content: space-evenly;
@@ -26,10 +34,11 @@
   }
 
   .container__formulario_contato h2 {
+    color: var(--cor-fonte-branca);
+    font-family: var(--fonte-titulo-comum);
     text-transform: uppercase;
     font-weight: bold;
     position: relative;
-    color: var(--cor-fonte-branca);
     font-size: 52px;
   }
 
@@ -44,6 +53,7 @@
   .nome-numero__formulario_contato div {
     width: 100%;
     position: relative;
+
   }
 
   .campos {
@@ -67,6 +77,11 @@
   input:hover, textarea:hover { 
     background: var(--fundo-campo-form-hover);
     box-shadow: -2px 4px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  input:focus {
+    border: 2px solid var(--fundo-branco);
+    outline: none;
   }
 
   @media screen and (max-width: 768px) {
@@ -101,9 +116,9 @@
 
       <div class="nome-numero__formulario_contato">
         <div>
-          <!-- <small style="color: rgb(184, 0, 0); top: -2em;" *ngIf="formulario.get('primeiroNome')?.invalid && formulario.get('primeiroNome')?.touched"> <!-- SÓ EXIBE O SMAL SE A VALIDÃO DO CAMPO 'primeiroNome' DO FORMULÁRIO ESTIVER VALIDO E SE O USUÁRIO CLICOU E SAIU DO CAMPO-->
-            <!-- primeiro Nome é obrigatório e deve ter pelo menos 3 caracteres. -->
-          <!-- </small> -->
+          <small style="color: rgb(184, 0, 0); top: -2em;" *ngIf="formulario.get('primeiroNome')?.invalid && formulario.get('primeiroNome')?.touched"> <!-- SÓ EXIBE O SMAL SE A VALIDÃO DO CAMPO 'primeiroNome' DO FORMULÁRIO ESTIVER VALIDO E SE O USUÁRIO CLICOU E SAIU DO CAMPO !-->
+            primeiro Nome é obrigatório e deve ter pelo menos 3 caracteres.
+          </small>
           <input id="primeiroNomeCampo" type="text" class="campos" formControlName="primeiroNome" placeholder="Primeiro Nome">
         </div>
   

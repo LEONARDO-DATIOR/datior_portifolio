@@ -17,14 +17,14 @@
     }
 
     .section-certificados-categoria h2 {
-        font-family: var(--fonte-titulo);
+        font-family: var(--fonte-titulo-categorias);
         text-align: left;
         margin: 0 0 1em 1em;
     }
 
     .certificados_lista-categorias {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, max-content));
+        grid-template-columns: repeat(auto-fit, 250px);
         gap: 2em 4em;
         justify-content: center;
         padding: 0;
@@ -35,43 +35,43 @@
 
 <section class="section-certificados-categoria">
     <div>
-        <h2 >Conhecimento por categoria</h2>
+        <h2>Conhecimento por categoria</h2>
         <ul class="certificados_lista-categorias">
             <app-certificado-categoria 
                 link="#"
                 caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
-                alt_imagem="Icone Categoria Design"
+                alt_imagem="Icone Categoria front-end"
                 titulo="Front-end"
             ></app-certificado-categoria>
             <app-certificado-categoria 
                 link="#"
                 caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
-                alt_imagem="Icone Categoria Design"
-                titulo="Front-end"
+                alt_imagem="Icone Categoria Gerenciamento projeto"
+                titulo="Gerenciamento de projetos"
+            ></app-certificado-categoria>
+            <app-certificado-categoria 
+                link="#"
+                caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
+                alt_imagem="Icone Categoria Back-end"
+                titulo="Back-end"
             ></app-certificado-categoria>
             <app-certificado-categoria 
                 link="#"
                 caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
                 alt_imagem="Icone Categoria Design"
-                titulo="Front-end"
+                titulo="Design"
             ></app-certificado-categoria>
             <app-certificado-categoria 
                 link="#"
                 caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
-                alt_imagem="Icone Categoria Design"
-                titulo="Front-end"
+                alt_imagem="Icone Categoria analise de dados"
+                titulo="Analise de dados"
             ></app-certificado-categoria>
             <app-certificado-categoria 
                 link="#"
                 caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
-                alt_imagem="Icone Categoria Design"
-                titulo="Front-end"
-            ></app-certificado-categoria>
-            <app-certificado-categoria 
-                link="#"
-                caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
-                alt_imagem="Icone Categoria Design"
-                titulo="Front-end"
+                alt_imagem="Icone Categoria Infraestrutura"
+                titulo="Infraestrutura"
             ></app-certificado-categoria>
             
         </ul>

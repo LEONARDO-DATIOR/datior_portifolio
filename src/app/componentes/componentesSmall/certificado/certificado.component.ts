@@ -10,4 +10,5 @@ export class CertificadoComponent {
   @Input() titulo: string = 'Certificado novo!!';
   @Input() caminho_imagem: string = '../../../assets/imagens/img_certificados/img_certificado.svg';
   @Input() alt_imagem: string = 'Imagem certificado novo';
+
 }
