@@ -3,9 +3,10 @@
         background: var(--fundo-branco);
         aspect-ratio: 1 / 1;
         border-radius: 0 0 20px 20px;
+        cursor: pointer;
     }
 
-    .certificado a {
+    .certificado div {
         display: grid;
         height: 100%;    
         width: 100%;
@@ -18,12 +19,12 @@
         text-decoration: none;
     }
 
-    .certificado a img {
+    .certificado div img {
         height: 102%;
         width: 100%;
     }
 
-    .certificado a p {
+    .certificado div p {
         display: flex;
         color: var(--cor-fonte-preta);
         font-family: var(--fonte-titulo-componentes);
@@ -52,8 +53,17 @@
 </style>
 
 <li class="certificado">
-    <a href="{{link}}">
+    <div (click)="abrirDialog()">
         <img src="{{caminho_imagem}}" alt="{{alt_imagem}}">
         <p>{{titulo}}</p>
-    </a>
+    </div>
+
+   <dialog #dialog>
+        <img src="{{caminho_imagem}}" alt="{{alt_imagem}}">
+        <p>{{titulo}}</p>
+        <button id="cancel" type="reset" (click)="fecharDialog()">Cancel</button>
+    </dialog>
+
+
+
 </li>
