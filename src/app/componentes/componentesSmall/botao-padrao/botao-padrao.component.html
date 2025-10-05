@@ -71,6 +71,23 @@
             color: red;
         }
     }
+
+    .botao_dialog {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        border-radius: 100px;
+        background: none;
+        border: none;
+        color: var(--cor-fonte-preta);
+        font-weight: bold;
+    }
+
+    .botao_dialog:hover {
+        border: 2px solid white;
+        background: var(--fundo-preto);
+        color: var(--cor-fonte-branca);
+    }
 </style>
 
 
@@ -90,4 +107,8 @@
 
 <button *ngIf="tipo_botao === 'botao_preto' && !submit_botao" class="botao_preto ">
     <p>{{ texto_botao }}</p>
+</button>
+
+<button *ngIf="tipo_botao === 'botao_dialog'" id="cancel" type="reset" class="botao_dialog">
+    <p>{{texto_botao}}</p>
 </button>

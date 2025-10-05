@@ -1,8 +1,9 @@
 import { Component, ElementRef, Input, ViewChild, viewChild } from '@angular/core';
+import { BotaoPadraoComponent } from "../botao-padrao/botao-padrao.component";
 
 @Component({
   selector: 'app-certificado',
-  imports: [],
+  imports: [BotaoPadraoComponent],
   templateUrl: './certificado.component.html',
 })
 export class CertificadoComponent {
@@ -18,9 +19,7 @@ export class CertificadoComponent {
   }
 
   abrirDialog(){
-    console.log('dentro da função')
     if (!this.dialogElement.open) {
-      console.log('dentro da função - abrindo modal')
       this.dialogElement.showModal();
     }
   }

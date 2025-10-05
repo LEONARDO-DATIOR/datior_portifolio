@@ -50,6 +50,42 @@
             transform: scale(1.15);
         }
     }
+
+    .dialog {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 800px;
+        height: 500px;
+        cursor:default;
+        background-size: cover;
+    }
+
+    .dialog img {
+        object-fit: cover;
+        width: 100%;
+        height: 240px;
+    }
+
+    .dialog_textos {
+        display: flex !important;
+        flex-direction: column;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+        height: 250px !important;
+    }
+
+    .dialog_textos h3 {
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    .dialog_textos p {
+        font-weight: 400 !important; 
+    }
+ 
 </style>
 
 <li class="certificado">
@@ -58,10 +94,13 @@
         <p>{{titulo}}</p>
     </div>
 
-   <dialog #dialog>
+   <dialog #dialog class="dialog">
         <img src="{{caminho_imagem}}" alt="{{alt_imagem}}">
-        <p>{{titulo}}</p>
-        <button id="cancel" type="reset" (click)="fecharDialog()">Cancel</button>
+        <div class="dialog_textos">
+            <h3>{{titulo}}</h3>
+            <p>adsadsad sad sadasd asdasdas dasd asdas dqwdqwdid qod qdoqwndasodqw odjwqodjqwo dsaodqwd iq doqw diwqdoqdqwdsqid diqwndiuqhbfysofnqj asib8ysdowo naisdnasndiq niasdiqf qbi a shdbqdh</p>
+            <app-botao-padrao tipo_botao="botao_dialog" id="cancel" (click)="fecharDialog()" texto_botao="X"></app-botao-padrao>
+        </div>
     </dialog>
 
 
