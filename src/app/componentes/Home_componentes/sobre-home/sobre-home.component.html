@@ -3,50 +3,42 @@
         display: flex;
         height: 100vh;
         background-color: var(--fundo-preto);
-        color: white;
-        align-items: center;
         justify-content: center;
-        padding: 100px 0 0 300px;
-        gap: 3em;
+        align-items: center;
     }
 
-    .sobre-home__textos {
+    .container-home {
+        display: grid;
+        grid-template-columns: 20vw 45vw;
+        column-gap: 2.5vw;
+        width: 70vw;
+        height: 40vh;
+        border: 2px solid var(--fundo-branco);
+        box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+    }
+
+    .container-home__imagem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px 0 0 8px;
+    }
+
+    .contianer-home__textos {
         display: flex;
         flex-direction: column;
-        gap: 4em;
-        width: 50%;
-        height: 100vh;
-    }
-
-    .sobre-home__textos h2 {
-        font-size: var(--fonte-titulo-componentes);
-        color: var(--cor-fonte-branca);
-        position: relative;
-        top: 3em;
-        font-size: 2.5em;
-        padding-bottom: 1em;
+        justify-content: space-evenly;
+        text-align: center;
+        color: white;
     }
 
     .textos_sobre_home p {
         font-family: var(--fonte-comum);
         white-space: normal; /* <- Isso permite quebra automática de linha */
         word-wrap: break-word;
-        font-size: 1.1rem;
-        line-height: 1.5;
-        position: relative;
-        top: 4em;
-        height: 45vh;
     }
 
-    .botao_contato {
-        position: relative;
-        width: 100%;
-        text-align: center;
-    }
-
-    .botao_contato button {
-        width: 80% !important;
-    }
 
     .sobre-home__gif {
         width: 50%;
@@ -61,37 +53,12 @@
     }
 
 
-@media screen and (max-width: 1400px) {
-    .sobre-home {
-        padding-left: 2% !important;
-    }
-}
+@media screen and (max-width: 1400px) {}
 
-@media screen and (max-width:1030px) {
-    .sobre-home {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0 !important;
-    }
-
-    .botao_contato {
-        display: none;
-    }
-}
+@media screen and (max-width:1030px) {}
 
 @media screen and (max-width: 768px) {
     
-
-    .sobre-home__textos {
-        width: 100vw !important;
-        text-align: center;
-        align-items: center !important;
-    }
-    .sobre-home__textos h2 {
-        padding: 0 !important;
-    }
-
     .textos_sobre_home {
         display: flex;
         flex-direction: column;
@@ -108,20 +75,23 @@
 </style>
 
 <section #sectionRef class="sobre-home ">
-    <div class="sobre-home__textos">
-        <h2>
-            LEONARDO DUCA
-        </h2>
-        <div #textoSobreHome class="textos_sobre_home" >
-            <p>{{ textoDigitado }}</p>
+    <div class="container-home">
+        <div class="container-home__imagem">
+            <img src="../../../../assets/imagens/foto_duca/Leo-IA.gif" alt="">
         </div>
-        <a class="botao_contato" href="\certificados">
-            <app-botao-padrao texto_botao="Conhecimentos" tipo_botao="botao_branco"></app-botao-padrao>
-        </a>
+        <div class="contianer-home__textos">
+            <h2>
+                LEONARDO DUCA
+            </h2>
+            <div #textoSobreHome class="textos_sobre_home" >
+                <p>{{ textoDigitado }}</p>
+            </div>
+            <a class="botao_contato" href="\certificados">
+                <!-- <app-botao-padrao texto_botao="Conhecimentos" ></app-botao-padrao> -->
+                <app-botao-padrao texto_botao="Conhecimentos" tipo_botao="botao_branco"></app-botao-padrao>
+            </a>
+        </div>
     </div>
     
-    <div class="sobre-home__gif w-50 h-100">
-        <img src="../../../assets/imagens/Leo-IA.gif" alt="Imagem IA" >
-    </div>
 
 </section>

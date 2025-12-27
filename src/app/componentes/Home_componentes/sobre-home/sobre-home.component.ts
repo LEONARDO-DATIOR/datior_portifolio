@@ -9,10 +9,7 @@ import { BotaoPadraoComponent } from '../../componentesSmall/botao-padrao/botao-
 
 export class SobreHomeComponent  {
   textoDigitado = '';
-  textoCompleto = `Olá! Seja bem-vindo ao meu portfólio.
-  Ele ainda está em construção, então é possível encontrar alguns ajustes pendentes ou conteúdos faltando — especialmente na parte de certificações e projetos.
-  Mesmo assim, você já pode explorar uma prévia do meu conhecimento em front-end.
-  A criação deste portfólio está documentada em vídeo, como parte da validação prática do meu aprendizado e desenvolvimento.`;
+  textoCompleto = `Com 22 anos, já vivi diversas experiências na área de TI que me ajudaram a entender onde realmente está minha paixão: o desenvolvimento. Descobri que o que mais me motiva é criar soluções que simplifiquem a vida das pessoas — não apenas de quem utiliza diretamente, mas também de todos ao seu redor. Acredito que a tecnologia existe para isso: facilitar, conectar e transformar. Seja por meio de automações, sistemas organizacionais ou ferramentas que proporcionem momentos de lazer, meu objetivo é sempre o mesmo — gerar impacto positivo e abrir caminhos para que outros também possam inovar.`;
 
   @ViewChild('sectionRef', { static: true }) sectionRef!: ElementRef;
   jaDigitou = false;
