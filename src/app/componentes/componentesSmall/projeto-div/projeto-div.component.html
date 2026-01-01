@@ -1,79 +1,102 @@
+
 <style>
-  
   .projeto {
-    transform: scale(0);
-    opacity: 0;
-    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-    border-radius: 12px;
-    border: none;
-    background: var(--fundo-preto);
-    max-width: 300px;
-    height: 18em;
-    box-shadow: 0px 0px 100px rgba(255, 255, 255, 0.3);
-  }
-
-  .projeto:hover {
-    height: 25em;
-  }
-
-  .projeto:hover .links-textos_projetos {
     display: flex;
+    flex-direction: column;
+    border: 2px solid var(--fundo-branco);
+    border-radius: 24px;
+    width: 70vw;
+    height: 70vh;
+    padding: 2em 8em;
+  }
+
+
+
+  .titulo_descricao__projeto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .titulo_descricao__projeto h4 {
+    color: var(--cor-fonte-branca);
+    font-size: 2em;
+  }
+
+  .titulo_descricao__projeto p {
+    color: var(--cor-fonte-cinza);
+    font-size: 1.5em;
+  }
+
+  .tecnologias_github__projeto {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+  }
+
+  .tecnologias_github__projeto p {
+    color: var(--cor-fonte-branca);
+    border-radius: 23px;
+  }
+
+  .tecnologias_github__projeto button {
+    background: none;
+    color: var(--cor-fonte-branca);
+    width: 120px;
+    border: 1px solid var(--fundo-branco);
+    border-radius: 23px;
+  }
+
+  .tecnologias__projeto {
+    display: flex;
+    gap: 2em;
+  }
+
+  .img_projeto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
+    gap: 2em;
+    padding: 0.5em 0;
   }
 
   .img_projeto img {
+    object-fit: cover;
     width: 100%;
+    height: 70%;
     border-radius:  12px 12px 0 0;
-  }
-
-  .textos_projetos {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 55%;
-    
-  }
-
-  .textos_projetos h4 {
-    color: var(--cor-fonte-branca);
-    font-family: var(--fonte-titulo-componentes);
-  }
-
-  .links-textos_projetos {
-    display: none;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    width: 100%;
-    gap: 1em;
-  }
-
-  .links-textos_projetos a {
-    text-decoration: none;
-    color: var(--cor-fonte-preta);
-    background: var(--fundo-branco);
-    border-radius: 4px;
-    width: 35%;
-    text-align: center;
-    font-weight: bold;
+    border: 1px solid white ;
   }
 
 
-  .projeto.visivel {
-    transform: scale(1);
-    opacity: 1;
-  }
 </style>
 
-<div #projeto class="projeto" [class.visivel]="visivel">
+<div class="projeto">
+  <div class="titulo_descricao__projeto">
+    <h4>{{ titulo_projeto }}</h4>
+    <p>Projeto do portifólio, que foi realizado com angular e documentado em vídeos</p>
+  </div>
+  <div class="tecnologias_github__projeto">
+    <div class="tecnologias__projeto">
+      <p href="#">
+        Angular
+      </p>
+      <p href="#">
+        React
+      </p>    
+    </div>
+    <div class="github__projeto">
+      <a href="">
+        <button>
+          GITHUB
+        </button>
+      </a>
+    </div>
+  </div>
   <div class="img_projeto">
     <img [src]="caminho_imagem"  alt="Imagem do projeto">
-  </div>
-  <div class="textos_projetos">
-    <h4 class="card-title fs-3" style="font-weight: 700;">{{ titulo_projeto }}</h4>
-    <div class="links-textos_projetos">
-      <a href="#">GITHUB</a>    
-      <a href="#">TESTAR</a>    
-      <a href="#">DESIGN</a>    
-    </div>
+    <app-botao-padrao tipo_botao="botao_branco" texto_botao="Visualizar"></app-botao-padrao>
   </div>
 </div>
