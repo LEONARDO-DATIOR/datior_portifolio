@@ -1,16 +1,30 @@
 <style>
     .video {
-        scale: 0;
+        display: none;
     }
 
     .section_apresentacao-video {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 130vh;
         background: var(--fundo-preto);
         padding: 10vh 0;
     }
+
+    .botao_play {
+        width: 50vw;
+        height: 80vh;
+        background-image: url('../../../../assets/imagens/icons/botao_play_apagado.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+
+    .botao_play:hover {
+        background-image: url('../../../../assets/imagens/icons/botao_play_acesso.svg');
+    }
+
 
     .section_apresentacao-video iframe {
         width: 55vw;
@@ -19,25 +33,11 @@
         border-radius: 2em;
     }
 
-    .video.visivel {
-        animation-duration: 3s;
-        animation-name: videoAparecendo;
-        scale: 1;
-    }
-
-    @keyframes videoAparecendo {
-        from {
-            scale: 0;
-        }
-        to {
-            scale: 1;
-        }
-    }
 
     @media screen and (max-width: 768px) {
 
         .section_apresentacao-video {
-            height: 80vh;
+            height: 100vh;
         }
 
         .section_apresentacao-video iframe {
@@ -50,10 +50,11 @@
 
 
 <section class="section_apresentacao-video">
+    <div class="botao_play" onclick="">
+    </div>
     <iframe
         #video
         class="video" 
-        [class.visivel]="visivel"
         src="https://www.youtube.com/embed/VzwUoUlz2D4?si=BjOzEHc2CBZWcraY" 
         title="YouTube Duca video sobre" 
         frameborder="4" 
