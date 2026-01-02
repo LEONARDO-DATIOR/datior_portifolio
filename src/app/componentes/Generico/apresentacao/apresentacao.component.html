@@ -1,65 +1,62 @@
 <style>
-    .video {
-        display: none;
-    }
+  .video {
+    display: none;
+  }
 
+  .section_apresentacao-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+    background: var(--fundo-preto);
+    padding: 10vh 0;
+  }
+
+  .container__botao_play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section_apresentacao-video iframe {
+    width: 75vw;
+    height: 75vh;
+    border: 2px solid var(--fundo-branco);
+    border-radius: 2em;
+  }
+
+  @media screen and (max-width: 768px) {
     .section_apresentacao-video {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 130vh;
-        background: var(--fundo-preto);
-        padding: 10vh 0;
+      height: 100vh;
     }
-
-    .botao_play {
-        width: 50vw;
-        height: 80vh;
-        background-image: url('../../../../assets/imagens/icons/botao_play_apagado.svg');
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-
-    .botao_play:hover {
-        background-image: url('../../../../assets/imagens/icons/botao_play_acesso.svg');
-    }
-
 
     .section_apresentacao-video iframe {
-        width: 55vw;
-        height: 65vh;
-        border: 2px solid var(--fundo-branco);
-        border-radius: 2em;
+      width: 85%;
+      height: 35vh;
     }
-
-
-    @media screen and (max-width: 768px) {
-
-        .section_apresentacao-video {
-            height: 100vh;
-        }
-
-        .section_apresentacao-video iframe {
-            width: 85%;
-            height: 35vh;
-        }
-    }
-    
+  }
 </style>
 
-
 <section class="section_apresentacao-video">
-    <div class="botao_play" onclick="">
-    </div>
-    <iframe
-        #video
-        class="video" 
-        src="https://www.youtube.com/embed/VzwUoUlz2D4?si=BjOzEHc2CBZWcraY" 
-        title="YouTube Duca video sobre" 
-        frameborder="4" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen
-    ></iframe>
+  <div class="container__botao_play" onclick="">
+    <img
+      #imagemBotaoPlay
+      class="botao_play"
+      [src]="srcImagemHover"
+      alt="Imagem do Play"
+      (mouseenter)="onMouseEnter()"
+      (mouseleave)="onMouseLeave()"
+      (click)="exibirVideo()"
+    />
+  </div>
+  <iframe
+    #video
+    class="video"
+    src="https://www.youtube.com/embed/VzwUoUlz2D4?si=BjOzEHc2CBZWcraY"
+    title="YouTube Duca video sobre"
+    frameborder="4"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+  ></iframe>
 </section>
