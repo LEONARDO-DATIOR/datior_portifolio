@@ -10,7 +10,7 @@ nele, documento todas as minhas conquistas em diversas áreas das minhas vidas.
 - **Email: ** [leonardowederveiga@gmail.com](https://mail.google.com/mail/u/0/#inbox?compose=DmwnWtDtZDSPZrJtscrzjCVnwPDBnmLdTdBZpHDpWNzltBjDBkdjmznkGgwRFfGTvknbHnZmLkBB)
 - **Git-hub: ** [LEONARDO-DATIOR](https://github.com/LEONARDO-DATIOR)
 - **Linkedin: ** [Leonardo Duca](https://www.linkedin.com/in/leonardo-duca-a1bb531b6/)
-- **Instagram: ** [Leonardo Duca](https://www.instagram.com/leonardo.duca_?utm_source=qr&igsh=YzR0MzBkNHJwNXhx)
+- **Instagram: ** [Leonardo Duca](https://www.instagram.com/duca_leonardo_/)
 - **Youtube: ** [DUCA](https://www.youtube.com/@duca_leonardo)
 
 ---
