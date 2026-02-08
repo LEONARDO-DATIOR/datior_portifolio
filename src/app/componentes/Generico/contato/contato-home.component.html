@@ -9,37 +9,34 @@
     background: var(--fundo-preto);
   }
 
-  .section-formulario_contato  small {
-    font-family: var(--fonte-comum);
-    position: absolute;
-    color: red;
-    text-wrap: nowrap;
-    width: 100px;
-  }
-
   .container__formulario_contato {
-    width: 100%;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    border-radius: 24px;
+    box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.2);
+    padding: 0 3em;
+    gap: 1em;
+    padding: 2em 1em;
+    width: 50%;
   }
-
-  .formulario_contato {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-  }
-
+  
   .container__formulario_contato h2 {
     color: var(--cor-fonte-branca);
     font-family: var(--fonte-titulo-comum);
-    text-transform: uppercase;
-    font-weight: bold;
+    font-weight: semi-bold;
     position: relative;
-    font-size: 52px;
+    width: 100%;
+    text-align: left;
+    font-size: 42px;
+  }
+
+  .formulario_contato {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2em;
   }
 
   .nome-numero__formulario_contato {
@@ -59,14 +56,26 @@
   .campos {
     background: var(--fundo-campo-form);
     width: 100%;
-    padding: 0.4em;
+    padding: 0 1em;
     border: none;
     border-radius: 16px;
     border-style: none;
-    box-shadow: -2px 4px 10px rgba(255, 255, 255, 0.3);
     font-size: 20px;
     font-weight: 700;
     color: var(--cor-fonte-preta);
+    height: 2em;
+  }
+
+  .campos::placeholder {
+    color: var(--cor-fonte-cinza);
+    font-family: var(--fonte-titulo-comum);
+    font-weight: 600;
+  }
+  
+  .campo_textarea {
+    height: 100%;
+    padding-top: 1em;
+    resize: none;
   }
 
   .botao {
@@ -74,9 +83,17 @@
   }
 
   
+  .formulario_contato small {
+    font-family: var(--fonte-comum);
+    position: absolute;
+    color: red;
+    text-wrap: nowrap;
+    width: 100px;
+  }
+
+  
   input:hover, textarea:hover { 
     background: var(--fundo-campo-form-hover);
-    box-shadow: -2px 4px 5px rgba(0, 0, 0, 0.1);
   }
 
   input:focus {
@@ -111,14 +128,12 @@
 
 <section class="section-formulario_contato">
   <div class="container__formulario_contato">
-    <h2>Fale comigo</h2>
-    <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()" class="formulario_contato"> <!-- DEFINE É O FORMGROUP E QUE QUANDO O BOTÃO DE SUBMIT DESSE FORM FOR CLICADO VAI PARA FUNÇÃO ENVIAR FORMULÁRIO -->
+    <h2>Entre em contato:</h2>
+    <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()" class="formulario_contato"> 
 
       <div class="nome-numero__formulario_contato">
         <div>
-          <small style="color: rgb(184, 0, 0); top: -2em;" *ngIf="formulario.get('primeiroNome')?.invalid && formulario.get('primeiroNome')?.touched"> <!-- SÓ EXIBE O SMAL SE A VALIDÃO DO CAMPO 'primeiroNome' DO FORMULÁRIO ESTIVER VALIDO E SE O USUÁRIO CLICOU E SAIU DO CAMPO !-->
-            primeiro Nome é obrigatório e deve ter pelo menos 3 caracteres.
-          </small>
+          <small style="color: rgb(184, 0, 0); top: -2em;" *ngIf="formulario.get('primeiroNome')?.invalid && formulario.get('primeiroNome')?.touched"></small>
           <input id="primeiroNomeCampo" type="text" class="campos" formControlName="primeiroNome" placeholder="Primeiro Nome">
         </div>
   
@@ -135,10 +150,7 @@
       </div>
   
       <div>
-        <textarea id="mensagem" class="campos" rows="4" formControlName="mensagem" placeholder="Mensagem"></textarea>
-        <!-- <small *ngIf="formulario.get('mensagem')?.invalid && formulario.get('mensagem')?.touched"> -->
-          <!-- A mensagem deve ter pelo menos 10 caracteres. -->
-        <!-- </small> -->
+        <textarea id="mensagem" class="campos campo_textarea" formControlName="mensagem" placeholder="Mensagem"></textarea>
       </div>
       
       <div class="botao">
