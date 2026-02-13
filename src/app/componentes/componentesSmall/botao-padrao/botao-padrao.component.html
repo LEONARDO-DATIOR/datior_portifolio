@@ -33,9 +33,27 @@
         color: var(--cor-fonte-preta);
     }
 
+    /* ATIVO */
+    :host(.ativo) button {
+        border: 3px solid var(--cor-fonte-verde) !important;
+        border-radius: 16px;
+        margin: 3EM 0;
+    }
+
+    :host(.ativo) p {
+        color: var(--cor-fonte-verde) !important;
+    }
+
+    :host(.ativo) button:hover {
+        background: var(--cor-fonte-verde);
+    }
+
+    :host(.ativo) button:hover > p {
+         color: var(--cor-fonte-preta) !important;
+    }
+    /* ATIVO */
 
     .botao_preto {
-/* bg-transparent border-black rounded */
         background: transparent;
         border: var(--fundo-preto);
         border-radius: 12px;   
@@ -65,13 +83,6 @@
         font-family: var(--font-family)
     }
 
-    @media screen and (max-width: 768px) {
-        button {
-            width: 100% !important;
-            color: red;
-        }
-    }
-
     .botao_dialog {
         position: relative;
         width: 60px;
@@ -87,6 +98,16 @@
         border: 2px solid white;
         background: var(--fundo-preto);
         color: var(--cor-fonte-branca);
+    }
+
+    @media screen and (max-width: 768px) {
+        button {
+            width: 100% !important;
+        }
+
+        /* ATIVO */
+        
+
     }
 </style>
 

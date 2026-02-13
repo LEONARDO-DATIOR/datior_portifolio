@@ -10,6 +10,7 @@ import { ApresentacaoComponent } from "../../componentes/Generico/apresentacao/a
   templateUrl: './home.component.html',
   styles: ['./home.component.css'],
 })
+
 export class HomeComponent {
 
 }

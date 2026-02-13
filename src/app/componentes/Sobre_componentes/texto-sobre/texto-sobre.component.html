@@ -8,13 +8,7 @@
         padding: 25vh 0 0;
     }
 
-    .section_texto-sobre h1 {
-        color: var(--cor-fonte-branca);
-        font-family: var(--fonte-titulo-comum);
-        font-size: 3em;
-        font-weight: 700;
-        margin: 0 0 2em;
-    }
+    
 
     .container__texto-sobre {
         display: flex;
@@ -39,6 +33,7 @@
     @media screen and (max-width: 768px) {
         .section_texto-sobre {
             padding: 10vh 0 0;
+            width: 100%;
         }
 
         .section_texto-sobre h1 {
@@ -51,13 +46,24 @@
             font-size: x-small;
             text-align: left;
         }
+
+        .botao-padrao_sobre {
+            width: 90vw !important;
+        }
     }
 
 </style>
 
 <section class="section_texto-sobre">
-    <h1 >QUEM SOU EU?</h1>
-    <div class="container__texto-sobre">
+
+    <app-botao-padrao 
+        (click)="ativarBotao(1)" 
+        [ativo]="botaoAtivo === 1"
+        tipo_botao="botao_branco"
+        class="botao-padrao_sobre"
+        texto_botao="Clique e saiba +"
+    ></app-botao-padrao>
+    <div class="container__texto-sobre" *ngIf="botaoAtivo === 1">
         <p >
 Desde cedo, a tecnologia sempre fez parte da minha vida. Cresci explorando a internet, jogando online e utilizando ferramentas de comunicação que, sem perceber, moldaram minha facilidade de adaptação ao mundo digital. Sempre enxerguei a tecnologia com um certo romantismo — como algo mágico capaz de transformar realidades. E foi justamente essa visão que despertou em mim o desejo de criar, inovar e facilitar a vida das pessoas.        </p>
         <p>
@@ -72,6 +78,5 @@ Na adolescência, descobri que por trás de tudo aquilo que eu admirava — sist
         </p>
         <p>
 Agora, estou retomando com força total minha trajetória no desenvolvimento. Estou construindo meu portfólio — meu espaço para mostrar meus “troféus”, aprendizados e evolução. Acredito que a tecnologia deve ser simples, funcional e centrada nas pessoas. E é exatamente isso que busco entregar em cada projeto: inovação com propósito.        </p>
-
     </div>
 </section>

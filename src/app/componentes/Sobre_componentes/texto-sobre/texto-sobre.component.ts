@@ -1,10 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { BotaoPadraoComponent } from "../../componentesSmall/botao-padrao/botao-padrao.component";
+import { CommonModule } from '@angular/common';
+import { provideAnimations } from '@angular/platform-browser/animations';
+
 
 @Component({
   selector: 'app-texto-sobre',
-  imports: [],
+  imports: [BotaoPadraoComponent, CommonModule],
   templateUrl: './texto-sobre.component.html'
 })
 export class TextoSobreComponent {
+
+  botaoAtivo: number | null = null;
+
+
+  ativarBotao(valor: number) {
+    if (this.botaoAtivo === valor) {
+      this.botaoAtivo = null;
+      console.log('Botão desativado');
+    } else {
+      this.botaoAtivo = valor;
+      console.log('Botão ativado:', valor);
+
+    }
+  }
+
 
 }
