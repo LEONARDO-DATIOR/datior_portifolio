@@ -25,11 +25,25 @@ O **Portfólio Datior** foi desenvolvido com foco em:
 ---
 
 ## 🛠️ Tecnologias
-- **Estrutura:** XHTML / HTML5  
-- **Estilos:** CSS3 (design minimalista e responsivo)  
-- **Interatividade:** JavaScript básico (se necessário)  
-- **Hospedagem recomendada:** GitHub Pages, Vercel ou Netlify  
+- **Estrutura:** XHTML / HTML5  / Angular
+- **Estilos:** CSS3 / BootStrap
+- **Interatividade:** TypeScript 
+- **Hospedagem recomendada:** Vercel  
 
 ---
 
 ## 📂 Estrutura do Repositório
+DATIOR_PORTIFOLIO
+```text
+├── src
+│   ├── app
+│   │   ├── components
+│   │   ├── pages
+│   │   └── config / routes
+│   ├── assets
+│   └── styles
+├── public
+├── configuration
+└── build
+```
+
