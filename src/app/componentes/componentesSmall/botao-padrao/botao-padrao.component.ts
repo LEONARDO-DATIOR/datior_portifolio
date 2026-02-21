@@ -13,6 +13,7 @@ export class BotaoPadraoComponent {
   @Input() disabled_botao: boolean = false;
  
   @Input() ativo: boolean = false; 
+children: any;
 
   @HostBinding('class.ativo') get estaAtivo() {
     console.log('Valor de ativo:', this.ativo);

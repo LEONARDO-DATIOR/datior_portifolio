@@ -3,6 +3,7 @@ import {  Component,
   Input,
   ViewChild} from '@angular/core';
 import { BotaoPadraoComponent } from "../botao-padrao/botao-padrao.component.js";
+import { AppRoutingModule } from "../../../app.routes";
 
 @Component({
   selector: 'app-projeto-div',
@@ -14,5 +15,6 @@ export class ProjetoDivComponent {
   @Input() descricao_projeto: string = '';
   @Input() caminho_imagem: string = '';
   @Input() link_projeto: string = '#';
+  @Input() link_github: string = '#';
   
 }

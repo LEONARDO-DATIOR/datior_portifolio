@@ -9,7 +9,7 @@ import { BotaoPadraoComponent } from '../../componentesSmall/botao-padrao/botao-
 
 export class SobreHomeComponent  {
   textoDigitado = '';
-  textoCompleto = `Com 22 anos, já vivi diversas experiências na área de TI que me ajudaram a entender onde realmente está minha paixão: o desenvolvimento. Descobri que o que mais me motiva é criar soluções que simplifiquem a vida das pessoas — não apenas de quem utiliza diretamente, mas também de todos ao seu redor. Acredito que a tecnologia existe para isso: facilitar, conectar e transformar. Seja por meio de automações, sistemas organizacionais ou ferramentas que proporcionem momentos de lazer, meu objetivo é sempre o mesmo — gerar impacto positivo e abrir caminhos para que outros também possam inovar.`;
+  textoCompleto = `O objetivo deste portfólio vai além de simplesmente me apresentar para o mercado de trabalho. Na verdade, ele nasce do mesmo motivo pelo qual criamos álbuns de fotos. Não fazemos álbuns apenas para mostrar imagens a outras pessoas, mas para registrar conquistas, guardar momentos felizes e preservar memórias. Eles existem tanto para serem compartilhados quanto para que nós mesmos possamos revisitar nossa história e enxergar a nossa própria evolução. Este site é minha arte. Um espaço onde registro tudo o que conquistei, como evoluí ao longo do tempo e do que sou capaz. É algo que quero mostrar às futuras gerações da minha família — e, acima de tudo, algo que me permita olhar para trás a com orgulho da minha trajetória.`;
 
   @ViewChild('sectionRef', { static: true }) sectionRef!: ElementRef;
   jaDigitou = false;
