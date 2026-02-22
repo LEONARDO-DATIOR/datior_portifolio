@@ -1,7 +1,7 @@
-import { Component, QueryList, ViewChildren } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, QueryList, ViewChildren } from '@angular/core';
 import { CertificadoComponent } from "../../componentesSmall/certificado/certificado.component";
 import { HttpClient } from '@angular/common/http';
-import { NgForOf } from '@angular/common';
+import { isPlatformBrowser, NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-todos-certificados',
@@ -11,9 +11,11 @@ templateUrl: './todos-certificados.component.html',
 export class TodosCertificadosComponent {
   dadosCsv: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, @Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit() {
+    if (!isPlatformBrowser(this.platformId)) return;
+    
     this.http.get('assets/datas/CERTIFICADOS-DUCA.csv', { responseType: 'text' })
       .subscribe((textoCsv: string) => {
         const linhas: string[] = textoCsv

@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild, viewChild } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BotaoPadraoComponent } from "../botao-padrao/botao-padrao.component";
 
 @Component({
