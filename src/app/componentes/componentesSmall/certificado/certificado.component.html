@@ -89,20 +89,10 @@
 </style>
 
 <li class="certificado">
-    <div (click)="abrirDialog()">
-        <img src="{{caminho_imagem}}" alt="{{alt_imagem}}">
-        <p>{{titulo}}</p>
-    </div>
-
-   <dialog #dialog class="dialog">
-        <img src="{{caminho_imagem}}" alt="{{alt_imagem}}">
-        <div class="dialog_textos">
-            <h3>{{titulo}}</h3>
-            <p>adsadsad sad sadasd asdasdas dasd asdas dqwdqwdid qod qdoqwndasodqw odjwqodjqwo dsaodqwd iq doqw diwqdoqdqwdsqid diqwndiuqhbfysofnqj asib8ysdowo naisdnasndiq niasdiqf qbi a shdbqdh</p>
-            <app-botao-padrao tipo_botao="botao_dialog" id="cancel" (click)="fecharDialog()" texto_botao="X"></app-botao-padrao>
+    <a href="{{link}}" target="_blank">
+        <div>
+            <img src="{{caminho_imagem}}" alt="{{alt_imagem}}">
+            <p>{{titulo}}</p>
         </div>
-    </dialog>
-
-
-
+    </a>
 </li>

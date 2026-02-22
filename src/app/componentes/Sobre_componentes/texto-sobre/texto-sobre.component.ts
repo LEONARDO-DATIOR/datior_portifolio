@@ -17,11 +17,8 @@ export class TextoSobreComponent {
   ativarBotao(valor: number) {
     if (this.botaoAtivo === valor) {
       this.botaoAtivo = null;
-      console.log('Botão desativado');
     } else {
       this.botaoAtivo = valor;
-      console.log('Botão ativado:', valor);
-
     }
   }
 

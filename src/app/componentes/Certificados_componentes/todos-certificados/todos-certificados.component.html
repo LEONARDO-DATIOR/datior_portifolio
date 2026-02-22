@@ -27,76 +27,11 @@
 <section class="section_certificados-todos">
     <ul class="certificados_lista-todos">
         <app-certificado
-            link="#"
+            *ngFor="let certificado of dadosCsv; let index = index"    
+            [link]="certificado['LINK PARA CERTIFICAR'].includes('http') ? certificado['LINK PARA CERTIFICAR'] : 'https://www.cursoemvideo.com/validacao-de-certificado/'"
             caminho_imagem="../../../assets/imagens/img_certificados/img_certificado.svg"
             alt_imagem="Imagem certificado"
-            titulo="TESTE DE CERTIFICADO dasdsadsadadadsasdadadasdda"
-        ></app-certificado>
-        <app-certificado
-            link="#"
-            caminho_imagem="../../../assets/imagens/img_certificados/img_certificado.svg"
-            alt_imagem="Imagem certificado"
-            titulo="TESTE DE CERTIFICADO"
-        ></app-certificado>
-        <app-certificado
-            link="#"
-            caminho_imagem="../../../assets/imagens/img_certificados/img_certificado.svg"
-            alt_imagem="Imagem certificado"
-            titulo="TESTE DE CERTIFICADO"
-        ></app-certificado>
-        <app-certificado
-            link="#"
-            caminho_imagem="../../../assets/imagens/img_certificados/img_certificado.svg"
-            alt_imagem="Imagem certificado"
-            titulo="TESTE DE CERTIFICADO"
-        ></app-certificado>
-        <app-certificado
-            link="#"
-            caminho_imagem="../../../assets/imagens/img_certificados/img_certificado.svg"
-            alt_imagem="Imagem certificado"
-            titulo="TESTE DE CERTIFICADO"
-        ></app-certificado>
-        <app-certificado
-            link="#"
-            caminho_imagem="../../../assets/imagens/img_certificados/img_certificado.svg"
-            alt_imagem="Imagem certificado"
-            titulo="TESTE DE CERTIFICADO"
-        ></app-certificado>
-        <app-certificado
-            link="#"
-            caminho_imagem="../../../assets/imagens/img_certificados/img_certificado.svg"
-            alt_imagem="Imagem certificado"
-            titulo="TESTE DE CERTIFICADO dasdsadsadadadsasdadadasdda"
-        ></app-certificado>
-        <app-certificado
-            link="#"
-            caminho_imagem="../../../assets/imagens/img_certificados/img_certificado.svg"
-            alt_imagem="Imagem certificado"
-            titulo="TESTE DE CERTIFICADO"
-        ></app-certificado>
-        <app-certificado
-            link="#"
-            caminho_imagem="../../../assets/imagens/img_certificados/img_certificado.svg"
-            alt_imagem="Imagem certificado"
-            titulo="TESTE DE CERTIFICADO"
-        ></app-certificado>
-        <app-certificado
-            link="#"
-            caminho_imagem="../../../assets/imagens/img_certificados/img_certificado.svg"
-            alt_imagem="Imagem certificado"
-            titulo="TESTE DE CERTIFICADO"
-        ></app-certificado>
-        <app-certificado
-            link="#"
-            caminho_imagem="../../../assets/imagens/img_certificados/img_certificado.svg"
-            alt_imagem="Imagem certificado"
-            titulo="TESTE DE CERTIFICADO"
-        ></app-certificado>
-        <app-certificado
-            link="#"
-            caminho_imagem="../../../assets/imagens/img_certificados/img_certificado.svg"
-            alt_imagem="Imagem certificado"
-            titulo="TESTE DE CERTIFICADO"
+            [titulo]="certificado['NOME CURSO']"
         ></app-certificado>
     </ul>
 </section>

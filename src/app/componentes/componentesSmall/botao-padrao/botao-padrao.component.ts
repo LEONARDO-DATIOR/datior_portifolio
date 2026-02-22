@@ -16,7 +16,6 @@ export class BotaoPadraoComponent {
 children: any;
 
   @HostBinding('class.ativo') get estaAtivo() {
-    console.log('Valor de ativo:', this.ativo);
     return this.ativo;
   }
 }
