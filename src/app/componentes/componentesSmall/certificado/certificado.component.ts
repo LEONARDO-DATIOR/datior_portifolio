@@ -9,7 +9,8 @@ import { BotaoPadraoComponent } from "../botao-padrao/botao-padrao.component";
 export class CertificadoComponent {
   @Input() link: string = '#';
   @Input() titulo: string = 'SEM NOME';
-  @Input() caminho_imagem: string = '../../../assets/imagens/img_certificados/img_certificado.svg';
-  @Input() alt_imagem: string = 'Imagem certificado novo';
+  @Input() escola: string = '';
+  @Input() dataRealizacao: string = '';
+  @Input() categoria: string = 'Não categorizado';
 
 }

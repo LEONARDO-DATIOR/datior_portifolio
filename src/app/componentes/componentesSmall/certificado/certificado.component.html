@@ -20,6 +20,15 @@
         padding: 1em;
         gap: 1em;
     } 
+
+    .conteudo_certificado button {
+        background: none;
+        color: var(--fonte-branco);
+        border: 1px solid var(--fundo-branco);
+        border-radius: 8px;
+        padding: 0.2em 0;
+        width: 80%;
+    }
     
     .info_certificado {
         color: white;
@@ -32,7 +41,7 @@
     }
 
     .titulo_ceritificado {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 600;
         width: 100% !important;
     }
@@ -46,6 +55,10 @@
     .detalhes_certificado div {
         display: flex;
         gap: 0.5em;
+    }
+
+    .detalhes_certificado img {
+        width: 20px;
     }
 
     .certificado:hover {
@@ -69,19 +82,50 @@
 <li class="certificado">
     <a href="{{link}}" target="_blank">
         <div class="conteudo_certificado">
-            <button>front-end</button>
+            <button>@switch (categoria) {
+                @case ('FRONT-END') {
+                    Front-end
+                }
+                @case ('BACK-END') {
+                    Front-end
+                }
+                @case ('PROGRAMAÇÃO / ALGORITMO') {
+                    Back-end
+                }
+                @case ('UI/UX') {
+                    Design
+                }
+                @case ('BANCO DE DADOS') {
+                    Back-end
+                }
+                @case ('ANALISE DE DADOS') {
+                    Análise de Dados
+                }
+                @case ('REDES/CLOUD') {
+                    Infraestrutura
+                }
+                @case ('IA') {
+                    Análise de Dados
+                }
+                @case ('METODOLOGIAS AGEIS') {
+                    Gerenciamento de Projetos
+                }
+                @default {
+                    SEM CATEGORIA
+                }
+            } </button>
 
             <div class="info_certificado">
                 <p class="titulo_ceritificado">{{titulo}}</p>
                 <hr>
                 <div class="detalhes_certificado">
                     <div>
-                        <img src="" alt="">
-                        <p>Alura</p>
+                        <img src="/assets/imagens/icons/icon_estudo.png" alt="Logo Alura">
+                        <p>{{escola}}</p>
                     </div>
                     <div>
-                        <img src="" alt="">
-                        <p>02/2026</p>
+                        <img src="/assets/imagens/icons/icon_calendario.png" alt="Calendário">
+                        <p>{{dataRealizacao}}</p>
                     </div>
                 </div>
             </div>

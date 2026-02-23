@@ -29,9 +29,10 @@
         <app-certificado
             *ngFor="let certificado of dadosCsv; let index = index"    
             [link]="certificado['LINK PARA CERTIFICAR'].includes('http') ? certificado['LINK PARA CERTIFICAR'] : 'https://www.cursoemvideo.com/validacao-de-certificado/'"
-            caminho_imagem="../../../assets/imagens/img_certificados/img_certificado.svg"
-            alt_imagem="Imagem certificado"
             [titulo]="certificado['NOME CURSO']"
+            [escola]="certificado['ESCOLA']"
+            [dataRealizacao]="certificado['DATA']"
+            [categoria]="certificado['CATEGORIA']"
         ></app-certificado>
     </ul>
 </section>

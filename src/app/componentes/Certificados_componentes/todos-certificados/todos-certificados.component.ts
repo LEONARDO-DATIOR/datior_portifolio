@@ -2,6 +2,7 @@ import { Component, Inject, PLATFORM_ID, QueryList, ViewChildren } from '@angula
 import { CertificadoComponent } from "../../componentesSmall/certificado/certificado.component";
 import { HttpClient } from '@angular/common/http';
 import { isPlatformBrowser, NgForOf } from '@angular/common';
+import * as Papa from 'papaparse';  
 
 @Component({
   selector: 'app-todos-certificados',
@@ -16,25 +17,16 @@ export class TodosCertificadosComponent {
   ngOnInit() {
     if (!isPlatformBrowser(this.platformId)) return;
     
-    this.http.get('assets/datas/CERTIFICADOS-DUCA.csv', { responseType: 'text' })
+    this.http
+      .get('assets/datas/CERTIFICADOS-DUCA.csv', { responseType: 'text' })
       .subscribe((textoCsv: string) => {
-        const linhas: string[] = textoCsv
-          .split('\n')
-          .map((l: string) => l.trim())
-          .filter((l: string) => l.length > 0);
-        
-        const headers: string[] = linhas[0].split(',');
 
-        const json = linhas.slice(1).map((linha: string) => {
-          const valores = linha.split(',');
-          const objetoCurso: any = {};
-          headers.forEach((h: string, i: number) => {
-            objetoCurso[h] = valores[i];
-          })
+        const resultado = Papa.parse(textoCsv, {
+          header: true,
+          skipEmptyLines: true
+        });
 
-          return objetoCurso;
-        })
-        this.dadosCsv = json;
+        this.dadosCsv = resultado.data;
       });
   }
 
