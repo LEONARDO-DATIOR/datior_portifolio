@@ -103,6 +103,30 @@
         font-size: 1.4em;  
         text-align: center;
     }
+
+    /* CATEGORIA UNICA */
+    .conjunto-categoria-unica {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4em;
+    }
+
+    .categoria-unica {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid var(--fundo-preto);
+        border-radius: 12px;
+        width: 15vw;
+        aspect-ratio: 1 / 1;
+        background: var(--fundo-branco);
+        color: var(--cor-fonte-preta);
+    }
+
+
+
 </style>
 
 <li *ngIf="tipo === 'categoria' " class="certificados_categorias">
@@ -118,4 +142,12 @@
         <h3>{{titulo}}</h3>
     </a>
 </li>
+
+<div *ngIf="tipo === 'categoria-unica'" class="conjunto-categoria-unica">
+    <div class="categoria-unica">
+        <img src="{{caminho_imagem}}" alt="{{alt_imagem}}">
+        <h3>{{titulo}}</h3>
+    </div>
+    <app-descricao-conhecimento></app-descricao-conhecimento>
+</div>
 
