@@ -9,5 +9,5 @@ import { DescricaoConhecimentoComponent } from "../../Categoria_Conhecimento_com
   templateUrl: './categoria-conhecimento.component.html',
 })
 export class CategoriaConhecimentoComponent {
-  @Input() categorias: string[] = ['front-end', 'Gerenciamento de projetos', 'Back-end', 'Design', 'Análise de dados', 'Infraestrutura'];
+  @Input() categorias: string[] = ['Front-end', 'Gerenciamento de projetos', 'Back-end', 'Design', 'Análise de dados', 'Infraestrutura'];
 }
