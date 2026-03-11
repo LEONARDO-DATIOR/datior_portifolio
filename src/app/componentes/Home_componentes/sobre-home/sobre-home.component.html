@@ -30,7 +30,7 @@
         height: 44vh;
     }
 
-    .contianer-home__textos {
+    .container-home__textos {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -71,7 +71,7 @@
         height: 100%;
     }
     
-    .contianer-home__textos {
+    .container-home__textos {
         padding: 0 2em 2em 2em;
         gap: 20px;
         justify-content: space-between;
@@ -92,19 +92,35 @@
 @media screen and (max-width: 768px) {
     .container-home {
         margin-top: 1em;
-        height: 85%;
+        height: 45vh;
+        grid-template-rows: 65% 35%;
     }
 
     .container-home__imagem img {
         width: 100%;
     }
-    .contianer-home__textos {
+    .container-home__textos {
         gap: 8px;
+        padding: 0;
+    }
+
+    .container-home__textos h2 {
+        margin: 0;
+    }
+
+    .container-home__textos a {
+        padding: 0 2em;
+        margin-bottom: 1em;
+        font-size: 12px;
+        position: relative;
     }
 
     .textos_sobre_home p { 
+        display: none;
         font-size: 12px;
+        padding: 1em;
     }
+
 }
 
 
@@ -115,7 +131,7 @@
         <div class="container-home__imagem">
             <img src="../../../../assets/imagens/foto_duca/Leo-IA.gif" alt="">
         </div>
-        <div class="contianer-home__textos">
+        <div class="container-home__textos">
             <h2>
                 LEONARDO DUCA
             </h2>

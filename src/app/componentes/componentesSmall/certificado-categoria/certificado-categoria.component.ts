@@ -1,10 +1,11 @@
 import { Component, input, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DescricaoConhecimentoComponent } from "../../Categoria_Conhecimento_componentes/descricao-conhecimento/descricao-conhecimento.component";
 
 
 @Component({
   selector: 'app-certificado-categoria',
-  imports: [CommonModule],
+  imports: [CommonModule, DescricaoConhecimentoComponent],
   templateUrl: './certificado-categoria.component.html',
 })
 export class CertificadoCategoriaComponent {

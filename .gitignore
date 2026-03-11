@@ -41,6 +41,11 @@ testem.log
 .DS_Store
 Thumbs.db
 
+<<<<<<< HEAD
 
 # Arquivos HELP
 .ajuda.txt
+=======
+# Arquivo help
+.ajuda.txt
+>>>>>>> categoria-conhecimento

@@ -31,6 +31,34 @@
         list-style: none;
     }
 
+    /* CATEGORIA UNICA */
+    .section-categoria-certificado {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-height: 3500px;
+        min-height: 100vh;
+        margin: 4em 0 0 0;
+        position: relative;
+        padding: 8em 0 0 0;
+        background: var(--fundo-preto);
+    }
+
+    .section-categoria-certificado div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4em;
+        width: 50%;
+        color: var(--cor-fonte-branca);
+    }
+
+    .section-categoria-certificado li {
+        width: 30% !important;
+    }
+
+
     @media screen and (max-width: 768px) {
         .section-certificados-categoria {
             padding: 8em 0 4em 0;
@@ -47,47 +75,29 @@
 
 </style>
 
-<section class="section-certificados-categoria">
+<section *ngIf="categorias.length > 1" class="section-certificados-categoria">
     <div>
         <h2>Conhecimento por categoria</h2>
         <ul class="certificados_lista-categorias">
             <app-certificado-categoria 
-                link="#"
+               *ngFor="let categoria of categorias"
                 caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
-                alt_imagem="Icone Categoria front-end"
-                titulo="Front-end"
+                [alt_imagem]="'Icone Categoria de ' + categoria"
+                [titulo]="categoria"
             ></app-certificado-categoria>
-            <app-certificado-categoria 
-                link="#"
-                caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
-                alt_imagem="Icone Categoria Gerenciamento projeto"
-                titulo="Gerenciamento de projetos"
-            ></app-certificado-categoria>
-            <app-certificado-categoria 
-                link="#"
-                caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
-                alt_imagem="Icone Categoria Back-end"
-                titulo="Back-end"
-            ></app-certificado-categoria>
-            <app-certificado-categoria 
-                link="#"
-                caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
-                alt_imagem="Icone Categoria Design"
-                titulo="Design"
-            ></app-certificado-categoria>
-            <app-certificado-categoria 
-                link="#"
-                caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
-                alt_imagem="Icone Categoria analise de dados"
-                titulo="Analise de dados"
-            ></app-certificado-categoria>
-            <app-certificado-categoria 
-                link="#"
-                caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
-                alt_imagem="Icone Categoria Infraestrutura"
-                titulo="Infraestrutura"
-            ></app-certificado-categoria>
-            
         </ul>
+    </div>
+
+</section>
+
+<section *ngIf="categorias.length == 1" class="section-categoria-certificado">
+    <div>
+        <app-certificado-categoria 
+            *ngFor="let categoria of categorias"
+            caminho_imagem="../../../assets/imagens/icons/Icone_design.svg"
+            [alt_imagem]="'Icone Categoria de ' + categoria"
+            [titulo]="categoria"
+            tipo="categoria-unica"
+        ></app-certificado-categoria>
     </div>
 </section>

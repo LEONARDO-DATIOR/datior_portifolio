@@ -4,19 +4,22 @@ import { SobreComponent } from './pages/sobre/sobre.component';
 import { NgModule } from '@angular/core';
 import { ContatoComponent} from './pages/contato/contato.component';
 import { CertificadosComponent } from './pages/certificados/certificados.component';
+import { PageCategoriaConhecimentoComponent } from './pages/page-categoria-conhecimento/page-categoria-conhecimento.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'home', component: HomeComponent},
     {path: 'sobre', component: SobreComponent},
     {path: 'contato', component: ContatoComponent},
-    {path: 'certificados', component: CertificadosComponent}
+    {path: 'certificados', component: CertificadosComponent},
+    {path: 'categoria-conhecimento', component: PageCategoriaConhecimentoComponent},
     // {path: 'Certificados',}
-    // {path: 'Contato',}
+    // {path: 'Contato',}   
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
-  })
-  export class AppRoutingModule { }
+        imports: [RouterModule.forRoot(routes)],
+        exports: [RouterModule]
+    })
+
+export class AppRoutingModule { }
