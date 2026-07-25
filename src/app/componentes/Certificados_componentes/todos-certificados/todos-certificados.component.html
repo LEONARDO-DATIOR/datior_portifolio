@@ -27,12 +27,13 @@
 <section class="section_certificados-todos">
     <ul class="certificados_lista-todos">
         <app-certificado
-            *ngFor="let certificado of dadosCsv; let index = index"    
+            *ngFor="let certificado of dadosCsv; let index = index"
             [link]="certificado['LINK PARA CERTIFICAR'].includes('http') ? certificado['LINK PARA CERTIFICAR'] : 'https://www.cursoemvideo.com/validacao-de-certificado/'"
             [titulo]="certificado['NOME CURSO']"
             [escola]="certificado['ESCOLA']"
             [dataRealizacao]="certificado['DATA']"
             [categoria]="certificado['CATEGORIA']"
         ></app-certificado>
+
     </ul>
 </section>
