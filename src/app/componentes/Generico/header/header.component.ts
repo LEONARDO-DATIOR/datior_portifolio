@@ -1,25 +1,26 @@
 import { Component, HostListener } from '@angular/core';
-
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
-  imports: [],
-  templateUrl: './header.component.html',
+    selector: 'app-header',
+    imports: [],
+    templateUrl: './header.component.html',
 })
 export class HeaderComponent {
-  isHidden = false;
-  lastScrollTop = 0;
+    estaAparecendo = false;
+    scrollNoTopo = 0;
 
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    @HostListener('window:scroll', [])
+    onWindowScroll() {
+        const scrollTop =
+            window.pageYOffset || document.documentElement.scrollTop;
 
-    if (scrollTop > this.lastScrollTop && scrollTop > 170) {
-      this.isHidden = true; // rolando pra baixo
-    } else {
-      this.isHidden = false; // rolando pra cima
+        if (scrollTop > this.scrollNoTopo && scrollTop > 170) {
+            this.estaAparecendo = true; // rolando pra baixo
+        } else {
+            this.estaAparecendo = false; // rolando pra cima
+        }
+
+        this.scrollNoTopo = scrollTop <= 0 ? 0 : scrollTop;
     }
-
-    this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-  }
 }

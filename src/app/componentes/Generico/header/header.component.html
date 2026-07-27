@@ -1,76 +1,95 @@
-<style> 
-  a {
-    color: transparent;
-    font-size: 1.5em;
-    font-weight: 600;
-    font-family: var(--fonte-comum);
-    background-image: linear-gradient(to right, var(--cor-fonte-branca-hover) 50%, var(--cor-fonte-branca) -50%);
-    background-size: 200% 100%;
-    background-position: 100% 0;
-    background-clip: text;
-    transition: background-position 0.4s ease-in-out;
-  }
+<style>
+    .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        height: 7%;
+        width: 100%;
+        z-index: 11;
+        background: var(--fundo-preto);
 
-  a:hover {
-    background-position: 0 0;
-    font-weight: 700;
-    font-size: 25px;
-  }
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2em 0;
+            gap: 4em;
 
-  @media (max-width: 768px) {
-    nav {
-      width: 100vw!important;
+            li {
+                transition: transform 0.4s ease;
+
+                a {
+                    text-decoration: none;
+                    font-size: 1.5em;
+                    font-weight: 600;
+                    font-family: var(--fonte-comum);
+                    color: var(--fundo-branco);
+                }
+            }
+
+            li:hover {
+                background-position: 0 0;
+                transform: scale(1.1);
+            }
+        }
     }
 
-    .navbar-brand {
-      margin-left: 1.5em;
-    }
+    @media (max-width: 768px) {
+        nav {
+            width: 100vw !important;
+        }
 
-    .navbar-toggler{
-      margin-right: 1.5em;
-    }
+        .navbar-toggler {
+            margin-right: 1.5em;
+        }
 
-    div {
-      padding: 0!important;
-      margin: 0!important;
-      width: 100vw!important;
-    }
+        div {
+            padding: 0 !important;
+            margin: 0 !important;
+            width: 100vw !important;
+        }
 
-    ul {
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      padding-bottom: 1em;
-    }
+        ul {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding-bottom: 1em;
+        }
 
-    a {
-      font-size: 1.2em;
+        a {
+            font-size: 1.2em;
+        }
     }
-
-  }
 </style>
 
-<nav class="navbar navbar-expand-lg shadow-sm" [class.some_conteudo]="isHidden" [class.aparece_conteudo]="!isHidden" style="background: var(--fundo-preto); position: fixed; top: 0; width: 100%; height: 7%; z-index: 1050;">  <div class="container-fluid">
-    <a class="navbar-brand"  href="#">Navbar</a>
-    <button class="navbar-toggler"  style="background-color: var(--fundo-branco) !important;"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon" ></span>
-    </button>
-      <div class="collapse navbar-collapse justify-content-center align-items-center"  id="navbarSupportedContent">
-        <ul class="navbar-nav mb-2 mb-lg-0  gap-4 justify-content-center align-items-center" style="background: var(--fundo-preto);">
-          <li class="navbar-brand">
-            <a href="/home">Home</a>
-          </li>
-          <li>
-            <a  href="/sobre">Sobre</a>
-          </li>
-          <li>
-            <a  href="/contato">Contatos</a>
-          </li>
-          <li>
-            <a  href="/certificados">Certificados</a>
-          </li>
+<nav
+    class="navbar navbar-expand-lg shadow-sm"
+    [class.some_conteudo]="estaAparecendo"
+    [class.aparece_conteudo]="!estaAparecendo"
+>
+    <div>
+        <ul class="navbar-nav" style="background: var(--fundo-preto)">
+            <li>
+                <a href="/home">Home</a>
+            </li>
+            <li>
+                <a href="/sobre">Sobre</a>
+            </li>
+            <li>
+                <a href="/contato">Contatos</a>
+            </li>
+            <li>
+                <a href="/certificados">Certificados</a>
+            </li>
         </ul>
-        <button class="btn btn-outline-success" style="position: absolute; right: 60px !important; display: none;" type="submit">Search</button>
+        <button
+            class="btn btn-outline-success"
+            style="position: absolute; right: 60px !important; display: none"
+            type="submit"
+        >
+            Search
+        </button>
     </div>
-    </div>
-  </nav>
+</nav>
