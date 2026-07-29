@@ -25,11 +25,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-    }
 
-    .container-home__imagem img {
-        object-fit: cover;
-        height: 44vh;
+        img {
+            object-fit: cover;
+            height: 44vh;
+        }
     }
 
     .container-home__textos {
@@ -40,23 +40,24 @@
         color: white;
     }
 
-    .textos_sobre_home p {
-        font-family: var(--fonte-comum);
-        white-space: normal; /* <- Isso permite quebra automática de linha */
-        word-wrap: break-word;
+    .textos_sobre_home {
+        p {
+            font-family: var(--fonte-comum);
+            white-space: normal; /* <- Isso permite quebra automática de linha */
+            word-wrap: break-word;
+        }
     }
-
 
     .sobre-home__gif {
         width: 50%;
         height: 100%;
         background: none !important;
-    }
 
-    .sobre-home__gif img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 
     .container-redes {
@@ -87,108 +88,109 @@
         }
     }
 
+    @media screen and (max-width: 1400px) {
+        .sobre-home {
+            height: 120vh;
+        }
 
-@media screen and (max-width: 1400px) {
-    .sobre-home {
-        height: 120vh;
-    }
+        .container-home {
+            grid-template-columns: 100%;
+            grid-template-rows: 45% 55%;
+            width: 60vw;
+            height: 70vh;
+        }
 
-    .container-home {
-        grid-template-columns: 100%;
-        grid-template-rows: 45% 55%;
-        width: 60vw;
-        height: 70vh;
-    }
+        .container-home__imagem img {
+            width: 50%;
+            height: 100%;
+        }
 
-    .container-home__imagem img {
-        width: 50%;
-        height: 100%;
-    }
+        .container-home__textos {
+            padding: 0 2em 2em 2em;
+            gap: 20px;
+            justify-content: space-between;
+        }
 
-    .container-home__textos {
-        padding: 0 2em 2em 2em;
-        gap: 20px;
-        justify-content: space-between;
-    }
+        .textos_sobre_home p {
+            font-size: 14px;
+        }
 
-    .textos_sobre_home p {
-        font-size: 14px;
-    }
+        .container-redes {
+            width: 100%;
 
-    .container-redes {
-        width: 100%;
-
-        a {
-            opacity: 90%;
+            a {
+                opacity: 90%;
+            }
         }
     }
 
-}
-
-@media screen and (max-width:1030px) {
-    .container-home {
-        width: 70vw;
-        height: 80vh;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .container-home {
-        margin-top: 1em;
-        height: 45vh;
-        grid-template-rows: 65% 35%;
-    }
-
-    .container-home__imagem img {
-        width: 100%;
-    }
-    .container-home__textos {
-        gap: 8px;
-        padding: 0;
-    }
-
-    .container-home__textos h2 {
-        margin: 0;
-    }
-
-    .container-home__textos a {
-        padding: 0 2em;
-        margin-bottom: 1em;
-        font-size: 12px;
-        position: relative;
-    }
-
-    .textos_sobre_home p {
-        display: none;
-        font-size: 12px;
-        padding: 1em;
-    }
-
-    .container-redes {
-        img {
-            width: 90%;
+    @media screen and (max-width: 1030px) {
+        .container-home {
+            width: 70vw;
+            height: 80vh;
         }
     }
 
-}
+    @media screen and (max-width: 768px) {
+        .sobre-home {
+            height: 100vh;
+        }
 
+        .container-home {
+            margin-top: 2em;
+            height: 70vh;
+            grid-template-rows: 35% 65%;
+        }
 
+        .container-home__imagem img {
+            width: 100%;
+            scale: 1;
+        }
+
+        .container-home__textos {
+            padding: 1em 0;
+
+            h2 {
+                margin: 0;
+            }
+
+            a {
+                padding: 0 2em;
+                margin-bottom: 1em;
+                font-size: 12px;
+                position: relative;
+            }
+        }
+
+        .textos_sobre_home p {
+            font-size: 11px;
+            text-align: justify;
+            padding: 0 2em;
+        }
+
+        .container-redes {
+            img {
+                width: 90%;
+            }
+        }
+    }
 </style>
 
-<section #sectionRef class="sobre-home ">
+<section #sectionRef class="sobre-home">
     <div class="container-home">
         <div class="container-home__imagem">
-            <img src="../../../../assets/imagens/foto_duca/Leo-IA.gif" alt="">
+            <img src="../../../../assets/imagens/foto_duca/Leo-IA.gif" alt="" />
         </div>
         <div class="container-home__textos">
-            <h2>
-                LEONARDO DUCA
-            </h2>
-            <div #textoSobreHome class="textos_sobre_home" >
+            <h2>LEONARDO DUCA</h2>
+            <div #textoSobreHome class="textos_sobre_home">
                 <p>{{ textoDigitado }}</p>
             </div>
             <a href="\certificados">
-                <app-botao-padrao texto_botao="Conhecimentos" tipo_botao="botao_branco"></app-botao-padrao>
+                <app-botao-padrao
+                    texto_botao="Conhecimentos"
+                    tipo_botao="botao_branco"
+                ></app-botao-padrao>
             </a>
         </div>
     </div>
@@ -196,18 +198,38 @@
     <div class="container-redes">
         <ul>
             <li>
-                <a href="https://www.linkedin.com/in/leonardo-duca/?skipRedirect=true" target="_blank" rel="noopener noreferrer">
-                    <img src="../../../../assets/imagens/icons/icon_linkedin_branco.svg" alt="Icone Linkedin">
+                <a
+                    href="https://www.linkedin.com/in/leonardo-duca/?skipRedirect=true"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src="../../../../assets/imagens/icons/icon_linkedin_branco.svg"
+                        alt="Icone Linkedin"
+                    />
                 </a>
             </li>
             <li>
-                <a href="./../../../../assets/pdfs/Leonardo_Duca_curriculo.pdf" download>
-                    <img src="../../../../assets/imagens/icons/icon_curriculo_branco.svg" alt="Icone Curriculo">
+                <a
+                    href="./../../../../assets/pdfs/Leonardo_Duca_curriculo.pdf"
+                    download
+                >
+                    <img
+                        src="../../../../assets/imagens/icons/icon_curriculo_branco.svg"
+                        alt="Icone Curriculo"
+                    />
                 </a>
             </li>
             <li>
-                <a href="https://github.com/LEONARDO-DATIOR" target="_blank" rel="noopener noreferrer">
-                    <img src="../../../../assets/imagens/icons/icon_github_branco.svg" alt="Icone GitHub">
+                <a
+                    href="https://github.com/LEONARDO-DATIOR"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src="../../../../assets/imagens/icons/icon_github_branco.svg"
+                        alt="Icone GitHub"
+                    />
                 </a>
             </li>
         </ul>
