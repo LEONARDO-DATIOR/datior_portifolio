@@ -10,11 +10,15 @@
         z-index: 11;
         background: var(--fundo-preto);
 
+        .burger {
+            display: none;
+        }
+
         ul {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 2em 0;
+            width: 100%;
             gap: 4em;
 
             li {
@@ -36,30 +40,25 @@
         }
     }
 
-    @media (max-width: 768px) {
-        nav {
-            width: 100vw !important;
-        }
+    @media screen and (max-width: 768px) {
+        .navbar {
+            ul {
+                display: none;
+                gap: 1.3em;
+                padding: 2em 0;
+            }
 
-        .navbar-toggler {
-            margin-right: 1.5em;
-        }
+            .burger {
+                display: block;
+                background: white;
+                width: 20%;
+                border: none;
+                border-radius: 20px;
+            }
 
-        div {
-            padding: 0 !important;
-            margin: 0 !important;
-            width: 100vw !important;
-        }
-
-        ul {
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            padding-bottom: 1em;
-        }
-
-        a {
-            font-size: 1.2em;
+            .aberto {
+                display: flex;
+            }
         }
     }
 </style>
@@ -69,27 +68,24 @@
     [class.some_conteudo]="estaAparecendo"
     [class.aparece_conteudo]="!estaAparecendo"
 >
-    <div>
-        <ul class="navbar-nav" style="background: var(--fundo-preto)">
-            <li>
-                <a href="/home">Home</a>
-            </li>
-            <li>
-                <a href="/sobre">Sobre</a>
-            </li>
-            <li>
-                <a href="/contato">Contatos</a>
-            </li>
-            <li>
-                <a href="/certificados">Certificados</a>
-            </li>
-        </ul>
-        <button
-            class="btn btn-outline-success"
-            style="position: absolute; right: 60px !important; display: none"
-            type="submit"
-        >
-            Search
-        </button>
-    </div>
+    <button #burger_menu class="burger" (click)="toggleMenu($event)">☰</button>
+    <ul
+        #menu
+        class="navbar-nav"
+        style="background: var(--fundo-preto)"
+        [class.aberto]="menuAberto"
+    >
+        <li>
+            <a href="/home">Home</a>
+        </li>
+        <li>
+            <a href="/sobre">Sobre</a>
+        </li>
+        <li>
+            <a href="/contato">Contatos</a>
+        </li>
+        <li>
+            <a href="/certificados">Certificados</a>
+        </li>
+    </ul>
 </nav>
