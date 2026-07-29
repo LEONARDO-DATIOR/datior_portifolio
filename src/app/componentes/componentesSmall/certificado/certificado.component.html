@@ -1,75 +1,100 @@
 <style>
-     .certificado {
+    .certificado {
         background: var(--fundo-preto);
         cursor: pointer;
         border: 1px solid var(--fundo-branco);
         border-radius: 16px;
         width: 300px;
         height: 250px;
-    }
 
-    .certificado a {
-        text-decoration: none;
-    }
+        a {
+            text-decoration: none;
+        }
 
-    .conteudo_certificado {
-        color: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 1em;
-        gap: 1em;
-    } 
+        .conteudo_certificado {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1em;
+            gap: 1em;
 
-    .conteudo_certificado button {
-        background: none;
-        color: var(--fonte-branco);
-        border: 1px solid var(--fundo-branco);
-        border-radius: 8px;
-        padding: 0.2em 0;
-        width: 80%;
-    }
-    
-    .info_certificado {
-        color: white;
-        display: grid;
-        grid-template-rows: 2.5fr 1fr;
-        grid-template-columns: 1fr;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;        
-    }
+            button {
+                background: none;
+                color: var(--fonte-branco);
+                border: 1px solid var(--fundo-branco);
+                border-radius: 8px;
+                padding: 0.2em 0;
+                width: 80%;
+            }
 
-    .titulo_ceritificado {
-        font-size: 18px;
-        font-weight: 600;
-        width: 100% !important;
-    }
+            /* VISUAL POR CATEGORIA */
+            .front-end {
+                border: 1px solid blue;
+                color: blue;
+            }
 
+            .back-end {
+                border: 1px solid red;
+                color: red;
+            }
 
-    .detalhes_certificado {
-        display: flex;
-        justify-content: space-between;
-    }
+            .design {
+                border: 1px solid purple;
+                color: purple;
+            }
 
-    .detalhes_certificado div {
-        display: flex;
-        gap: 0.5em;
-    }
+            .gestao {
+                border: 1px solid orange;
+                color: orange;
+            }
 
-    .detalhes_certificado img {
-        width: 20px;
-    }
+            .analise-de-dados {
+                border: 1px solid green;
+                color: green;
+            }
+        }
 
-    .certificado:hover {
-        animation-name: balancar;
-        animation-duration: 3s;
-        animation-fill-mode: forwards;
+        .info_certificado {
+            color: white;
+            display: grid;
+            grid-template-rows: 2.5fr 1fr;
+            grid-template-columns: 1fr;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            .titulo_ceritificado {
+                font-size: 18px;
+                font-weight: 600;
+                width: 100% !important;
+            }
+
+            .detalhes_certificado {
+                display: flex;
+                justify-content: space-between;
+
+                div {
+                    display: flex;
+                    gap: 0.5em;
+                }
+
+                img {
+                    width: 20px;
+                }
+            }
+        }
+
+        &:hover {
+            animation-name: balancar;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+        }
     }
 
     @keyframes balancar {
         0% {
-           transform: scale(1);
+            transform: scale(1);
         }
         100% {
             transform: scale(1.15);
@@ -85,58 +110,64 @@
             flex-direction: column;
             align-items: center;
         }
-      
     }
- 
 </style>
 
 <li class="certificado">
-    <a href="{{link}}" target="_blank">
+    <a href="{{ link }}" target="_blank">
         <div class="conteudo_certificado">
-            <button>@switch (categoria) {
-                @case ('FRONT-END') {
-                    Front-end
+            <button [ngClass]="getClasseCategoria(categoria)">
+                @switch (categoria) {
+                    @case ("FRONT-END") {
+                        Front-end
+                    }
+                    @case ("BACK-END") {
+                        Back-end
+                    }
+                    @case ("PROGRAMAÇÃO / ALGORITMO") {
+                        Back-end
+                    }
+                    @case ("UI/UX") {
+                        Design
+                    }
+                    @case ("BANCO DE DADOS") {
+                        Back-end
+                    }
+                    @case ("ANALISE DE DADOS") {
+                        Análise de Dados
+                    }
+                    @case ("REDES/CLOUD") {
+                        Infraestrutura
+                    }
+                    @case ("IA") {
+                        Análise de Dados
+                    }
+                    @case ("METODOLOGIAS AGEIS") {
+                        Gerenciamento de Projetos
+                    }
+                    @default {
+                        SEM CATEGORIA
+                    }
                 }
-                @case ('BACK-END') {
-                    Front-end
-                }
-                @case ('PROGRAMAÇÃO / ALGORITMO') {
-                    Back-end
-                }
-                @case ('UI/UX') {
-                    Design
-                }
-                @case ('BANCO DE DADOS') {
-                    Back-end
-                }
-                @case ('ANALISE DE DADOS') {
-                    Análise de Dados
-                }
-                @case ('REDES/CLOUD') {
-                    Infraestrutura
-                }
-                @case ('IA') {
-                    Análise de Dados
-                }
-                @case ('METODOLOGIAS AGEIS') {
-                    Gerenciamento de Projetos
-                }
-                @default {
-                    SEM CATEGORIA
-                }
-            } </button>
+            </button>
 
             <div class="info_certificado">
-                <p class="titulo_ceritificado">{{titulo}}</p>
-                <hr>
+                <p class="titulo_ceritificado teste">{{ titulo }}</p>
+                <hr />
                 <div class="detalhes_certificado">
                     <div>
-                        <img src="/assets/imagens/icons/icon_estudo.png" alt="Logo Alura">
-                        <p>{{escola}}</p>
+                        <img
+                            src="/assets/imagens/icons/icon_estudo.png"
+                            alt="Logo Alura"
+                        />
+                        <p>{{ escola }}</p>
                     </div>
                     <div>
-                        <img src="/assets/imagens/icons/icon_calendario.png" alt="Calendário">
-                        <p>{{dataRealizacao}}</p>
+                        <img
+                            src="/assets/imagens/icons/icon_calendario.png"
+                            alt="Calendário"
+                        />
+                        <p>{{ dataRealizacao }}</p>
                     </div>
                 </div>
             </div>
