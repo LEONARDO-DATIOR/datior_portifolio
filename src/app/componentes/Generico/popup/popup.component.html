@@ -1,0 +1,398 @@
+<style>
+    /* ========================================
+    OVERLAY
+    ======================================== */
+
+    .popup-overlay {
+        position: fixed;
+        inset: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 20px;
+
+        background: rgba(0, 0, 0, 0.75);
+
+        z-index: 9999;
+
+        box-sizing: border-box;
+    }
+
+    /* ========================================
+    MODAL
+    ======================================== */
+
+    .popup-modal {
+        position: relative;
+
+        width: min(900px, 95vw);
+
+        padding: 35px 55px 30px;
+
+        background: linear-gradient(
+            145deg,
+            #171717 0%,
+            #050505 50%,
+            #101010 100%
+        );
+
+        color: white;
+
+        border: 2px solid #444;
+
+        border-radius: 24px;
+
+        box-sizing: border-box;
+
+        box-shadow:
+            0 10px 35px rgba(0, 0, 0, 0.65),
+            0 0 20px rgba(255, 255, 255, 0.08);
+
+        overflow: hidden;
+
+        z-index: 10000;
+    }
+
+    /* ========================================
+    BRILHO EXTERNO
+    ======================================== */
+
+    .popup-modal::before {
+        content: "";
+
+        position: absolute;
+
+        inset: 0;
+
+        border-radius: inherit;
+
+        pointer-events: none;
+
+        box-shadow:
+            inset 0 1px 1px rgba(255, 255, 255, 0.15),
+            inset 0 -1px 2px rgba(0, 0, 0, 0.8);
+    }
+
+    /* ========================================
+    BOTÃO FECHAR
+    ======================================== */
+
+    .popup-close {
+        position: absolute;
+
+        top: 5px;
+        right: 18px;
+
+        border: none;
+
+        background: transparent;
+
+        color: white;
+
+        font-size: 52px;
+
+        font-weight: 200;
+
+        line-height: 1;
+
+        cursor: pointer;
+
+        z-index: 2;
+
+        transition:
+            transform 0.2s ease,
+            opacity 0.2s ease;
+    }
+
+    .popup-close:hover {
+        transform: scale(1.08);
+
+        opacity: 0.7;
+    }
+
+    /* ========================================
+    TÍTULO
+    ======================================== */
+
+    .popup-modal h1 {
+        position: relative;
+
+        margin: 0 45px 25px;
+
+        text-align: center;
+
+        font-size: clamp(25px, 4vw, 38px);
+
+        font-weight: 700;
+
+        letter-spacing: 0.5px;
+
+        color: #f5f5f5;
+    }
+
+    /* ========================================
+    DESCRIÇÃO
+    ======================================== */
+
+    .popup-description {
+        position: relative;
+
+        max-width: 800px;
+
+        margin: 0 auto 25px;
+
+        text-align: center;
+
+        color: #e0e0e0;
+
+        font-size: clamp(15px, 2vw, 20px);
+
+        line-height: 1.45;
+    }
+
+    /* ========================================
+    PROGRESSO
+    ======================================== */
+
+    .popup-progress-section {
+        position: relative;
+
+        margin-top: 15px;
+    }
+
+    .popup-progress-section h2 {
+        margin: 0 0 10px;
+
+        font-size: clamp(19px, 3vw, 26px);
+
+        color: #f5f5f5;
+    }
+
+    /* Linha contendo barra + 75% */
+
+    .popup-progress-container {
+        display: flex;
+
+        align-items: center;
+
+        gap: 18px;
+    }
+
+    /* Barra externa */
+
+    .popup-progress-bar {
+        flex: 1;
+
+        height: 46px;
+
+        overflow: hidden;
+
+        border: 3px solid #f5f5f5;
+
+        border-radius: 12px;
+
+        background: #080808;
+
+        box-shadow:
+            inset 0 0 10px rgba(0, 0, 0, 0.9),
+            0 0 8px rgba(255, 255, 255, 0.15);
+
+        box-sizing: border-box;
+    }
+
+    /* Barra preenchida */
+
+    .popup-progress-fill {
+        height: 100%;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        min-width: 50px;
+
+        background: linear-gradient(90deg, #c4f3ef, #f0ffff);
+
+        color: #666;
+
+        box-shadow: 0 0 20px rgba(180, 255, 250, 0.8);
+
+        transition: width 0.8s ease;
+
+        box-sizing: border-box;
+    }
+
+    /* Texto dentro da barra */
+
+    .popup-progress-fill span {
+        white-space: nowrap;
+
+        font-size: 16px;
+
+        font-weight: 400;
+    }
+
+    /* 75% */
+
+    .popup-progress-number {
+        min-width: 85px;
+
+        font-size: clamp(35px, 5vw, 55px);
+
+        font-weight: 700;
+
+        line-height: 1;
+
+        color: #f5f5f5;
+    }
+
+    /* ========================================
+    BOTÃO MVP
+    ======================================== */
+
+    .popup-mvp-button {
+        position: relative;
+
+        display: block;
+
+        width: min(580px, 80%);
+
+        margin: 32px auto 0;
+
+        padding: 17px 25px;
+
+        border: 1px solid #555;
+
+        border-radius: 18px;
+
+        background: linear-gradient(180deg, #555, #292929);
+
+        color: white;
+
+        font-size: clamp(18px, 2.5vw, 26px);
+
+        font-weight: 600;
+
+        cursor: pointer;
+
+        box-shadow:
+            inset 0 1px 1px rgba(255, 255, 255, 0.2),
+            0 5px 12px rgba(0, 0, 0, 0.45);
+
+        transition:
+            transform 0.2s ease,
+            filter 0.2s ease;
+    }
+
+    .popup-mvp-button:hover {
+        filter: brightness(1.15);
+
+        transform: translateY(-2px);
+    }
+
+    .popup-mvp-button:active {
+        transform: translateY(1px);
+    }
+
+    /* ========================================
+    RESPONSIVIDADE
+    ======================================== */
+
+    @media (max-width: 700px) {
+        .popup-overlay {
+            padding: 10px;
+        }
+
+        .popup-modal {
+            width: 95vw;
+
+            padding: 30px 20px 25px;
+
+            border-radius: 18px;
+        }
+
+        .popup-modal h1 {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .popup-description {
+            font-size: 15px;
+        }
+
+        .popup-progress-container {
+            gap: 10px;
+        }
+
+        .popup-progress-bar {
+            height: 38px;
+        }
+
+        .popup-progress-fill span {
+            font-size: 10px;
+        }
+
+        .popup-progress-number {
+            min-width: 55px;
+
+            font-size: 30px;
+        }
+
+        .popup-mvp-button {
+            width: 100%;
+
+            font-size: 18px;
+        }
+    }
+</style>
+
+<div class="popup-overlay" #popupOverlay *ngIf="mostrarPopup">
+    <div class="popup-modal">
+        <!-- Fechar -->
+        <button class="popup-close" type="button" (click)="fechar()">×</button>
+
+        <!-- Título -->
+        <h1>PORTFÓLIO: MVP EM DESENVOLVIMENTO</h1>
+
+        <!-- Descrição -->
+        <p class="popup-description">
+            Obrigado pela sua visita! Atualmente, este portfólio está em
+            processo de desenvolvimento ativo. O MVP (Produto Mínimo Viável)
+            ainda não está completo. Estamos trabalhando duro para trazer a
+            melhor experiência.
+        </p>
+
+        <!-- Progresso -->
+        <div class="popup-progress-section">
+            <h2>Progresso do Desenvolvimento</h2>
+
+            <div class="popup-progress-container">
+                <div class="popup-progress-bar">
+                    <div
+                        class="popup-progress-fill"
+                        [style.width.%]="progresso"
+                    >
+                        <span>
+                            Aproximadamente {{ progresso }}% concluído
+                        </span>
+                    </div>
+                </div>
+
+                <span class="popup-progress-number"> {{ progresso }}% </span>
+            </div>
+        </div>
+
+        <!-- Botão -->
+        <button
+            class="popup-mvp-button"
+            type="button"
+            (click)="visualizarMvp()"
+        >
+            Ver MVP Parcial
+        </button>
+    </div>
+</div>
