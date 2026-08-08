@@ -97,6 +97,20 @@
         .projeto {
             padding: 2em 4em;
         }
+
+        .tecnologias_github__projeto {
+            flex-direction: column;
+            gap: 1.5em;
+            text-align: center;
+        }
+
+        .tecnologias__projeto {
+            justify-content: center;
+        }
+
+        .github__projeto {
+            width: 100%;
+        }
     }
 
     @media screen and (max-width: 768px) {
@@ -106,12 +120,12 @@
 
             .titulo_descricao__projeto {
                 p {
-                    display: none;
+                    font-size: 12px;
                 }
             }
 
             .tecnologias_github__projeto {
-                font-size: 12px;
+                font-size: 10px;
             }
 
             .img_projeto {
@@ -135,8 +149,9 @@
     </div>
     <div class="tecnologias_github__projeto">
         <div class="tecnologias__projeto">
-            <p href="#">Angular</p>
-            <p href="#">React</p>
+            @for (tecnologia of tecnologias; track tecnologia) {
+                <p>{{ tecnologia }}</p>
+            }
         </div>
         <div class="github__projeto">
             <a href="{{ link_github }}" target="_blank">

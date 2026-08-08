@@ -32,17 +32,14 @@
 
 <section class="section_projetos-home">
     <div class="projetos-home__projetos">
-        <app-projeto-div
-            titulo_projeto="Datior Home"
-            descricao_projeto="Este é o projeto que você está vendo agora. Ele é o meu portfólio pessoal, onde compartilho minha trajetória, conquistas e habilidades."
-            caminho_imagem="../../../../assets/imagens/projetos/projeto_portifolio.png"
-            link_github="https://github.com/LEONARDO-DATIOR/datior_portifolio"
-        ></app-projeto-div>
-        <app-projeto-div
-            titulo_projeto="Datior Home"
-            descricao_projeto="Este é o projeto que você está vendo agora. Ele é o meu portfólio pessoal, onde compartilho minha trajetória, conquistas e habilidades."
-            caminho_imagem="../../../../assets/imagens/projetos/projeto_portifolio.png"
-            link_github="https://github.com/LEONARDO-DATIOR/datior_portifolio"
-        ></app-projeto-div>
+        @for (projeto of projetos; track projeto) {
+            <app-projeto-div
+                [titulo_projeto]="projeto.titulo"
+                [descricao_projeto]="projeto.descricao"
+                [caminho_imagem]="projeto.caminho_imagem"
+                [link_github]="projeto.link_github"
+                [tecnologias]="projeto.tecnologias"
+            ></app-projeto-div>
+        }
     </div>
 </section>
