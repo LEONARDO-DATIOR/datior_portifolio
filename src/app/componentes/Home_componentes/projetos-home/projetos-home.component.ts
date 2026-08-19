@@ -20,7 +20,7 @@ export class ProjetosHomeComponent {
         {
             titulo: 'Overdrive-Info',
             descricao:
-                'Projeto desenvolvido para monitoramento e diagnóstico de equipamentos, com coleta e análise de informações de hardware e sistema. A solução permite identificar falhas, anomalias e possíveis gargalos de desempenho, além de gerar relatórios técnicos para auxiliar na análise e manutenção das máquinas.',
+                'Projeto desenvolvido para monitoramento e diagnóstico de equipamentos, com coleta e análise de informações de hardware e sistema.',
             caminho_imagem:
                 '/../../../assets/imagens/projetos/Overdrive-info.png',
             link_github: 'https://github.com/LEONARDO-DATIOR/datior_portifolio',

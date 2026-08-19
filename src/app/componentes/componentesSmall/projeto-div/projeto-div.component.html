@@ -1,171 +1,184 @@
 <style>
-    .projeto {
-        transition: transform 0.8s ease;
+    .card-projeto {
+        width: 420px;
+        height: 420px;
+        background: var(--fundo-preto);
+        border: 1px solid var(--fundo-cinza);
+        border-radius: 24px;
+        padding: 32px;
         display: flex;
         flex-direction: column;
-        box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.2);
-        border: 2px solid var(--fundo-branco);
-        border-radius: 24px;
-        width: 60vw;
-        height: 50vh;
-        padding: 2em 8em;
+        gap: 28px;
+        transition: 0.35s;
 
-        .titulo_descricao__projeto {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-content: center;
-
-            h4 {
-                color: var(--cor-fonte-branca);
-                font-size: 2em;
-            }
-
-            P {
-                color: var(--cor-fonte-branca);
-                opacity: 0.7;
-                font-size: 1em;
-            }
+        .card-projeto__apelido {
+            color: var(--cor-fonte-cinza);
+            letter-spacing: 6px;
+            font-size: 0.85rem;
         }
 
-        .tecnologias_github__projeto {
-            display: flex;
-            justify-content: space-between;
-            margin: 2em 0;
-
-            p {
-                color: var(--cor-fonte-branca);
-                border-radius: 23px;
-                cursor: pointer;
-            }
-        }
-
-        .img_projeto {
-            position: relative;
-            display: flex;
-            height: 100%;
-
-            img {
-                position: absolute;
-                width: 100%;
-                max-height: 100%;
-                object-fit: cover;
-                border-radius: 12px;
-                opacity: 50%;
-            }
-
-            a {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 2;
-            }
-
-            img:has(+ a:hover) {
-                transition: 1s;
-                opacity: 1;
-            }
-        }
-
-        .github__projeto button {
-            background: none;
-            z-index: 1;
+        .card-projeto__titulo {
+            font-size: 2em;
+            font-weight: 700;
             color: var(--cor-fonte-branca);
-            width: 120px;
-            border: 1px solid var(--fundo-branco);
-            border-radius: 23px;
+            line-height: 0.9;
         }
 
-        .tecnologias__projeto {
+        .card-projeto__descricao {
+            color: var(--cor-fonte-cinza);
+            font-size: 1em;
+            line-height: 1.8;
+        }
+
+        .card-projeto__acoes {
             display: flex;
-            gap: 2em;
-        }
-    }
-
-    .projeto:hover {
-        transform: translateY(-10px);
-    }
-
-    @media screen and (max-width: 1400px) {
-        .projeto {
-            padding: 2em 6em;
-        }
-    }
-
-    @media screen and (max-width: 1030px) {
-        .projeto {
-            padding: 2em 4em;
+            gap: 16px;
         }
 
-        .tecnologias_github__projeto {
-            flex-direction: column;
-            gap: 1.5em;
-            text-align: center;
-        }
+        /* TROCAR PARA BOTAO COMPONENTE */
+        .btn {
+            flex: 1;
+            height: 52px;
+            border-radius: 14px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
 
-        .tecnologias__projeto {
+            display: flex;
             justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            transition: 0.3s;
         }
 
-        .github__projeto {
-            width: 100%;
+        .btn--primary {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: #fff;
+        }
+
+        .btn--primary:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .btn--secondary {
+            background: #111;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #fff;
+        }
+
+        .btn--secondary:hover {
+            background: #1b1b1b;
+        }
+        /* TROCAR PARA BOTAO COMPONENTE */
+
+        .card-projeto__tecnologias {
+            span {
+                color: var(--cor-fonte-cinza);
+            }
+
+            ul {
+                display: flex;
+                gap: 1em;
+                list-style: none;
+                font-size: 0.95rem;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    color: var(--cor-fonte-branca);
+                }
+            }
         }
     }
 
-    @media screen and (max-width: 768px) {
-        .projeto {
-            padding: 1em 1em;
-            height: 45vh;
+    .card-projeto:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 0 45px rgba(255, 255, 255, 0.08);
+    }
 
-            .titulo_descricao__projeto {
-                p {
-                    font-size: 12px;
-                }
+    @media screen and (max-width: 900px) {
+        .card-projeto {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            width: 320px;
+            max-height: 350px;
+            padding: 16px;
+
+            .card-projeto__titulo {
+                font-size: 1.5em;
             }
 
-            .tecnologias_github__projeto {
-                font-size: 10px;
+            .card-projeto__descricao {
+                font-size: 0.8em;
             }
 
-            .img_projeto {
-                img {
-                    object-fit: none;
-                    height: 100%;
-                }
-
-                a {
-                    width: 80%;
-                }
+            .btn {
+                font-size: 0.6em;
+                height: 32px;
             }
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        .card-projeto {
+            margin: 0 auto;
+            width: 95%;
         }
     }
 </style>
 
-<div class="projeto">
-    <div class="titulo_descricao__projeto">
-        <h4>{{ titulo_projeto }}</h4>
-        <p>{{ descricao_projeto }}</p>
+<div class="card-projeto">
+    <span class="card-projeto__apelido">DATIOR</span>
+
+    <h2 class="card-projeto__titulo">
+        {{ titulo_projeto }}
+    </h2>
+
+    <p class="card-projeto__descricao">
+        {{ descricao_projeto }}
+    </p>
+
+    <div class="card-projeto__acoes">
+        <!-- TROCAR PARA BOTÃO COMPONENTE -->
+        <button class="btn btn--primary">VISUALIZAR PROJETO</button>
+
+        <button class="btn btn--secondary">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+            >
+                <path
+                    d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38
+                0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+                -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87
+                2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+                0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12
+                0 0 .67-.21 2.2.82a7.5 7.5 0 0 1 4 0c1.53-1.04
+                2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82
+                1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54
+                1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01
+                8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+                />
+            </svg>
+
+            CÓDIGO FONTE
+        </button>
+        <!-- TROCAR PARA BOTÃO COMPONENTE -->
     </div>
-    <div class="tecnologias_github__projeto">
-        <div class="tecnologias__projeto">
+
+    <div class="card-projeto__tecnologias">
+        <span>Tecnologias:</span>
+        <ul>
             @for (tecnologia of tecnologias; track tecnologia) {
-                <p>{{ tecnologia }}</p>
+                <li>{{ tecnologia }}</li>
             }
-        </div>
-        <div class="github__projeto">
-            <a href="{{ link_github }}" target="_blank">
-                <button>GITHUB</button>
-            </a>
-        </div>
-    </div>
-    <div class="img_projeto">
-        <img [src]="caminho_imagem" alt="Imagem do projeto" />
-        <a href="">
-            <app-botao-padrao
-                tipo_botao="botao_branco"
-                texto_botao="Visualizar"
-            ></app-botao-padrao>
-        </a>
+        </ul>
     </div>
 </div>
