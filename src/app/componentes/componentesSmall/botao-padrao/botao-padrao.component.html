@@ -1,18 +1,18 @@
-
 <style>
     .botao_submit {
         background: var(--fundo-branco);
-        width: 220px; 
-        height: 50px; 
+        width: 220px;
+        height: 50px;
         border-radius: 8px;
         border: 1px solid var(--cor-fonte-branca);
         color: var(--cor-fonte-preta);
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     }
 
+    /* BOTÃO BRANCO */
     .botao_branco {
         background: transparent;
-        border: 2px solid var(--fundo-branco);
+        border: 1px solid var(--fundo-cinza);
         text-decoration: none;
         border-radius: 12px;
         width: 50vh;
@@ -20,10 +20,10 @@
     }
     .botao_branco > p {
         font-size: 1.5em;
-        font-weight: bold;
+        font-weight: 400;
         font-family: var(--fonte-comum);
         color: var(--cor-fonte-branca);
-    }   
+    }
 
     .botao_branco:hover {
         background: var(--fundo-branco);
@@ -31,13 +31,14 @@
     }
     .botao_branco:hover p {
         color: var(--cor-fonte-preta);
+        font-weight: 600;
     }
 
     /* ATIVO */
     :host(.ativo) button {
         border: 3px solid var(--cor-fonte-verde) !important;
         border-radius: 16px;
-        margin: 3EM 0;
+        margin: 3em 0;
     }
 
     :host(.ativo) p {
@@ -49,14 +50,14 @@
     }
 
     :host(.ativo) button:hover > p {
-         color: var(--cor-fonte-preta) !important;
+        color: var(--cor-fonte-preta) !important;
     }
     /* ATIVO */
 
     .botao_preto {
         background: transparent;
         border: var(--fundo-preto);
-        border-radius: 12px;   
+        border-radius: 12px;
         width: 50vh;
         max-height: 50px;
     }
@@ -65,7 +66,7 @@
         font-weight: bold;
         font-family: var(--font-family);
         color: var(--cor-fonte-preta);
-    }   
+    }
 
     .botao_preto:hover {
         background: var(--fundo-preto);
@@ -75,12 +76,11 @@
         color: var(--cor-fonte-branca);
     }
 
-
     .botao_submit:hover {
         background: var(--fundo-preto);
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
         color: var(--cor-fonte-branca);
-        font-family: var(--font-family)
+        font-family: var(--font-family);
     }
 
     .botao_dialog {
@@ -106,29 +106,39 @@
         }
 
         /* ATIVO */
-        
-
     }
 </style>
 
-
 <!-- Botão de submit -->
-<button *ngIf="submit_botao"
-        type="submit"
-        [disabled]="disabled_botao"
-        class="botao_submit">
+<button
+    *ngIf="submit_botao"
+    type="submit"
+    [disabled]="disabled_botao"
+    class="botao_submit"
+>
     <p class="fs-5 fw-bold">{{ texto_botao }}</p>
 </button>
 
 <!-- Botão branco alternativo -->
-<button *ngIf="tipo_botao === 'botao_branco' && !submit_botao" class="botao_branco">
+<button
+    *ngIf="tipo_botao === 'botao_branco' && !submit_botao"
+    class="botao_branco"
+>
     <p>{{ texto_botao }}</p>
 </button>
 
-<button *ngIf="tipo_botao === 'botao_preto' && !submit_botao" class="botao_preto ">
+<button
+    *ngIf="tipo_botao === 'botao_preto' && !submit_botao"
+    class="botao_preto"
+>
     <p>{{ texto_botao }}</p>
 </button>
 
-<button *ngIf="tipo_botao === 'botao_dialog'" id="cancel" type="reset" class="botao_dialog">
-    <p>{{texto_botao}}</p>
+<button
+    *ngIf="tipo_botao === 'botao_dialog'"
+    id="cancel"
+    type="reset"
+    class="botao_dialog"
+>
+    <p>{{ texto_botao }}</p>
 </button>
