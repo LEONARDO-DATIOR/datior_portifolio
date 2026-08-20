@@ -1,4 +1,4 @@
-<style>
+<style *ngIf="!carrosel">
     .section_certificados-todos {
         background: var(--fundo-preto);
         padding: 4em 2em;
@@ -21,19 +21,110 @@
             gap: 4em;
         }
     }
-
 </style>
 
-<section class="section_certificados-todos">
+<section class="section_certificados-todos" *ngIf="!carrosel">
     <ul class="certificados_lista-todos">
         <app-certificado
             *ngFor="let certificado of dadosCsv; let index = index"
-            [link]="certificado['LINK PARA CERTIFICAR'].includes('http') ? certificado['LINK PARA CERTIFICAR'] : 'https://www.cursoemvideo.com/validacao-de-certificado/'"
+            [link]="
+                certificado['LINK PARA CERTIFICAR'].includes('http')
+                    ? certificado['LINK PARA CERTIFICAR']
+                    : 'https://www.cursoemvideo.com/validacao-de-certificado/'
+            "
             [titulo]="certificado['NOME CURSO']"
             [escola]="certificado['ESCOLA']"
             [dataRealizacao]="certificado['DATA']"
             [categoria]="certificado['CATEGORIA']"
         ></app-certificado>
-
     </ul>
+</section>
+
+<!-- CARROSEL -->
+<style *ngIf="carrosel">
+    .section_certificados-carrosel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        background: var(--fundo-preto);
+    }
+
+    .certificados_lista-carrosel {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 250px);
+        justify-content: center;
+        width: 70%;
+        gap: 2em 6em;
+        list-style: none;
+    }
+
+    /* BOTAO CARROSEL */
+    .btn-carrossel {
+        width: 55px;
+        height: 55px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background: transparent;
+        color: var(--cor-fonte-branca);
+
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 50%;
+
+        cursor: pointer;
+
+        font-size: 1.5rem;
+        font-weight: 600;
+
+        transition: 0.25s ease;
+    }
+
+    .btn-carrossel:hover {
+        background: white;
+        color: black;
+        transform: scale(1.08);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-carrossel:active {
+        transform: scale(0.95);
+    }
+
+    .btn-carrossel:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+    }
+    /* BOTAO CARROSEL */
+
+    @media screen and (max-width: 768px) {
+        .section_certificados-todos {
+            padding: 4em 0;
+        }
+        .certificados_lista-todos {
+            padding: 0;
+            gap: 4em;
+        }
+    }
+</style>
+<section class="section_certificados-carrosel" *ngIf="carrosel">
+    <button class="btn-carrossel" (click)="anterior()">❮</button>
+
+    <ul class="certificados_lista-carrosel">
+        <app-certificado
+            *ngFor="let certificado of certificadosVisiveis"
+            [link]="
+                certificado['LINK PARA CERTIFICAR'].includes('http')
+                    ? certificado['LINK PARA CERTIFICAR']
+                    : 'https://www.cursoemvideo.com/validacao-de-certificado/'
+            "
+            [titulo]="certificado['NOME CURSO']"
+            [escola]="certificado['ESCOLA']"
+            [dataRealizacao]="certificado['DATA']"
+            [categoria]="certificado['CATEGORIA']"
+        ></app-certificado>
+    </ul>
+    <button class="btn-carrossel" (click)="proximo()">❯</button>
 </section>

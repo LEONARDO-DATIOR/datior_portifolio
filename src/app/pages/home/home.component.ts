@@ -4,6 +4,7 @@ import { SobreHomeComponent } from '../../componentes/Home_componentes/sobre-hom
 import { ContatoHomeComponent } from '../../componentes/Generico/contato/contato-home.component';
 import { ApresentacaoComponent } from '../../componentes/Generico/apresentacao/apresentacao.component';
 import { PopupComponent } from '../../componentes/Generico/popup/popup.component';
+import { TodosCertificadosComponent } from "../../componentes/Certificados_componentes/todos-certificados/todos-certificados.component";
 
 @Component({
     selector: 'app-home',
@@ -13,6 +14,7 @@ import { PopupComponent } from '../../componentes/Generico/popup/popup.component
         ContatoHomeComponent,
         ApresentacaoComponent,
         PopupComponent,
+        TodosCertificadosComponent
     ],
     templateUrl: './home.component.html',
 })
