@@ -4,6 +4,67 @@
         padding: 4em 2em;
     }
 
+    .botao_exibir_filtros {
+        display: block;
+        background: none;
+        color: white;
+        margin: 2em auto;
+        border: 1px solid white;
+        border-radius: 22px;
+        width: 160px;
+    }
+
+    .botao_fechar_filtros {
+        display: none;
+        background: none;
+        color: white;
+        font-size: large;
+        font-weight: bold;
+        margin: 2em auto;
+        border: none;
+    }
+
+    .div_filtro_certificados {
+        display: none;
+        justify-content: center;
+        gap: 2em;
+        margin-bottom: 6em;
+        width: 100%;
+
+        .botao_filtro {
+            background: none;
+            width: 125px;
+            color: white;
+            border: 3px solid;
+            border-radius: 22px;
+        }
+
+        .front-end {
+            border: 1px solid blue;
+            color: blue;
+        }
+
+        .back-end {
+            border: 1px solid red;
+            color: red;
+        }
+
+        .design {
+            border: 1px solid purple;
+            color: purple;
+        }
+
+        .gestao {
+            border: 1px solid orange;
+            color: orange;
+        }
+
+        .analise-de-dados {
+            border: 1px solid green;
+            color: green;
+        }
+    }
+
     .certificados_lista-todos {
         display: grid;
         grid-template-columns: repeat(auto-fit, 250px);
@@ -24,9 +85,52 @@
 </style>
 
 <section class="section_certificados-todos" *ngIf="!carrosel">
+    <button
+        #btn_exibir_filtro
+        class="botao_exibir_filtros"
+        (click)="exibirFiltros(true)"
+    >
+        Exibir filtros
+    </button>
+    <button
+        #btn_fechar_filtro
+        class="botao_fechar_filtros"
+        (click)="exibirFiltros(false)"
+    >
+        X
+    </button>
+    <div #div_filtros class="div_filtro_certificados">
+        <button class="botao_filtro" (click)="filtrarCategoria('todos')">
+            Todos
+        </button>
+        <button
+            class="botao_filtro front-end"
+            (click)="filtrarCategoria('FRONT-END')"
+        >
+            Front-end
+        </button>
+        <button class="botao_filtro design" (click)="filtrarCategoria('UI/UX')">
+            Design
+        </button>
+        <button
+            class="botao_filtro back-end"
+            (click)="filtrarCategoria('BACK-END')"
+        >
+            Back-end
+        </button>
+        <button
+            class="botao_filtro gestao"
+            (click)="filtrarCategoria('METODOLOGIAS AGEIS')"
+        >
+            Gestão
+        </button>
+        <button class="botao_filtro" (click)="filtrarCategoria('REDES/CLOUD')">
+            Infraestrutura
+        </button>
+    </div>
     <ul class="certificados_lista-todos">
         <app-certificado
-            *ngFor="let certificado of dadosCsv; let index = index"
+            *ngFor="let certificado of certificadosFiltrados"
             [link]="
                 certificado['LINK PARA CERTIFICAR'].includes('http')
                     ? certificado['LINK PARA CERTIFICAR']
@@ -114,7 +218,7 @@
 
     <ul class="certificados_lista-carrosel">
         <app-certificado
-            *ngFor="let certificado of certificadosVisiveis"
+            *ngFor="let certificado of dadosCsv"
             [link]="
                 certificado['LINK PARA CERTIFICAR'].includes('http')
                     ? certificado['LINK PARA CERTIFICAR']

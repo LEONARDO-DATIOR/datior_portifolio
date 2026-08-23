@@ -1,9 +1,11 @@
 import {
     Component,
+    ElementRef,
     HostListener,
     Inject,
     Input,
     PLATFORM_ID,
+    ViewChild,
 } from '@angular/core';
 import { CertificadoComponent } from '../../componentesSmall/certificado/certificado.component';
 import { HttpClient } from '@angular/common/http';
@@ -17,13 +19,53 @@ import * as Papa from 'papaparse';
 })
 export class TodosCertificadosComponent {
     @Input() carrosel: boolean = false;
+    @ViewChild('btn_exibir_filtro') btnExibir!: ElementRef;
+    @ViewChild('btn_fechar_filtro') btnFechar!: ElementRef;
+    @ViewChild('div_filtros') divFiltros!: ElementRef;
 
     dadosCsv: any[] = [];
+    certificadosFiltrados: any[] = [];
+    categoriaSelecionada = 'todos';
 
     constructor(
         private http: HttpClient,
         @Inject(PLATFORM_ID) private platformId: Object,
     ) {}
+
+    exibirFiltros(exibir: boolean) {
+        if (exibir) {
+            this.btnExibir.nativeElement.style.display = 'none';
+            this.divFiltros.nativeElement.style.display = 'flex';
+            this.btnFechar.nativeElement.style.display = 'flex';
+        } else {
+            this.btnExibir.nativeElement.style.display = 'block';
+            this.divFiltros.nativeElement.style.display = 'none';
+            this.btnFechar.nativeElement.style.display = 'none';
+        }
+    }
+
+    filtrarCategoria(categoria: string): void {
+        this.categoriaSelecionada = categoria;
+
+        if (categoria == 'todos') {
+            this.certificadosFiltrados = [...this.dadosCsv];
+        } else if (
+            categoria === 'BACK-END' ||
+            categoria === 'PROGRAMAÇÃO / ALGORITMO' ||
+            categoria === 'ANALISE DE DADOS'
+        ) {
+            this.certificadosFiltrados = this.dadosCsv.filter(
+                (certificado) =>
+                    certificado['CATEGORIA'] === 'BACK-END' ||
+                    certificado['CATEGORIA'] === 'PROGRAMAÇÃO / ALGORITMO' ||
+                    certificado['CATEGORIA'] === 'ANALISE DE DADOS',
+            );
+        } else {
+            this.certificadosFiltrados = this.dadosCsv.filter(
+                (certificado) => certificado['CATEGORIA'] === categoria,
+            );
+        }
+    }
 
     ngOnInit() {
         if (!isPlatformBrowser(this.platformId)) return;
@@ -36,18 +78,9 @@ export class TodosCertificadosComponent {
                     header: true,
                     skipEmptyLines: true,
                 });
-
                 this.dadosCsv = resultado.data;
+                this.filtrarCategoria('todos');
             });
-    }
-
-    // LOGICA CARROSEL
-    indiceAtual = 0;
-    quantidadeVisivel = 3;
-
-    @HostListener('window:resize')
-    onResize(): void {
-        this.atualizarExibicaoCarrosel();
     }
 
     private atualizarExibicaoCarrosel(): void {
@@ -60,7 +93,15 @@ export class TodosCertificadosComponent {
         } else {
             this.quantidadeVisivel = 3;
         }
-        console.log(tamanhoDatela + ' - ' + this.quantidadeVisivel);
+    }
+
+    // LOGICA CARROSEL
+    indiceAtual = 0;
+    quantidadeVisivel = 3;
+
+    @HostListener('window:resize')
+    onResize(): void {
+        this.atualizarExibicaoCarrosel();
     }
 
     get certificadosVisiveis() {
