@@ -18,7 +18,6 @@ import * as Papa from 'papaparse';
     templateUrl: './todos-certificados.component.html',
 })
 export class TodosCertificadosComponent {
-    @Input() carrosel: boolean = false;
     @ViewChild('btn_exibir_filtro') btnExibir!: ElementRef;
     @ViewChild('btn_fechar_filtro') btnFechar!: ElementRef;
     @ViewChild('div_filtros') divFiltros!: ElementRef;
@@ -96,6 +95,8 @@ export class TodosCertificadosComponent {
     }
 
     // LOGICA CARROSEL
+    @Input() carrosel: boolean = false;
+
     indiceAtual = 0;
     quantidadeVisivel = 3;
 

@@ -1,11 +1,15 @@
 <style *ngIf="!carrosel">
     .section_certificados-todos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         background: var(--fundo-preto);
         padding: 4em 2em;
+        min-height: 100vh;
     }
 
     .botao_exibir_filtros {
-        display: block;
+        display: none;
         background: none;
         color: white;
         margin: 2em auto;
@@ -15,7 +19,7 @@
     }
 
     .botao_fechar_filtros {
-        display: none;
+        display: block;
         background: none;
         color: white;
         font-size: large;
@@ -25,8 +29,9 @@
     }
 
     .div_filtro_certificados {
-        display: none;
+        display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 2em;
         margin-bottom: 6em;
         width: 100%;
@@ -37,31 +42,79 @@
             color: white;
             border: 3px solid;
             border-radius: 22px;
+
+            &:hover {
+                transition-duration: 0.7s;
+                border: none;
+                color: var(--fundo-preto);
+                background: white;
+                transform: scale(1.1);
+                font-weight: bold;
+            }
         }
 
         .front-end {
             border: 1px solid blue;
             color: blue;
+
+            &:hover {
+                transition-duration: 0.5s;
+                border: none;
+                color: var(--fundo-preto);
+                background: blue;
+            }
         }
 
         .back-end {
             border: 1px solid red;
             color: red;
+
+            &:hover {
+                border: none;
+                transition-duration: 0.5s;
+                border: none;
+                color: var(--fundo-preto);
+                background: red;
+            }
         }
 
         .design {
             border: 1px solid purple;
             color: purple;
+
+            &:hover {
+                border: none;
+                transition-duration: 0.5s;
+                border: none;
+                color: var(--fundo-preto);
+                background: purple;
+            }
         }
 
         .gestao {
             border: 1px solid orange;
             color: orange;
+
+            &:hover {
+                border: none;
+                transition-duration: 0.5s;
+                border: none;
+                color: var(--fundo-preto);
+                background: orange;
+            }
         }
 
         .analise-de-dados {
             border: 1px solid green;
             color: green;
+
+            &:hover {
+                border: none;
+                transition-duration: 0.5s;
+                border: none;
+                color: var(--fundo-preto);
+                background: green;
+            }
         }
     }
 
@@ -71,12 +124,18 @@
         justify-content: center;
         gap: 2em 6em;
         list-style: none;
+        margin: 0 !important;
     }
 
     @media screen and (max-width: 768px) {
+        .div_filtro_certificados {
+            padding: 0 2em;
+        }
+
         .section_certificados-todos {
             padding: 4em 0;
         }
+
         .certificados_lista-todos {
             padding: 0;
             gap: 4em;
@@ -156,6 +215,8 @@
 
     .certificados_lista-carrosel {
         display: grid;
+        padding: 0;
+        margin: 0;
         grid-template-columns: repeat(auto-fit, 250px);
         justify-content: center;
         width: 70%;
@@ -208,7 +269,6 @@
             padding: 4em 0;
         }
         .certificados_lista-todos {
-            padding: 0;
             gap: 4em;
         }
     }
@@ -218,7 +278,7 @@
 
     <ul class="certificados_lista-carrosel">
         <app-certificado
-            *ngFor="let certificado of dadosCsv"
+            *ngFor="let certificado of certificadosVisiveis"
             [link]="
                 certificado['LINK PARA CERTIFICAR'].includes('http')
                     ? certificado['LINK PARA CERTIFICAR']
