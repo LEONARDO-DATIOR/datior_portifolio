@@ -1,0 +1,11 @@
+@import url("./styles/botao-submit.scss"); // SUBMIT
+@import url("./styles/botao-generico.scss"); // GENERICO
+@import url("./styles/botao-dialog.scss"); // DIALOG
+
+@media screen and (max-width: 768px) {
+    button {
+        width: 100% !important;
+    }
+
+    /* ATIVO */
+}

@@ -2,20 +2,21 @@ import { Component, HostBinding, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-botao-padrao',
-  imports: [CommonModule],
-  templateUrl: './botao-padrao.component.html',
+    selector: 'app-botao-padrao',
+    imports: [CommonModule],
+    templateUrl: './botao-padrao.component.html',
+    styleUrl: './botao-padrao.component.scss',
 })
 export class BotaoPadraoComponent {
-  @Input() texto_botao: string = 'Clique aqui'; 
-  @Input() submit_botao: boolean = false;
-  @Input() tipo_botao: string = 'botao_preto'; // Pode ser 'button', 'submit' ou 'reset'
-  @Input() disabled_botao: boolean = false;
- 
-  @Input() ativo: boolean = false; 
-children: any;
+    @Input() texto_botao: string = 'Clique aqui';
+    @Input() submit_botao: boolean = false;
+    @Input() tipo_botao: string = 'botao_preto'; // Pode ser 'button', 'submit' ou 'reset'
+    @Input() disabled_botao: boolean = false;
 
-  @HostBinding('class.ativo') get estaAtivo() {
-    return this.ativo;
-  }
+    @Input() ativo: boolean = false;
+    children: any;
+
+    @HostBinding('class.ativo') get estaAtivo() {
+        return this.ativo;
+    }
 }

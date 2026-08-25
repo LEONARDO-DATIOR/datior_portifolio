@@ -1,0 +1,16 @@
+.botao_dialog {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    background: none;
+    border: none;
+    color: var(--cor-fonte-preta);
+    font-weight: bold;
+}
+
+.botao_dialog:hover {
+    border: 2px solid white;
+    background: var(--fundo-preto);
+    color: var(--cor-fonte-branca);
+}

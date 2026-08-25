@@ -1,0 +1,46 @@
+.botao_branco {
+    background: transparent;
+    border: 1px solid var(--fundo-cinza);
+    text-decoration: none;
+    border-radius: 12px;
+    width: 50vh;
+    height: 50px;
+}
+.botao_branco > p {
+    font-size: 1.5em;
+    font-weight: 400;
+    font-family: var(--fonte-comum);
+    color: var(--cor-fonte-branca);
+}
+
+.botao_branco:hover {
+    background: var(--fundo-branco);
+    border: 2px solid var(--fundo-preto);
+}
+.botao_branco:hover p {
+    color: var(--cor-fonte-preta);
+    font-weight: 600;
+}
+
+// PRETO
+.botao_preto {
+    background: transparent;
+    border: var(--fundo-preto);
+    border-radius: 12px;
+    width: 50vh;
+    max-height: 50px;
+}
+.botao_preto > p {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: var(--font-family);
+    color: var(--cor-fonte-preta);
+}
+
+.botao_preto:hover {
+    background: var(--fundo-preto);
+    border: 2px solid var(--fundo-branco);
+}
+.botao_preto:hover p {
+    color: var(--cor-fonte-branca);
+}
