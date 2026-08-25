@@ -1,10 +1,11 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 
 @Component({
-    selector: 'app-projeto-div',
-    templateUrl: './projeto-div.component.html',
+    selector: 'app-projeto',
+    templateUrl: './projeto.component.html',
+    styleUrl: './projeto.component.scss',
 })
-export class ProjetoDivComponent {
+export class ProjetoComponent {
     @Input() titulo_projeto: string = '';
     @Input() descricao_projeto: string = '';
     @Input() caminho_imagem: string = '';

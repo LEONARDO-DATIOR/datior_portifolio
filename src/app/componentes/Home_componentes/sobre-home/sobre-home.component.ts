@@ -5,5 +5,6 @@ import { BotaoPadraoComponent } from '../../componentesSmall/botao-padrao/botao-
     selector: 'app-sobre-home',
     imports: [BotaoPadraoComponent],
     templateUrl: './sobre-home.component.html',
+    styleUrl: './sobre-home.component.scss',
 })
 export class SobreHomeComponent {}

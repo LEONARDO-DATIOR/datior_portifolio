@@ -1,46 +1,13 @@
-<style>
-    .projetos-home__projetos {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-items: center;
-        gap: 4em;
-        width: 100%;
-        background: var(--fundo-preto);
-    }
-
-    .section_projetos-home {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background: var(--fundo-preto);
-        min-height: 60vh;
-        gap: 8em;
-    }
-
-    @media screen and (max-width: 768px) {
-        .section_projetos-home {
-            padding: 4em 0;
-        }
-
-        .projetos-home__projetos {
-            flex-wrap: wrap;
-            gap: 10em;
-        }
-    }
-</style>
-
 <section class="section_projetos-home">
     <div class="projetos-home__projetos">
         @for (projeto of projetos; track projeto) {
-            <app-projeto-div
+            <app-projeto
                 [titulo_projeto]="projeto.titulo"
                 [descricao_projeto]="projeto.descricao"
                 [caminho_imagem]="projeto.caminho_imagem"
                 [link_github]="projeto.link_github"
                 [tecnologias]="projeto.tecnologias"
-            ></app-projeto-div>
+            ></app-projeto>
         }
     </div>
 </section>

@@ -9,16 +9,6 @@
 p {
     margin: 0 !important;
 }
-/* PARA O HEADER APARECER E SUMIR */
-.some_conteudo {
-    transition: transform 0.5s ease-in-out;
-    transform: translateY(-100%);
-}
-
-.aparece_conteudo {
-    transition: transform 0.5s ease-in-out;
-    transform: 0;
-}
 
 :root {
     /* BACKGROUND  */
@@ -34,7 +24,6 @@ p {
 
     --cor-fonte-preta: #000;
     --cor-fonte-branca: #fff;
-    --cor-fonte-verde: #2bff00;
-    --cor-fonte-branca-hover: #d8d8d8;
     --cor-fonte-cinza: #646464;
+    --cor-fonte-branca-hover: #d8d8d8;
 }

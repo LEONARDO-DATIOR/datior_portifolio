@@ -1,0 +1,130 @@
+.card-projeto {
+    width: 420px;
+    height: 420px;
+    background: var(--fundo-preto);
+    border: 1px solid var(--fundo-cinza);
+    border-radius: 24px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    transition: 0.35s;
+
+    .card-projeto__apelido {
+        color: var(--cor-fonte-cinza);
+        letter-spacing: 6px;
+        font-size: 0.85rem;
+    }
+
+    .card-projeto__titulo {
+        font-size: 2em;
+        font-weight: 700;
+        color: var(--cor-fonte-branca);
+        line-height: 0.9;
+    }
+
+    .card-projeto__descricao {
+        color: var(--cor-fonte-cinza);
+        font-size: 1em;
+        line-height: 1.8;
+    }
+
+    .card-projeto__acoes {
+        display: flex;
+        gap: 16px;
+    }
+
+    /* TROCAR PARA BOTAO COMPONENTE */
+    .btn {
+        flex: 1;
+        height: 52px;
+        border-radius: 14px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.95rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        transition: 0.3s;
+    }
+
+    .btn--primary {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        color: #fff;
+    }
+
+    .btn--primary:hover {
+        background: #fff;
+        color: #000;
+    }
+
+    .btn--secondary {
+        background: #111;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: #fff;
+    }
+
+    .btn--secondary:hover {
+        background: #1b1b1b;
+    }
+    /* TROCAR PARA BOTAO COMPONENTE */
+
+    .card-projeto__tecnologias {
+        span {
+            color: var(--cor-fonte-cinza);
+        }
+
+        ul {
+            display: flex;
+            gap: 1em;
+            list-style: none;
+            font-size: 0.95rem;
+            padding: 0;
+            margin: 0;
+
+            li {
+                color: var(--cor-fonte-branca);
+            }
+        }
+    }
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 0 45px rgba(255, 255, 255, 0.08);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .card-projeto {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 320px;
+        max-height: 350px;
+        padding: 16px;
+
+        .card-projeto__titulo {
+            font-size: 1.5em;
+        }
+
+        .card-projeto__descricao {
+            font-size: 0.8em;
+        }
+
+        .btn {
+            font-size: 0.6em;
+            height: 32px;
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .card-projeto {
+        margin: 0 auto;
+        width: 95%;
+    }
+}

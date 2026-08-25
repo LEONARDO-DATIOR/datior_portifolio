@@ -1,63 +1,26 @@
-<style>
-    .section_inicio-sobre {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        margin: 0;
-        height: 100vh;
-        padding-top: 3em;
-        width: 100%;
-        background: var(--fundo-preto);
-        color: var(--cor-fonte-branca);
-    }
-
-    .section_inicio-sobre a {
-        margin-top: 2em;
-    }   
-
-    .container__inicio-sobre {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 100%;
-        position: relative;
-        gap: 3em;
-    }
-
-    .container__inicio-sobre p {
-        font-family: var(--fonte-comum);
-        width: 45%;
-        text-align: center;
-        font-size: medium;
-    }
-
-    .container__inicio-sobre img {
-        width: 25%;
-    }
-
-    @media screen and (max-width: 768px) {
-        .container__inicio-sobre p {
-            width: 75%;
-        }
-        .container__inicio-sobre img {
-            width: 35%;
-        }
-
-        .section_inicio-sobre a {
-            width: 80vw;
-        }
-    }
-
-</style>
-
 <section class="section_inicio-sobre">
     <div class="container__inicio-sobre">
-        <p>Com 22 anos, já vivi diversas experiências na área de TI que me ajudaram a entender onde realmente está minha paixão: o desenvolvimento. Descobri que o que mais me motiva é criar soluções que simplifiquem a vida das pessoas — não apenas de quem utiliza diretamente, mas também de todos ao seu redor. Acredito que a tecnologia existe para isso: facilitar, conectar e transformar. Seja por meio de automações, sistemas organizacionais ou ferramentas que proporcionem momentos de lazer, meu objetivo é sempre o mesmo — gerar impacto positivo e abrir caminhos para que outros também possam inovar.</p>
-        <img src="../../../assets/imagens/foto_duca/duca_trabalhando.png" alt="Foto do Leonardo Duca">
+        <p>
+            Com 22 anos, já vivi diversas experiências na área de TI que me
+            ajudaram a entender onde realmente está minha paixão: o
+            desenvolvimento. Descobri que o que mais me motiva é criar soluções
+            que simplifiquem a vida das pessoas — não apenas de quem utiliza
+            diretamente, mas também de todos ao seu redor. Acredito que a
+            tecnologia existe para isso: facilitar, conectar e transformar. Seja
+            por meio de automações, sistemas organizacionais ou ferramentas que
+            proporcionem momentos de lazer, meu objetivo é sempre o mesmo —
+            gerar impacto positivo e abrir caminhos para que outros também
+            possam inovar.
+        </p>
+        <img
+            src="../../../assets/imagens/foto_duca/duca_trabalhando.png"
+            alt="Foto do Leonardo Duca"
+        />
     </div>
     <a href="/contato">
-        <app-botao-padrao texto_botao="Contato" tipo_botao="botao_branco"></app-botao-padrao>
+        <app-botao-padrao
+            texto_botao="Contato"
+            tipo_botao="botao_branco"
+        ></app-botao-padrao>
     </a>
 </section>

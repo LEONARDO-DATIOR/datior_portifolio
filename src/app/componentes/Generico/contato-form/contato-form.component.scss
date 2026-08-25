@@ -1,0 +1,122 @@
+.section-formulario_contato {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background: var(--fundo-preto);
+
+    .container__formulario_contato {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--fundo-branco);
+        border-radius: 24px;
+        gap: 1em;
+        padding: 2em 4em;
+        width: 50%;
+
+        h2 {
+            color: var(--cor-fonte-branca);
+            width: 100%;
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 1em;
+        }
+
+        .formulario_contato {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 2em;
+
+            .nome-numero__formulario_contato {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 2em;
+                height: 40px;
+
+                div {
+                    width: 100%;
+                    position: relative;
+                }
+            }
+
+            .campos {
+                background: var(--fundo-preto);
+                width: 100%;
+                padding: 0 1em;
+                border: none;
+                border-bottom: 2px solid var(--fundo-branco);
+                font-size: 20px;
+                font-weight: 700;
+                color: var(--cor-fonte-branca);
+                height: 2em;
+
+                &::placeholder {
+                    color: var(--cor-fonte-cinza);
+                    font-family: var(--fonte-titulo-comum);
+                    font-weight: 600;
+                }
+
+                &:focus {
+                    border: 2px solid var(--fundo-branco);
+                    outline: none;
+                }
+
+                &:hover {
+                    background: var(--fundo-cinza);
+                }
+            }
+
+            .campo_textarea {
+                height: 100%;
+                padding-top: 1em;
+                resize: none;
+
+                &:hover {
+                    background: var(--fundo-cinza);
+                }
+            }
+
+            .botao {
+                text-align: center;
+            }
+
+            small {
+                font-family: var(--fonte-comum);
+                position: absolute;
+                color: red;
+                text-wrap: nowrap;
+                width: 100px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container__formulario_contato {
+        width: 90vw;
+        gap: 4em;
+
+        h2 {
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .nome-numero__formulario_contato {
+            flex-direction: column;
+            gap: 0 !important;
+            margin-bottom: 1em;
+
+            div {
+                width: 100% !important;
+                height: 100%;
+                margin-bottom: 1.5em;
+            }
+        }
+    }
+}

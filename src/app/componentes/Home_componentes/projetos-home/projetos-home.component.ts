@@ -1,10 +1,11 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { ProjetoDivComponent } from '../../componentesSmall/projeto-div/projeto-div.component';
+import { ProjetoComponent } from '../../componentesSmall/projeto/projeto.component';
 
 @Component({
     selector: 'app-projetos-home',
-    imports: [ProjetoDivComponent],
+    imports: [ProjetoComponent],
     templateUrl: './projetos-home.component.html',
+    styleUrl: './projetos-home.component.scss',
 })
 export class ProjetosHomeComponent {
     projetos = [

@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
     selector: 'app-header',
     imports: [],
     templateUrl: './header.component.html',
+    styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
     // lógica para sumir ou aparecer com o menu de acordo com o click

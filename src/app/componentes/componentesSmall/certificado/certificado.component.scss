@@ -11,7 +11,7 @@
     }
 
     .conteudo_certificado {
-        color: white;
+        color: var(--cor-fonte-branca);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -20,7 +20,7 @@
     }
 
     .info_certificado {
-        color: white;
+        color: var(--cor-fonte-branca);
         display: grid;
         grid-template-rows: 2.5fr 1fr;
         grid-template-columns: 1fr;
