@@ -12,6 +12,7 @@ export class BotaoPadraoComponent {
     @Input() submit_botao: boolean = false;
     @Input() tipo_botao: string = 'botao_preto'; // Pode ser 'button', 'submit' ou 'reset'
     @Input() disabled_botao: boolean = false;
+    @Input() categoria_certificado: any;
 
     @Input() ativo: boolean = false;
     children: any;

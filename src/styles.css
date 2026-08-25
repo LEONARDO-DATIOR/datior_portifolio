@@ -9,9 +9,7 @@
 p {
     margin: 0 !important;
 }
-/* a {
-   color: red !important;
-} */
+/* PARA O HEADER APARECER E SUMIR */
 .some_conteudo {
     transition: transform 0.5s ease-in-out;
     transform: translateY(-100%);
@@ -27,9 +25,6 @@ p {
     --fundo-preto: rgba(0, 0, 0, 1);
     --fundo-branco: rgba(255, 255, 255, 1);
     --fundo-cinza: #444;
-    --fundo-campo-form: #ffffff;
-    --fundo-branco-hover: #f1f1f1;
-    --fundo-campo-form-hover: #cecece;
 
     /* FONTES */
     --fonte-comum: "Work Sans", sans-serif;

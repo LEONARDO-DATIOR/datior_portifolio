@@ -1,6 +1,7 @@
-@import url("./styles/botao-submit.scss"); // SUBMIT
-@import url("./styles/botao-generico.scss"); // GENERICO
-@import url("./styles/botao-dialog.scss"); // DIALOG
+@use "./styles/botao-submit.scss"; // SUBMIT
+@use "./styles/botao-generico.scss"; // GENERICO
+@use "./styles/botao-certificado.scss"; // CERTIFICADO
+@use "./styles/botao-dialog.scss"; // DIALOG
 
 @media screen and (max-width: 768px) {
     button {

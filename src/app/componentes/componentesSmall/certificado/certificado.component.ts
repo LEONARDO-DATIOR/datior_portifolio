@@ -1,10 +1,12 @@
-import { NgClass } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { BotaoPadraoComponent } from '../botao-padrao/botao-padrao.component';
 
 @Component({
     selector: 'app-certificado',
     templateUrl: './certificado.component.html',
-    imports: [NgClass],
+    styleUrl: './certificado.component.scss',
+    imports: [BotaoPadraoComponent, NgIf],
 })
 export class CertificadoComponent {
     @Input() link: string = '#';

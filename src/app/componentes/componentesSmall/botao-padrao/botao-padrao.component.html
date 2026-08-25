@@ -1,5 +1,3 @@
-<style></style>
-
 <!-- Botão de submit -->
 <button
     *ngIf="submit_botao"
@@ -25,6 +23,46 @@
     <p>{{ texto_botao }}</p>
 </button>
 
+<!-- CERTIFICADO -->
+<button
+    *ngIf="tipo_botao === 'botao_categoria'"
+    [ngClass]="categoria_certificado"
+>
+    @switch (categoria_certificado) {
+        @case ("FRONT-END") {
+            Front-end
+        }
+        @case ("BACK-END") {
+            Back-end
+        }
+        @case ("PROGRAMAÇÃO / ALGORITMO") {
+            Back-end
+        }
+        @case ("UI/UX") {
+            Design
+        }
+        @case ("BANCO DE DADOS") {
+            Back-end
+        }
+        @case ("ANALISE DE DADOS") {
+            Análise de Dados
+        }
+        @case ("REDES/CLOUD") {
+            Infraestrutura
+        }
+        @case ("IA") {
+            Análise de Dados
+        }
+        @case ("METODOLOGIAS AGEIS") {
+            Gerenciamento de Projetos
+        }
+        @default {
+            {{ categoria_certificado }}
+        }
+    }
+</button>
+
+<!-- DIALOG -->
 <button
     *ngIf="tipo_botao === 'botao_dialog'"
     id="cancel"

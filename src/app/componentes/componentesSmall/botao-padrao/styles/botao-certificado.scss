@@ -1,0 +1,45 @@
+.front-end,
+.back-end,
+.design,
+.gestao,
+.analise-de-dados,
+.sem-categoria,
+.infraestrutura {
+    background: none;
+    color: var(--fonte-branco);
+    border: 1px solid var(--fundo-branco);
+    border-radius: 8px;
+    padding: 0.2em 0;
+    width: 120%;
+}
+
+/* VISUAL POR CATEGORIA */
+.front-end {
+    border: 1px solid blue;
+    color: blue;
+}
+
+.back-end {
+    border: 1px solid red;
+    color: red;
+}
+
+.design {
+    border: 1px solid purple;
+    color: purple;
+}
+
+.gestao {
+    border: 1px solid orange;
+    color: orange;
+}
+
+.analise-de-dados {
+    border: 1px solid green;
+    color: green;
+}
+
+.infraestrutura {
+    border: 1px solid gold;
+    color: gold;
+}
