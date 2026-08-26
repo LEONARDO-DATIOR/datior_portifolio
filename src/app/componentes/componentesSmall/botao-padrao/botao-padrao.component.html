@@ -1,134 +1,73 @@
-
-<style>
-    .botao_submit {
-        background: var(--fundo-branco);
-        width: 220px; 
-        height: 50px; 
-        border-radius: 8px;
-        border: 1px solid var(--cor-fonte-branca);
-        color: var(--cor-fonte-preta);
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .botao_branco {
-        background: transparent;
-        border: 2px solid var(--fundo-branco);
-        text-decoration: none;
-        border-radius: 12px;
-        width: 50vh;
-        height: 50px;
-    }
-    .botao_branco > p {
-        font-size: 1.5em;
-        font-weight: bold;
-        font-family: var(--fonte-comum);
-        color: var(--cor-fonte-branca);
-    }   
-
-    .botao_branco:hover {
-        background: var(--fundo-branco);
-        border: 2px solid var(--fundo-preto);
-    }
-    .botao_branco:hover p {
-        color: var(--cor-fonte-preta);
-    }
-
-    /* ATIVO */
-    :host(.ativo) button {
-        border: 3px solid var(--cor-fonte-verde) !important;
-        border-radius: 16px;
-        margin: 3EM 0;
-    }
-
-    :host(.ativo) p {
-        color: var(--cor-fonte-verde) !important;
-    }
-
-    :host(.ativo) button:hover {
-        background: var(--cor-fonte-verde);
-    }
-
-    :host(.ativo) button:hover > p {
-         color: var(--cor-fonte-preta) !important;
-    }
-    /* ATIVO */
-
-    .botao_preto {
-        background: transparent;
-        border: var(--fundo-preto);
-        border-radius: 12px;   
-        width: 50vh;
-        max-height: 50px;
-    }
-    .botao_preto > p {
-        font-size: 1.5em;
-        font-weight: bold;
-        font-family: var(--font-family);
-        color: var(--cor-fonte-preta);
-    }   
-
-    .botao_preto:hover {
-        background: var(--fundo-preto);
-        border: 2px solid var(--fundo-branco);
-    }
-    .botao_preto:hover p {
-        color: var(--cor-fonte-branca);
-    }
-
-
-    .botao_submit:hover {
-        background: var(--fundo-preto);
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-        color: var(--cor-fonte-branca);
-        font-family: var(--font-family)
-    }
-
-    .botao_dialog {
-        position: relative;
-        width: 60px;
-        height: 60px;
-        border-radius: 100px;
-        background: none;
-        border: none;
-        color: var(--cor-fonte-preta);
-        font-weight: bold;
-    }
-
-    .botao_dialog:hover {
-        border: 2px solid white;
-        background: var(--fundo-preto);
-        color: var(--cor-fonte-branca);
-    }
-
-    @media screen and (max-width: 768px) {
-        button {
-            width: 100% !important;
-        }
-
-        /* ATIVO */
-        
-
-    }
-</style>
-
-
 <!-- Botão de submit -->
-<button *ngIf="submit_botao"
-        type="submit"
-        [disabled]="disabled_botao"
-        class="botao_submit">
+<button
+    *ngIf="submit_botao"
+    type="submit"
+    [disabled]="disabled_botao"
+    class="botao_submit"
+>
     <p class="fs-5 fw-bold">{{ texto_botao }}</p>
 </button>
 
 <!-- Botão branco alternativo -->
-<button *ngIf="tipo_botao === 'botao_branco' && !submit_botao" class="botao_branco">
+<button
+    *ngIf="tipo_botao === 'botao_branco' && !submit_botao"
+    class="botao_branco"
+>
     <p>{{ texto_botao }}</p>
 </button>
 
-<button *ngIf="tipo_botao === 'botao_preto' && !submit_botao" class="botao_preto ">
+<button
+    *ngIf="tipo_botao === 'botao_preto' && !submit_botao"
+    class="botao_preto"
+>
     <p>{{ texto_botao }}</p>
 </button>
 
-<button *ngIf="tipo_botao === 'botao_dialog'" id="cancel" type="reset" class="botao_dialog">
-    <p>{{texto_botao}}</p>
+<!-- CERTIFICADO -->
+<button
+    *ngIf="tipo_botao === 'botao_categoria'"
+    [ngClass]="categoria_certificado"
+>
+    @switch (categoria_certificado) {
+        @case ("FRONT-END") {
+            Front-end
+        }
+        @case ("BACK-END") {
+            Back-end
+        }
+        @case ("PROGRAMAÇÃO / ALGORITMO") {
+            Back-end
+        }
+        @case ("UI/UX") {
+            Design
+        }
+        @case ("BANCO DE DADOS") {
+            Back-end
+        }
+        @case ("ANALISE DE DADOS") {
+            Análise de Dados
+        }
+        @case ("REDES/CLOUD") {
+            Infraestrutura
+        }
+        @case ("IA") {
+            Análise de Dados
+        }
+        @case ("METODOLOGIAS AGEIS") {
+            Gerenciamento de Projetos
+        }
+        @default {
+            {{ categoria_certificado }}
+        }
+    }
+</button>
+
+<!-- DIALOG -->
+<button
+    *ngIf="tipo_botao === 'botao_dialog'"
+    id="cancel"
+    type="reset"
+    class="botao_dialog"
+>
+    <p>{{ texto_botao }}</p>
 </button>

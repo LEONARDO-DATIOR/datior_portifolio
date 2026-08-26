@@ -1,10 +1,11 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { ProjetoDivComponent } from '../../componentesSmall/projeto-div/projeto-div.component';
+import { ProjetoComponent } from '../../componentesSmall/projeto/projeto.component';
 
 @Component({
     selector: 'app-projetos-home',
-    imports: [ProjetoDivComponent],
+    imports: [ProjetoComponent],
     templateUrl: './projetos-home.component.html',
+    styleUrl: './projetos-home.component.scss',
 })
 export class ProjetosHomeComponent {
     projetos = [
@@ -20,7 +21,7 @@ export class ProjetosHomeComponent {
         {
             titulo: 'Overdrive-Info',
             descricao:
-                'Projeto desenvolvido para monitoramento e diagnóstico de equipamentos, com coleta e análise de informações de hardware e sistema. A solução permite identificar falhas, anomalias e possíveis gargalos de desempenho, além de gerar relatórios técnicos para auxiliar na análise e manutenção das máquinas.',
+                'Projeto desenvolvido para monitoramento e diagnóstico de equipamentos, com coleta e análise de informações de hardware e sistema.',
             caminho_imagem:
                 '/../../../assets/imagens/projetos/Overdrive-info.png',
             link_github: 'https://github.com/LEONARDO-DATIOR/datior_portifolio',

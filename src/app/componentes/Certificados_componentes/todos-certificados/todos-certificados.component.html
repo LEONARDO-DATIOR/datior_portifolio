@@ -1,39 +1,86 @@
-<style>
-    .section_certificados-todos {
-        background: var(--fundo-preto);
-        padding: 4em 2em;
-    }
-
-    .certificados_lista-todos {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, 250px);
-        justify-content: center;
-        gap: 2em 6em;
-        list-style: none;
-    }
-
-    @media screen and (max-width: 768px) {
-        .section_certificados-todos {
-            padding: 4em 0;
-        }
-        .certificados_lista-todos {
-            padding: 0;
-            gap: 4em;
-        }
-    }
-
+<style *ngIf="!carrosel">
+    @import url("./styles/todos-certificados.scss");
 </style>
-
-<section class="section_certificados-todos">
+<section class="section_certificados-todos" *ngIf="!carrosel">
+    <button
+        #btn_exibir_filtro
+        class="botao_exibir_filtros"
+        (click)="exibirFiltros(true)"
+    >
+        Exibir filtros
+    </button>
+    <button
+        #btn_fechar_filtro
+        class="botao_fechar_filtros"
+        (click)="exibirFiltros(false)"
+    >
+        X
+    </button>
+    <div #div_filtros class="div_filtro_certificados">
+        <button class="botao_filtro" (click)="filtrarCategoria('todos')">
+            Todos
+        </button>
+        <button
+            class="botao_filtro front-end"
+            (click)="filtrarCategoria('FRONT-END')"
+        >
+            Front-end
+        </button>
+        <button class="botao_filtro design" (click)="filtrarCategoria('UI/UX')">
+            Design
+        </button>
+        <button
+            class="botao_filtro back-end"
+            (click)="filtrarCategoria('BACK-END')"
+        >
+            Back-end
+        </button>
+        <button
+            class="botao_filtro gestao"
+            (click)="filtrarCategoria('METODOLOGIAS AGEIS')"
+        >
+            Gestão
+        </button>
+        <button class="botao_filtro" (click)="filtrarCategoria('REDES/CLOUD')">
+            Infraestrutura
+        </button>
+    </div>
     <ul class="certificados_lista-todos">
         <app-certificado
-            *ngFor="let certificado of dadosCsv; let index = index"
-            [link]="certificado['LINK PARA CERTIFICAR'].includes('http') ? certificado['LINK PARA CERTIFICAR'] : 'https://www.cursoemvideo.com/validacao-de-certificado/'"
+            *ngFor="let certificado of certificadosFiltrados"
+            [link]="
+                certificado['LINK PARA CERTIFICAR'].includes('http')
+                    ? certificado['LINK PARA CERTIFICAR']
+                    : 'https://www.cursoemvideo.com/validacao-de-certificado/'
+            "
             [titulo]="certificado['NOME CURSO']"
             [escola]="certificado['ESCOLA']"
             [dataRealizacao]="certificado['DATA']"
             [categoria]="certificado['CATEGORIA']"
         ></app-certificado>
-
     </ul>
+</section>
+
+<!-- CARROSEL -->
+<style *ngIf="carrosel">
+    @import url("./styles/todos-certificados-carrosel.scss");
+</style>
+<section class="section_certificados-carrosel" *ngIf="carrosel">
+    <button class="btn-carrossel" (click)="anterior()">❮</button>
+
+    <ul class="certificados_lista-carrosel">
+        <app-certificado
+            *ngFor="let certificado of certificadosVisiveis"
+            [link]="
+                certificado['LINK PARA CERTIFICAR'].includes('http')
+                    ? certificado['LINK PARA CERTIFICAR']
+                    : 'https://www.cursoemvideo.com/validacao-de-certificado/'
+            "
+            [titulo]="certificado['NOME CURSO']"
+            [escola]="certificado['ESCOLA']"
+            [dataRealizacao]="certificado['DATA']"
+            [categoria]="certificado['CATEGORIA']"
+        ></app-certificado>
+    </ul>
+    <button class="btn-carrossel" (click)="proximo()">❯</button>
 </section>

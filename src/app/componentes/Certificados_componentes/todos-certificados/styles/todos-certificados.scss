@@ -1,0 +1,142 @@
+.section_certificados-todos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--fundo-preto);
+    padding: 4em 2em;
+    min-height: 100vh;
+}
+
+.botao_exibir_filtros {
+    display: none;
+    background: none;
+    color: var(--cor-fonte-branca);
+    margin: 2em auto;
+    border: 1px solid var(--fundo-branco);
+    border-radius: 22px;
+    width: 160px;
+}
+
+.botao_fechar_filtros {
+    display: block;
+    background: none;
+    color: var(--cor-fonte-branca);
+    font-size: large;
+    font-weight: bold;
+    margin: 2em auto;
+    border: none;
+}
+
+.div_filtro_certificados {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-bottom: 6em;
+    width: 100%;
+
+    .botao_filtro {
+        background: none;
+        width: 125px;
+        color: var(--cor-fonte-branca);
+        border: 3px solid;
+        border-radius: 22px;
+
+        &:hover {
+            transition-duration: 0.7s;
+            border: none;
+            color: var(--fundo-preto);
+            background: var(--fundo-preto);
+            transform: scale(1.1);
+            font-weight: bold;
+        }
+    }
+
+    .front-end {
+        border: 1px solid blue;
+        color: blue;
+
+        &:hover {
+            transition-duration: 0.5s;
+            border: none;
+            color: var(--fundo-preto);
+            background: blue;
+        }
+    }
+
+    .back-end {
+        border: 1px solid red;
+        color: red;
+
+        &:hover {
+            border: none;
+            transition-duration: 0.5s;
+            border: none;
+            color: var(--fundo-preto);
+            background: red;
+        }
+    }
+
+    .design {
+        border: 1px solid purple;
+        color: purple;
+
+        &:hover {
+            border: none;
+            transition-duration: 0.5s;
+            border: none;
+            color: var(--fundo-preto);
+            background: purple;
+        }
+    }
+
+    .gestao {
+        border: 1px solid orange;
+        color: orange;
+
+        &:hover {
+            border: none;
+            transition-duration: 0.5s;
+            border: none;
+            color: var(--fundo-preto);
+            background: orange;
+        }
+    }
+
+    .analise-de-dados {
+        border: 1px solid green;
+        color: green;
+
+        &:hover {
+            border: none;
+            transition-duration: 0.5s;
+            border: none;
+            color: var(--fundo-preto);
+            background: green;
+        }
+    }
+}
+
+.certificados_lista-todos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 250px);
+    justify-content: center;
+    gap: 2em 6em;
+    list-style: none;
+    margin: 0 !important;
+}
+
+@media screen and (max-width: 768px) {
+    .div_filtro_certificados {
+        padding: 0 2em;
+    }
+
+    .section_certificados-todos {
+        padding: 4em 0;
+    }
+
+    .certificados_lista-todos {
+        padding: 0;
+        gap: 4em;
+    }
+}

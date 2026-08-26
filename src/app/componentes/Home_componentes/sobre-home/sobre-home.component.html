@@ -1,237 +1,33 @@
-<style>
-    .sobre-home {
-        display: flex;
-        flex-direction: column;
-        gap: 3em;
-        justify-content: center;
-        height: 100vh;
-        background-color: var(--fundo-preto);
-        align-items: center;
-    }
+<section class="section_sobre-home">
+    <div class="container_sobre-home">
+        <div class="sobre-home__texto">
+            <span class="sobre-home__apelido">DATIOR</span>
 
-    .container-home {
-        display: grid;
-        grid-template-columns: 20vw 55vw;
-        grid-template-rows: 45vh;
-        column-gap: 2.5vw;
-        width: 80vw;
-        height: 45vh;
-        border: 2px solid var(--fundo-branco);
-        box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.2);
-        border-radius: 10px;
-    }
+            <h1 class="sobre-home__titulo">
+                <span class="sobre-home__titulo-principal">LEONARDO</span>
+                <span class="sobre-home__titulo-outline">DUCA</span>
+            </h1>
 
-    .container-home__imagem {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+            <p class="sobre-home__descricao">
+                Transformo ideias em soluções digitais performáticas, funcionais
+                e com foco em experiência.
+            </p>
 
-        img {
-            object-fit: cover;
-            height: 44vh;
-        }
-    }
-
-    .container-home__textos {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        text-align: center;
-        color: white;
-    }
-
-    .textos_sobre_home {
-        p {
-            font-family: var(--fonte-comum);
-            white-space: normal; /* <- Isso permite quebra automática de linha */
-            word-wrap: break-word;
-        }
-    }
-
-    .sobre-home__gif {
-        width: 50%;
-        height: 100%;
-        background: none !important;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-
-    .container-redes {
-        width: 80%;
-
-        ul {
-            display: flex;
-            list-style: none;
-            justify-content: space-evenly;
-            margin: 0;
-            padding: 0;
-        }
-
-        a {
-            opacity: 60%;
-            img {
-                transform: scale(0.85);
-            }
-        }
-
-        a:hover {
-            transition: 1s;
-            opacity: 100%;
-            img {
-                transition: 4s;
-                transform: scale(1);
-            }
-        }
-    }
-
-    @media screen and (max-width: 1400px) {
-        .sobre-home {
-            height: 120vh;
-        }
-
-        .container-home {
-            grid-template-columns: 100%;
-            grid-template-rows: 45% 55%;
-            width: 60vw;
-            height: 70vh;
-        }
-
-        .container-home__imagem img {
-            width: 50%;
-            height: 100%;
-        }
-
-        .container-home__textos {
-            padding: 0 2em 2em 2em;
-            gap: 20px;
-            justify-content: space-between;
-        }
-
-        .textos_sobre_home p {
-            font-size: 14px;
-        }
-
-        .container-redes {
-            width: 100%;
-
-            a {
-                opacity: 90%;
-            }
-        }
-    }
-
-    @media screen and (max-width: 1030px) {
-        .container-home {
-            width: 70vw;
-            height: 80vh;
-        }
-    }
-
-    @media screen and (max-width: 768px) {
-        .sobre-home {
-            height: 100vh;
-        }
-
-        .container-home {
-            margin-top: 2em;
-            height: 70vh;
-            grid-template-rows: 35% 65%;
-        }
-
-        .container-home__imagem img {
-            width: 100%;
-            scale: 1;
-        }
-
-        .container-home__textos {
-            padding: 1em 0;
-
-            h2 {
-                margin: 0;
-            }
-
-            a {
-                padding: 0 2em;
-                margin-bottom: 1em;
-                font-size: 12px;
-                position: relative;
-            }
-        }
-
-        .textos_sobre_home p {
-            font-size: 13px;
-            text-align: justify;
-            padding: 0 2em;
-        }
-
-        .container-redes {
-            img {
-                width: 90%;
-            }
-        }
-    }
-</style>
-
-<section #sectionRef class="sobre-home">
-    <div class="container-home">
-        <div class="container-home__imagem">
-            <img src="../../../../assets/imagens/foto_duca/Leo-IA.gif" alt="" />
-        </div>
-        <div class="container-home__textos">
-            <h2>LEONARDO DUCA</h2>
-            <div #textoSobreHome class="textos_sobre_home">
-                <p>{{ textoDigitado }}</p>
+            <div class="sobre-home__acoes">
+                <a href="contato">
+                    <app-botao-padrao
+                        tipo_botao="botao_branco"
+                        texto_botao="CONTATO"
+                    ></app-botao-padrao>
+                </a>
             </div>
-            <a href="\certificados">
-                <app-botao-padrao
-                    texto_botao="Conhecimentos"
-                    tipo_botao="botao_branco"
-                ></app-botao-padrao>
-            </a>
         </div>
-    </div>
 
-    <div class="container-redes">
-        <ul>
-            <li>
-                <a
-                    href="https://www.linkedin.com/in/leonardo-duca/?skipRedirect=true"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <img
-                        src="../../../../assets/imagens/icons/icon_linkedin_branco.svg"
-                        alt="Icone Linkedin"
-                    />
-                </a>
-            </li>
-            <li>
-                <a
-                    href="./../../../../assets/pdfs/Leonardo_Duca_curriculo.pdf"
-                    download
-                >
-                    <img
-                        src="../../../../assets/imagens/icons/icon_curriculo_branco.svg"
-                        alt="Icone Curriculo"
-                    />
-                </a>
-            </li>
-            <li>
-                <a
-                    href="https://github.com/LEONARDO-DATIOR"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <img
-                        src="../../../../assets/imagens/icons/icon_github_branco.svg"
-                        alt="Icone GitHub"
-                    />
-                </a>
-            </li>
-        </ul>
+        <div class="sobre-home__imagem">
+            <img
+                src="../../../../assets/imagens/foto_duca/DUCA_MVP.png"
+                alt="Leonardo Duca"
+            />
+        </div>
     </div>
 </section>

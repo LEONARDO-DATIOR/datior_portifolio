@@ -1,0 +1,50 @@
+.section_texto-sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    background: var(--fundo-preto);
+    padding: 25vh 0 0;
+
+    .container__texto-sobre {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+        width: 75%;
+        padding: 4em 5em;
+        gap: 2em;
+        border-radius: 26px;
+        background: var(--fundo-branco);
+        box-shadow: 0 0 20px var(--fundo-branco);
+
+        p {
+            color: var(--cor-fonte-preta);
+            font-family: var(--fonte-comum);
+            font-size: x-large;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section_texto-sobre {
+        padding: 10vh 0 0;
+        width: 100%;
+
+        h1 {
+            width: 80%;
+        }
+
+        .container__texto-sobre {
+            width: 90%;
+            padding: 3em 3em;
+            font-size: x-small;
+            text-align: left;
+        }
+
+        .botao-padrao_sobre {
+            width: 90vw !important;
+        }
+    }
+}

@@ -1,0 +1,50 @@
+.botao_branco {
+    background: transparent;
+    border: 1px solid var(--fundo-cinza);
+    text-decoration: none;
+    border-radius: 12px;
+    width: 50vh;
+    height: 50px;
+
+    P {
+        font-size: 1.5em;
+        font-weight: 400;
+        font-family: var(--fonte-comum);
+        color: var(--cor-fonte-branca);
+    }
+
+    &:hover {
+        background: var(--fundo-branco);
+        border: 2px solid var(--fundo-preto);
+
+        p {
+            color: var(--cor-fonte-preta);
+            font-weight: 600;
+        }
+    }
+}
+
+// PRETO
+.botao_preto {
+    background: transparent;
+    border: var(--fundo-preto);
+    border-radius: 12px;
+    width: 50vh;
+    max-height: 50px;
+
+    p {
+        font-size: 1.5em;
+        font-weight: bold;
+        font-family: var(--font-family);
+        color: var(--cor-fonte-preta);
+    }
+
+    &:hover {
+        background: var(--fundo-preto);
+        border: 2px solid var(--fundo-branco);
+
+        p {
+            color: var(--cor-fonte-branca);
+        }
+    }
+}

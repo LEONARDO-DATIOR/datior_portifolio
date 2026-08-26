@@ -1,0 +1,12 @@
+@use "./styles/botao-submit.scss"; // SUBMIT
+@use "./styles/botao-generico.scss"; // GENERICO
+@use "./styles/botao-certificado.scss"; // CERTIFICADO
+@use "./styles/botao-dialog.scss"; // DIALOG
+
+@media screen and (max-width: 768px) {
+    button {
+        width: 100% !important;
+    }
+
+    /* ATIVO */
+}

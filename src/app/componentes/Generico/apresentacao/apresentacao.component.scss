@@ -1,0 +1,45 @@
+.section_apresentacao-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--fundo-preto);
+    padding: 10vh 0;
+
+    .video {
+        scale: 0;
+    }
+
+    iframe {
+        width: 55vw;
+        height: 65vh;
+        border: 2px solid var(--fundo-branco);
+        border-radius: 2em;
+    }
+
+    .visivel {
+        animation-duration: 3s;
+        animation-name: videoAparecendo;
+        scale: 1;
+    }
+}
+
+@keyframes videoAparecendo {
+    from {
+        scale: 0;
+    }
+    to {
+        scale: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section_apresentacao-video {
+        height: 80vh;
+
+        iframe {
+            width: 85%;
+            height: 35vh;
+        }
+    }
+}
